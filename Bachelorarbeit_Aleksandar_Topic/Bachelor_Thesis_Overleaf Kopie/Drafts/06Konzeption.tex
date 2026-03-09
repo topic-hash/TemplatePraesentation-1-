@@ -1,0 +1,68 @@
+\section{Konzeption der Artefakte}
+\label{sec:Konzeption}
+
+% Ziel: 6-8 Seiten
+% Inhalt: Fragebogen, Mapping-Workbook, SOPs
+
+\subsection{GRACE-Onboarding-Fragebogen}
+\label{sec:Fragebogen_Konzept}
+
+% TODO:
+% - Von 96 auf 15 Fragen reduziert (DeVellis 2017)
+% - Zwei Versionen: Vollversion (Brainstorming) + Kompakt (Workshop)
+% - Tabelle mit Fragebogen-Reduktion
+% - Begründung für Reduktion (Skalentwicklung nach DeVellis)
+
+
+\subsection{Entity-Mapping-Workbook}
+\label{sec:MappingWorkbook_Konzept}
+
+% TODO:
+% - JSON-Schema-Dokumentation für alle 6 Entity-Typen
+% - Tabelle: Entity-Typen Übersicht
+% - Für jede Entity: Felder, Datentypen, Required/Optional, Defaults
+% - Beispiele für typische Konfigurationen
+
+
+\subsection{Standard Operating Procedures (SOPs)}
+\label{sec:SOPs_Konzept}
+
+% TODO:
+% - 3 SOPs beschreiben:
+%   1. Kunden-Onboarding-Gespräch durchführen
+%   2. Master Creator nutzen
+%   3. JSONs in GRACE importieren
+% - Format: Markdown, Git-versioniert
+% - 6-Punkte-Validierungs-Checkliste
+
+
+\subsection{Technische Legitimierung: Englischsprachiger Master Creator}
+\label{sec:TechnischeLegitimierung}
+
+% TODO:
+% - LLM-Training primär auf englischen Daten
+% - Ressourcenbeschränkungen (7B-Modell)
+% - Performance-Unterschiede (30-40% besser bei Englisch)
+% - Quellen: Lai et al. (2023), Ahuja et al. (2023), Zhang et al. (2024)
+
+Die Wahl eines englischsprachigen Toolings für den Master Creator wird durch
+mehrere technische und empirische Faktoren legitimiert. Large Language Models
+werden primär auf englischsprachigen Korpora trainiert, was zu signifikanten
+Leistungsunterschieden zwischen Englisch und anderen Sprachen führt. Studien
+zeigen, dass kleinere Modelle (7B Parameter) bei nicht-englischen Sprachen
+Leistungseinbußen von 30-40\% aufweisen \cite{llm:multilingual_performance2023,
+llm:language_bias2023}. Diese Diskrepanz verstärkt sich bei Aufgaben der
+strukturierten Ausgabegenerierung, wo Präzision und Formatkonformität
+entscheidend sind \cite{llm:model_size_multilingual2024}.
+
+Die Ressourcenbeschränkung auf ein 7B-Modell (Qwen2.5-Coder) resultiert aus
+Datenhoheitsanforderungen: Lokales Deployment mit Ollama \cite{ollama:local_llm2024}
+auf vorhandener Hardware limitiert die Modellgröße. Vergleichbare industrielle
+Ansätze wie SmartAPS \cite{smartaps2025} nutzen ebenfalls leichtgewichtige
+Modelle (Mistral-7B) und demonstrieren deren Anwendbarkeit für Operations
+Management. Die Entscheidung für englischsprachige Prompts und JSON-Felder
+folgt somit der technischen Notwendigkeit: Die Performance-Verbesserung bei
+strukturierter Datengenerierung rechtfertigt den initalen Mehraufwand bei
+der Prompt-Entwicklung und kompensiert die Ressourcenbeschränkung durch
+optimale Modellauslastung.
+

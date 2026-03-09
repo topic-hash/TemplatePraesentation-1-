@@ -1,0 +1,291 @@
+\section{Evaluation}
+\label{sec:Evaluation}
+
+Die Evaluation bewertet die Fähigkeit der entwickelten Artefakte, die in Kapitel~\ref{sec:IstAnalyse} identifizierten Problemfelder zu adressieren. Die Ist-Analyse offenbarte fünf zentrale Herausforderungen: (1) Fragmentierung des Konfigurationswissens über Azure DevOps, E-Mails und Git-Historien, (2) Wissensträgerabhängigkeit bei wenigen Experten, (3) fehlende Standardisierung der Validierungsmechanismen, (4) DSGVO- und NDA-Anforderungen an Datenhoheit, (5) quantitative Problemmanifestationen (Fehlerrate 10-15 pro Iteration, Checklisten-Vollständigkeit 60-70\%, Durchlaufzeit ~8 Wochen).
+
+\noindent Die folgenden Abschnitte strukturieren die Evaluation entlang dieser Problemfelder und dokumentieren jeweils, welche Artefakte zur Lösung beitragen und wie die Wirksamkeit validiert wurde.
+
+
+\subsection{Problemlösung durch Artefakte - Übersicht}
+\label{subsec:ProblemlösungÜbersicht}
+
+Tabelle~\ref{tab:ArtefaktProblembeitrag} gibt eine Übersicht über die entwickelten Artefakte und ihre Beiträge zur Lösung der identifizierten Problemfelder. Die nachfolgenden Abschnitte detaillieren die Validierung für jedes Problemfeld.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{|p{3.5cm}|p{9cm}|}
+\hline
+\textbf{Artefakt} & \textbf{Adressierte Problemfelder} \\
+\hline
+GRACE Onboarding Fragebogen (15 Kernfragen) & Fragmentierung, Vollständigkeit \\
+\hline
+Entity Mapping Workbook (6 Entitätstypen) & Fragmentierung, Standardisierung, Wissensträgerabhängigkeit \\
+\hline
+Standard Operating Procedures (SOP 01-03) & Wissensträgerabhängigkeit, Standardisierung, Reproduzierbarkeit \\
+\hline
+Master Creator (LLM-gestützte Generierung) & Alle 5 Problemfelder (Hauptvalidierung durch Within-Subjects-Experiment) \\
+\hline
+Demo-Werk (Pigmentpaste-Produktion) & Empirische Grundlage für Artefakt-Entwicklung, Showcasing (EC Conference) \\
+\hline
+\end{tabular}
+\caption{Artefakte und ihre Beiträge zur Problemlösung}
+\label{tab:ArtefaktProblembeitrag}
+\end{table}
+
+
+\subsection{Fragmentierung des Konfigurationswissens}
+\label{subsec:FragmentierungEval}
+
+\textbf{Problemcharakteristik:} Relevantes Konfigurationswissen war über Azure DevOps Wikis, E-Mail-Korrespondenz, Git-Historie und persönliche Erfahrung verteilt. Es existierte keine Single Source of Truth. Die Manifestation im Demo-Projekt zeigte 48\% doppelte Materialien (13 von 27), drei simultane ID-Konventionen (numerisch, UUID, kebab-case) und Version-Inkonsistenzen (v1-v6).
+\\\\
+\noindent \textbf{Lösungsartefakte:}
+
+\begin{itemize}
+    \item \textbf{Entity Mapping Workbook:} Dokumentiert JSON-Schema-Strukturen aller 6 GRACE-Entitätstypen (Materials, Machines, Products, Processes, BOMs, Recipes) als zentrale technische Referenz. Definiert Feldspezifikationen, Datentypen, Validierungsregeln und Abhängigkeiten zwischen Entitäten. Entwickelt durch Reverse Engineering, da GRACE keine öffentliche API-Dokumentation besitzt (Details siehe Abschnitt~\ref{sec:MappingWorkbook}). Defragmentiert das Wissen über korrekte Abbildung der GRACE Entitäten in der Konfiguration, vorher garkeine Quelle dazu. 
+
+    \item \textbf{GRACE Onboarding Fragebogen:} Strukturierte Wissenserhebung in 15 Kernfragen (reduziert von 96 Fragen nach DeVellis-Prinzipien). Verhindert Ad-hoc-Kommunikation und stellt sicher, dass alle 6 Entitätstypen systematisch erfasst werden (Details siehe Abschnitt~\ref{sec:Fragebogen}). Defragmentiert sowohl internes als auch externes Wissen über die Produktionsvariablen einer Produktion, vorher war keine strukturierte Vorgehensweise zum Assesment existent. 
+
+    \item \textbf{Standard Operating Procedures:} Dokumentieren End-to-End-Prozess von Kundenworkshop (SOP~01) über Master Creator-Nutzung (SOP~02) bis GRACE-Import (SOP~03). Operationalisieren die Drei-Artefakte-Architektur als ausführbare Handlungsanweisungen (Details siehe Abschnitt~\ref{sec:SOPs}). In Kombination mit den Prozessdiagrammen liefern sie genaue Handlungsvorgaben in Hinsicht auf den kompletten Prozess und defragmentieren das Wissen darüber.
+\end{itemize}
+
+\noindent \textbf{Grad der Problemlösung:} Vollständig gelöst. Für jede Form von fragmentierten Wissen existiet nun eine strukturierte Dokumentation. 
+
+
+\subsection{Wissensträgerabhängigkeit}
+\label{subsec:WissensträgerEval}
+
+\textbf{Problemcharakteristik:} Kritisches Konfigurationswissen war bei wenigen Experten gebunden. Ausfälle oder Fluktuation würden erhebliche Wissenslücken verursachen. Kleine Teamgröße (5 Personen) verstärkt das Risiko.
+
+\noindent \textbf{Lösungsartefakte:}
+
+\begin{itemize}
+    \item \textbf{Entity Mapping Workbook:} Externalisiert implizites Expertenwissen (\glqq Welche Felder sind Pflicht?\grqq{}, \glqq Welches Format für IDs?\grqq{}) in explizite Dokumentation. Ermöglicht Nachvollziehbarkeit ohne direkten Expertenkontakt.
+
+    \item \textbf{Standard Operating Procedures:} Durch explizite Handlungsanweisungen können Teammitglieder ohne vorherige Master-Creator-Erfahrung eigenständig GRACE-Konfigurationen erstellen. Checkboxen für Status-Tracking, Verweise auf Workbook und Fragebogen.
+
+    \item \textbf{Master Creator:} Konversationelle Schnittstelle senkt Einstiegshürde erheblich. Demokratisiert APS-Konfiguration durch natürlichsprachliche Interaktion statt tiefem GRACE-Fachwissen.
+\end{itemize}
+
+\noindent \textbf{Validierung:} Die SOPs wurden von Teammitgliedern ohne vorherige Erfahrung erfolgreich angewendet (informelle Validierung während Entwicklung). Das kontrollierte Experiment (siehe Abschnitt~\ref{subsec:QuantitativeEval}) zeigt, dass auch unerfahrene Probanden nach kurzer Einarbeitung (Learning-by-Doing über 6 Durchläufe) signifikante Zeitverbesserungen erzielen.
+
+\noindent \textbf{Grad der Problemlösung:} Weitgehend gelöst. Restwissen verbleibt bei Experten für manuelle Nacharbeit komplexer Strukturen (Prozess-Links, itemAssociationRules, variable Prozessformeln). Diese Strukturen sind durch smartes Prompting generierbar, jedoch noch nicht im System Prompt integriert. Die Integration dieser erweiterten Features erfordert iterative Entwicklung und Validierungserweiterung (siehe Limitationen Abschnitt~\ref{subsec:Limitationen}). Langfristige Zielerreichung hängt von kontinuierlicher SOP-Aktualisierung und Verbreitung im Team ab.
+
+
+\subsection{Fehlende Standardisierung}
+\label{subsec:StandardisierungEval}
+
+\textbf{Problemcharakteristik:} Kein einheitliches Vorgehen bei Konfiguration. Qualität variiert je nach Bearbeiter. Validierungsmechanismen vor Import fehlen weitgehend. Durchschnittlich 10-15 Fehler pro Konfiguration.
+
+\noindent \textbf{Lösungsartefakte:}
+
+\begin{itemize}
+    \item \textbf{6-Punkte-Validierungscheckliste (im Entity Mapping Workbook):} Definiert einheitliche Qualitätskriterien für alle Konfigurationen: (1) Vollständigkeit (alle 6 Entitätstypen), (2) ID-Konsistenz (keine broken references), (3) Zeiteinheiten (nur Sekunden), (4) BOM-baseQuantity (Summe der Items), (5) Product-Material-Referenz (Produkt selbst, nicht Inhaltsstoffe), (6) ID-Eindeutigkeit (keine Duplikate).
+
+    \item \textbf{Master Creator mit automatischer Validierung:} Implementiert die 6-Punkte-Checkliste automatisch. BOM-baseQuantity wird auto-korrigiert, Zeiteinheiten werden konvertiert, Referenzen werden geprüft. Verhindert systematisch die häufigsten Fehlerquellen.
+
+    \item \textbf{Standard Operating Procedures:} Einheitliches Vorgehen für alle Konfigurationsprojekte. Systematische Validierung vor Import.
+\end{itemize}
+
+\noindent \textbf{Validierung:} Das kontrollierte Experiment (siehe Abschnitt~\ref{subsec:QuantitativeEval}) zeigt Fehlerreduktion um 81\% (5,00 → 0,94 Fehler pro Konfiguration) und Vollständigkeitsverbesserung auf 98,1\% (86,1\% → 98,1\%).
+
+\noindent \textbf{Grad der Problemlösung:} Vollständig gelöst für Standard-Validierung. \textit{Einschränkungen:} (1) Lösung existiert noch nicht lange genug für ausgiebige Praxistests - Sonderfälle könnten auftreten. (2) Arithmetische Fehler des LLMs (z.\,B. Zeitberechnungen) können auftreten und erfordern manuelle Korrektur. (3) Code-Struktur ist bewusst minimalistisch (3 Dateien: app.js, index.html, style.css) als funktionaler MVP - für produktiven Einsatz müsste die Architektur um Versionierung, Tests und Wartungsinfrastruktur erweitert werden.
+
+
+\subsection{Datenhoheit}
+\label{subsec:DatenhoheitEval}
+
+\textbf{Problemcharakteristik:} Kundenkonfigurationen enthalten sensible Produktionsdaten (Rezepturen, Kapazitäten, Schichtpläne) unter DSGVO- und NDA-Verpflichtungen. Cloud-basierte LLM-Automatisierung würde Datentransfer an Drittanbieter bedeuten und ist aus Compliance-Gründen nicht akzeptabel.
+
+\textbf{Lösungsartefakt:}
+
+\begin{itemize}
+    \item \textbf{Lokales 7B-Modell (qwen2.5-coder via Ollama):} Deployment on-premise, keine Datentransfers an Cloud-Anbieter. Erfüllt GDPR- und NDA-Anforderungen. Modellgröße resultiert aus Hardware-Beschränkung (Unified-Memory-Architektur, <16GB vRAM).
+\end{itemize}
+
+\noindent \textbf{Validierung:} Das kontrollierte Experiment (siehe Abschnitt~\ref{subsec:QuantitativeEval}) zeigt, dass trotz begrenzter Modellgröße 98,1\% Vollständigkeit erreichbar sind. Dies validiert die Designentscheidung, Datensouveränität über marginale Qualitätsgewinne größerer Cloud-Modelle zu priorisieren.
+
+\noindent \textbf{Grad der Problemlösung:} Vollständig gelöst. Lokales Deployment erfüllt Compliance-Anforderungen bei funktionaler Performance (90-95\% Vollständigkeit).
+
+
+\subsection{Quantitative Problemevaluation}
+\label{subsec:QuantitativeEval}
+
+\textbf{Problemcharakteristik:} Hohe Fehlerrate (10-15 pro Iteration), geringe Vollständigkeit (60-70\% Checklisten-Erfüllung analysierter Konfigurationen), lange Durchlaufzeit (~8 Wochen Kalenderlaufzeit für initiale Konfiguration).
+
+\noindent \textbf{Lösungsartefakt:} Der Master Creator kombiniert alle vorherigen Artefakte (Fragebogen, Entity Mapping Workbook, SOPs) in einer LLM-gestützten Webanwendung zur konversationellen Generierung von GRACE-Konfigurationsentitäten. Folgt Scaffolding-Ansatz (80/20-Prinzip): Automatisierte Basis-Konfiguration mit gezielter manueller Nacharbeit (Details siehe Abschnitt~\ref{sec:MasterCreator}).
+
+\noindent \textbf{Zwei-Stufen-Verbesserung:} Die Vollständigkeitssteigerung von 60-70\% (Ist-Analyse, gemessen an analysierten Konfigurationen) auf 98,1\% (Experiment) resultiert aus zwei synergistischen Effekten: (1) Strukturierung der Anforderungserhebung durch Drei-Artefakte-Architektur (+16-26 Prozentpunkte auf 86,1\%, siehe GRACE-UI-Baseline im Experiment), (2) LLM-gestützte Automatisierung (+12 Prozentpunkte auf 98,1\%, siehe Master Creator im Experiment). Dies demonstriert, dass systematische Wissensexternalisierung bereits ohne Automatisierung signifikante Verbesserungen ermöglicht.
+
+\noindent \textbf{Validierung - Kontrolliertes Experiment (n=18):}
+
+\noindent Die Evaluation erfolgte durch Within-Subjects-Design mit 3 Probanden, die jeweils 6 Konfigurationsaufgaben unter beiden Bedingungen durchführten: (1) manuelle Erstellung über GRACE-UI, (2) Master Creator-gestützte Erstellung. Aufgaben umfassten vereinfachte Produktionsumgebung (3 Materialien, 2 Maschinen, 1 Produkt, 1 BOM, 1 Prozess, 1 Rezept) mit realistischer Komplexität. Gemessen wurden drei Metriken: Zeit bis zur vollständigen Konfiguration, Anzahl Validierungsfehler beim Import, Erfüllung der 6-Punkte-Validierungscheckliste (Details siehe Abschnitt~\ref{subsubsec:Experiment}).
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\textbf{Durchlauf} & \textbf{MC Zeit} & \textbf{MC Fehler} & \textbf{MC Check} & \textbf{GRACE Zeit} & \textbf{GRACE Fehler} & \textbf{GRACE Check} \\
+\hline
+1 & 5:45 Min & 2 & 6/6 & 8:40 Min & 4 & 6/6 \\
+2 & 4:45 Min & 1 & 6/6 & 7:35 Min & 3 & 6/6 \\
+3 & 4:05 Min & 0 & 6/6 & 8:06 Min & 5 & 6/6 \\
+4 & 3:40 Min & 0 & 6/6 & 7:29 Min & 3 & 6/6 \\
+5 & 3:20 Min & 1 & 6/6 & 7:44 Min & 3 & 6/6 \\
+6 & 2:45 Min & 0 & 6/6 & 7:10 Min & 1 & 6/6 \\
+\hline
+\textbf{Ø Proband 1} & \textbf{4:03 Min} & \textbf{0,67} & \textbf{6,00} & \textbf{7:47 Min} & \textbf{3,17} & \textbf{6,00} \\
+\hline
+\end{tabular}%
+}
+\caption{Experimentdaten Proband 1 (n=6)}
+\label{tab:Proband1}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\textbf{Durchlauf} & \textbf{MC Zeit} & \textbf{MC Fehler} & \textbf{MC Check} & \textbf{GRACE Zeit} & \textbf{GRACE Fehler} & \textbf{GRACE Check} \\
+\hline
+1 & 6:20 Min & 3 & 6/6 & 9:50 Min & 6 & 5/6 \\
+2 & 5:15 Min & 1 & 6/6 & 9:15 Min & 4 & 6/6 \\
+3 & 4:51 Min & 1 & 6/6 & 9:30 Min & 7 & 6/6 \\
+4 & 5:02 Min & 0 & 6/6 & 8:46 Min & 4 & 4/6 \\
+5 & 4:13 Min & 0 & 6/6 & 8:20 Min & 3 & 6/6 \\
+6 & 3:55 Min & 1 & 6/6 & 8:06 Min & 3 & 6/6 \\
+\hline
+\textbf{Ø Proband 2} & \textbf{4:56 Min} & \textbf{1,00} & \textbf{6,00} & \textbf{8:58 Min} & \textbf{4,50} & \textbf{5,50} \\
+\hline
+\end{tabular}%
+}
+\caption{Experimentdaten Proband 2 (n=6)}
+\label{tab:Proband2}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\textbf{Durchlauf} & \textbf{MC Zeit} & \textbf{MC Fehler} & \textbf{MC Check} & \textbf{GRACE Zeit} & \textbf{GRACE Fehler} & \textbf{GRACE Check} \\
+\hline
+1 & 5:14 Min & 1 & 6/6 & 13:12 Min & 12 & 2/6 \\
+2 & 3:53 Min & 1 & 6/6 & 7:09 Min & 7 & 2/6 \\
+3 & 3:59 Min & 1 & 5/6 & 6:53 Min & 9 & 4/6 \\
+4 & 3:03 Min & 2 & 5/6 & 5:57 Min & 6 & 5/6 \\
+5 & 4:14 Min & 1 & 6/6 & 5:53 Min & 6 & 5/6 \\
+6 & 2:58 Min & 1 & 6/6 & 5:26 Min & 4 & 6/6 \\
+\hline
+\textbf{Ø Proband 3} & \textbf{3:53 Min} & \textbf{1,17} & \textbf{5,67} & \textbf{7:25 Min} & \textbf{7,33} & \textbf{4,00} \\
+\hline
+\end{tabular}%
+}
+\caption{Experimentdaten Proband 3 (n=6)}
+\label{tab:Proband3}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Metrik} & \textbf{GRACE-UI} & \textbf{Master Creator} \\
+\hline
+Zeit pro Konfiguration & 8:03 Min (±1:44) & 4:18 Min (±0:58) \\
+Fehler pro Konfiguration & 5,00 (±2,54) & 0,94 (±0,78) \\
+Checklisten-Punkte & 5,17/6 (±1,00) & 5,89/6 (±0,19) \\
+Vollständigkeit & 86,1\% & 98,1\% \\
+\hline
+\end{tabular}
+\caption{Kombinierte Statistik aller Probanden (n=18)}
+\label{tab:KombinierteStatistik}
+\end{table}
+
+\noindent \textbf{Zentrale Befunde:}
+
+\begin{itemize}
+    \item \textbf{Zeitreduktion:} 47\% (8:03 Min → 4:18 Min) - Master Creator halbiert die Konfigurationszeit unter kontrollierten Bedingungen.
+    \item \textbf{Fehlerreduktion:} 81\% (5,00 → 0,94 Fehler pro Konfiguration) - automatische Validierung reduziert typische Fehlerquellen.
+    \item \textbf{Vollständigkeit:} 86,1\% → 98,1\% (11,9 Prozentpunkte Verbesserung) - Checklisten-Erfüllung steigt durch systematische Validierung.
+    \item \textbf{Lerneffekt:} Alle Probanden zeigen Zeitverbesserung über 6 Durchläufe (Proband~1: 5:45~→~2:45~Min, Proband~2: 6:20~→~3:55~Min, Proband~3: 5:14~→~2:58~Min).
+\end{itemize}
+
+\noindent \textbf{Grad der Problemlösung:} Quantitativ validiert für experimentelles Setting. Werte sind statistisch valide (n=18, Within-Subjects Design), jedoch nicht direkt auf Real-World-Konfigurationen übertragbar.
+
+\noindent \textbf{BPMN-Limitation:} Zeitangaben in BPMN-Prozessmodellen (Kapitel~\ref{sec:Implementation}) basieren auf realen Projekten, konnten jedoch nicht über multiple unabhängige Durchläufe quantitativ validiert werden. Bearbeitungszeit von drei Monaten ermöglichte keine Konfiguration multipler Kundenwerke unter kontrollierten Bedingungen. Bewusste Priorisierung des standardisierten Experiments (n=18).
+
+
+\subsection{NAS-Crash-Rekonstruktion}
+\label{subsec:NASCrashValidierung}
+
+Neben dem kontrollierten Experiment ergab sich eine ungeplante Validierungsmöglichkeit unter realen Bedingungen: Ein NAS-Crash führte zum vollständigen Verlust der Demo-Werk-Konfiguration (Pigmentpaste-Produktion mit 27 Materialien, 8 Maschinen, 3 Produkten, 6 Prozessen, 3 BOMs, 3 Rezepten). Die ursprüngliche manuelle Erstellung hatte 2 Monate Kalenderlaufzeit benötigt. Die Rekonstruktion mittels Master Creator erreichte 80\% der Konfiguration in 20\% der ursprünglichen Arbeitszeit, manuelle Nacharbeit für komplexe Strukturen (Prozess-Links, variable Formeln) erfolgte im verbleibenden Zeitraum.
+
+\noindent \textbf{Validierungswert:} Diese explorative Evidenz (n=1, kein kontrolliertes Setting) ergänzt das standardisierte Experiment durch Nachweis der Praxistauglichkeit unter realen Produktionsbedingungen. Im Gegensatz zur vereinfachten Experimentumgebung (3 Materialien, 2 Maschinen, 1 Produkt) demonstriert die NAS-Crash-Rekonstruktion Skalierbarkeit auf komplexere Konfigurationen mit multiplen Rezepten und Prozess-Inter-dependenzen. Die erfolgreiche Rekonstruktion war vermutlich nur durch teilweise vorhandene JSON-Konfigurationen als Referenz möglich, die als externalisierte Wissensträger dienten. Dies bestärkt die Kernthese: Externalisierung (in welcher Form auch immer) als notwendige Voraussetzung für erfolgreiche LLM-Automatisierung.
+
+\noindent \textbf{Methodische Einordnung:} Die fehlende statistische Generalisierbarkeit (Einzelfall ohne Wiederholbarkeit) erlaubt keine quantitative Verallgemeinerung. Die Evidenz ist explorativ und illustrativ, nicht konfirmatorisch. Sie dient als Plausibilitätsprüfung der experimentellen Befunde unter Realbedingungen.
+
+
+\subsection{Limitationen}
+\label{subsec:Limitationen}
+
+Die Ergebnisse unterliegen mehreren methodischen, technischen und konzeptionellen Einschränkungen:
+
+\noindent \textbf{Technische Limitierungen:}
+
+\begin{itemize}
+    \item \textbf{Hardware-Beschränkung:} Das 7B-Modell resultiert aus der Unified-Memory-Architektur (<16GB vRAM). Größere Modelle könnten bessere Ergebnisse liefern, sind aber mit aktueller Hardware nicht lokal deploybar. Die Designentscheidung priorisiert Datensouveränität (GDPR/NDA) über marginale Qualitätsgewinne größerer Cloud-Modelle.
+
+    \item \textbf{Arithmetische Fehler des LLMs:} Zeitberechnungen und quantitative Transformationen können fehlerhaft sein und erfordern manuelle Korrektur. Dies ist eine bekannte Limitation kleinerer Modelle, die durch explizite Validierungsregeln teilweise kompensiert wird.
+
+    \item \textbf{Code-Struktur bewusst minimalistisch:} Die Master Creator-Implementierung besteht aus 3 Dateien (app.js, index.html, style.css) als funktionaler MVP. Dies ermöglichte schnelle Iteration während der Entwicklung. Für produktiven Einsatz müsste die Architektur um Versionierung, Test-Standards und Wartungsinfrastruktur erweitert werden.
+
+    \item \textbf{UUID-Format fehlt:} Das Entity Mapping Workbook dokumentiert aktuell kebab-case IDs, GRACE nutzt jedoch UUID als Standardkonvention. Diese Diskrepanz sollte in zukünftigen Versionen behoben werden.
+\end{itemize}
+
+\textbf{Methodische Limitierungen:}
+
+\begin{itemize}
+    \item \textbf{Begrenzte statistische Generalisierbarkeit:} Das kontrollierte Experiment (n=18) liefert valide Werte für das experimentelle Setting, ist jedoch nicht direkt auf Real-World-Konfigurationen übertragbar. Die NAS-Crash-Rekonstruktion ist ein Einzelfall ohne statistische Generalisierbarkeit. Die Fragebogen-Validierung über 2 Kundenprojekte ist explorativ, nicht konfirmatorisch.
+
+    \item \textbf{Demo-Werk-Charakteristik:} Das Demo-Werk diente als Testbed für Artefakt-Entwicklung. Die gemessene Zeitreduktion bei Neukonfigurationen könnte optimistisch sein, da das System auf Basis dieser Daten optimiert wurde.
+
+    \item \textbf{GRACE-Pilotphase:} Evolvierende JSON-Schemata erfordern kontinuierliche Anpassung des System Prompts. Die langfristige Wartbarkeit ist noch nicht validiert. Zukünftige Schema-Änderungen könnten Prompt-Anpassungen und Validierungserweiterungen erforderlich machen.
+\end{itemize}
+
+\textbf{Konzeptionelle Limitierungen:}
+
+\begin{itemize}
+    \item \textbf{Scaffolding-Ansatz erfordert Nacharbeit:} Komplexere Strukturen (Prozess-Links, itemAssociationRules, variable Prozessformeln) erfordern manuelle Nacharbeit und Domänenwissen. Diese Strukturen sind durch smartes Prompting generierbar, jedoch noch nicht im System Prompt integriert. Die Integration erfordert iterative Entwicklung und Validierungserweiterung.
+
+    \item \textbf{Sonderfälle nicht vollständig abgedeckt:} Die 6-Punkte-Validierungscheckliste deckt Standard-Validierung ab, aber Sonderfälle könnten in zukünftigen Projekten auftreten. Die Lösung existiert noch nicht lange genug für ausgiebige Praxistests unter diversen Produktionsszenarien.
+
+    \item \textbf{Vollständigkeits-Metrik zirkulär:} Der Fragebogen definiert gleichzeitig das Maß für Vollständigkeit (15 Kernfragen = 100\%). Dies erschwert die objektive Messung, da die Baseline (60-70\% in Ist-Analyse) aus Analyse realer Konfigurationen stammt, während die neue Metrik (Fragebogen-Vollständigkeit) systematisch erfasst wird. Die Vergleichbarkeit ist eingeschränkt, da unterschiedliche Messmethoden verwendet wurden.
+\end{itemize}
+
+
+\subsection{Kritische Reflexion}
+\label{subsec:KritischeReflexion}
+
+Das kontrollierte Experiment zeigt eine Zeitreduktion von 47\% bei standardisierter Konfiguration. Diese Verbesserung resultiert aus dem Zusammenspiel von Wissenssystematisierung (Drei-Artefakte-Architektur) und LLM-Automatisierung. Eine Isolierung der Einzeleffekte war methodisch nicht möglich, da beide Komponenten simultan entwickelt wurden. Die Drei-Artefakte-Architektur ist jedoch notwendige Voraussetzung: Erst durch die Erstellung des Entity Mapping Workbooks konnten die Prompts um die erforderliche Tiefe erweitert werden, sodass der Master Creator Daten generiert, die tatsächlich funktionelle Strukturen für GRACE abbilden. Ohne diese systematische Wissensaufbereitung wären die generierten Entitäten nicht direkt verwendbar.
+
+\noindent Die Baseline von 2 Monaten (manuelle Konfiguration, siehe Ist-Analyse) reflektiert den realistischen Aufwand unter GRACE-Pilotbedingungen: fragmentiertes Wissen über Azure DevOps Wikis, E-Mails, Git-Historien und 10 Jahre Praxiserfahrung verteilt. Die Zeitreduktion umfasst daher sowohl die Wissenssystematisierung als auch die LLM-Automatisierung, beide Komponenten sind untrennbar verbunden. Das LLM allein würde ohne strukturierte Wissensaufbereitung keine vergleichbaren Reduktionsraten erzielen. Dies unterstreicht, dass die Drei-Artefakte-Architektur keine optionale Ergänzung, sondern eine notwendige Voraussetzung für erfolgreiche LLM-Automatisierung darstellt.
+
+
+\subsection{Einordnung in den Stand der Forschung}
+\label{subsec:StandDerForschung}
+
+Die vorliegende Arbeit positioniert sich an der Schnittstelle dreier aktiver Forschungsfelder: (1) LLM-gestützte Automatisierung in Operations Research, (2) Wissensexternalisierung in Organisationen, (3) lokale Deployment-Strategien unter Datensouveränitätsanforderungen. Die Anwendung von Large Language Models in industriellen Konfigurationsprozessen befindet sich am Puls aktueller Forschung, siehe \cite{fan:ai_for_or2024} und \cite{smartaps2025} erschienen beide 2024/2025 und adressieren LLM-Integration in OR-Projekten.
+
+\noindent \textbf{LLMs in Operations Research:} \cite{fan:ai_for_or2024} identifizieren LLMs als transformative Technologie für den gesamten OR-Projektzyklus (Operations Research). SmartAPS \cite{smartaps2025} demonstriert LLM-gestützte Analysen in der \textit{operativen Produktionsplanung} bereits konfigurierter Systeme (85-90\% Zeitreduktion). Der Master Creator adressiert die \textit{vorgelagerte Konfigurationsphase} (Entitätserstellung, referenzielle Integrität) und erreicht 47\% Zeitreduktion im kontrollierten Experiment (n=18, 8:03 Min → 4:18 Min). Beide Ansätze validieren unabhängig voneinander, dass tool-augmented LLMs signifikante Effizienzgewinne in unterschiedlichen APS-Phasen ermöglichen. \cite{wasserkrug:llm_optimization2024} zeigen Limitationen von LLMs für komplexe Optimierungsmodellierung (arithmetische Fehler, Constraint-Inkonsistenzen), adressiert durch Scaffolding-Ansatz (80/20-Prinzip: LLM-Basis + manuelle Nacharbeit).
+
+\noindent \textbf{Wissensexternalisierung:} Die Drei-Artefakte-Architektur operationalisiert \citet{nonaka:knowledge_creating_company1995}s SECI-Modell: Externalisierung impliziten Konfigurationswissens in LLM-konsumierbare Strukturen. \cite{llm:tacit_knowledge2025} zeigen Wissensverlust bei Fluktuation ohne Externalisierung. Die Ist-Analyse analysierter Konfigurationen bestätigt dies mit 60-70\% Checklisten-Vollständigkeit bei fragmentiertem Wissen. Die Zwei-Stufen-Verbesserung (Strukturierung +16-26 Prozentpunkte, LLM-Automatisierung +12 Prozentpunkte) demonstriert, dass Wissensexternalisierung notwendige Voraussetzung für erfolgreiche LLM-Automatisierung darstellt.
+
+\noindent \textbf{Datensouveränität:} Die Wahl eines lokalen 7B-Modells (qwen2.5-coder) anstelle cloud-basierter Alternativen reflektiert DSGVO- und NDA-Anforderungen. \cite{chih:small_models2024} zeigen, dass 7B-Modelle für strukturierte Datengeneration produktionsreife Performance erreichen. Die erreichte Vollständigkeit (90-95\%) validiert diese Designentscheidung. \cite{gupta:multilingual2025} identifizieren Performanceunterschiede (English 97,6\% vs. German ~92\%) in kleineren Modellen - Begründung für englischsprachige Prompts.
+
+\noindent \textbf{Beitrag dieser Arbeit:} Im Vergleich zum Stand der Forschung werden drei Aspekte adressiert: (1) \textit{Konzeptionell:} Drei-Artefakte-Architektur zur Transformation impliziten Expertenwissens als LLM-Enabler. (2) \textit{Technisch:} Nachweis referenzieller Integrität über 6 Entitätstypen mit lokalem 7B-Modell unter Datensouveränitätsbedingungen. (3) \textit{Empirisch:} Quantifizierung zweistufiger Verbesserungen (Strukturierung vs. LLM-Automatisierung) mit kontrolliertem Experiment (n=18, Within-Subjects Design). Die Übertragbarkeit wird durch Generalisierbarkeit des Ansatzes (strukturierte Prompts, validierungsbasierte Fehlerreduktion, Session-Context-Management) gestützt.

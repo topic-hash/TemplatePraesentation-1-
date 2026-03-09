@@ -1,0 +1,101 @@
+[
+  {
+    "id": "pigment-paste-wp",
+    "name": "Pigment Paste WP Process",
+    "steps": [
+      {
+        "id": "step-1",
+        "name": "Dosing",
+        "processingTime": {
+          "type": "Constant",
+          "value": 900,
+          "unitId": "s"
+        },
+        "resourceDemands": [],
+        "isParallelizable": false
+      },
+      {
+        "id": "step-2",
+        "name": "Mixing",
+        "processingTime": {
+          "type": "Constant",
+          "value": 2100,
+          "unitId": "s"
+        },
+        "resourceDemands": [],
+        "isParallelizable": false
+      },
+      {
+        "id": "step-3",
+        "name": "Filtration",
+        "processingTime": {
+          "type": "Constant",
+          "value": 1200,
+          "unitId": "s"
+        },
+        "resourceDemands": [],
+        "isParallelizable": false
+      },
+      {
+        "id": "step-4",
+        "name": "Packout",
+        "processingTime": {
+          "type": "Constant",
+          "value": 600,
+          "unitId": "s"
+        },
+        "resourceDemands": [],
+        "isParallelizable": false
+      },
+      {
+        "id": "step-5",
+        "name": "Cleaning",
+        "processingTime": {
+          "type": "Constant",
+          "value": 600,
+          "unitId": "s"
+        },
+        "resourceDemands": [],
+        "isParallelizable": false
+      }
+    ],
+    "links": [
+      {
+        "sourceId": "step-1",
+        "targetId": "step-3",
+        "constraints": [
+          {
+            "type": "Precedence"
+          }
+        ]
+      },
+      {
+        "sourceId": "step-2",
+        "targetId": "step-3",
+        "constraints": [
+          {
+            "type": "Precedence"
+          }
+        ]
+      },
+      {
+        "sourceId": "step-3",
+        "targetId": "step-4",
+        "constraints": [
+          {
+            "type": "Precedence"
+          }
+        ]
+      },
+      {
+        "sourceId": "step-4",
+        "targetId": "step-5",
+        "constraints": [
+          {
+            "type": "Precedence"
+          }
+        ]
+      }
+    ]
+  }
+]

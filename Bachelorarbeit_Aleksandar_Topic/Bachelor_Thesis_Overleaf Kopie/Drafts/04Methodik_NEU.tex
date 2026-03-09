@@ -1,0 +1,453 @@
+\section{Methodik}
+\label{sec:Methodik}
+
+% Ziel: 3-4 Seiten
+% Ansatz: Aktionsforschung (Action Research)
+% Quellen: Lewin, Susman & Evered, Reason & Bradbury, Mayring
+% FOKUS: WIE/WARUM/Vorgehen, NICHT WAS/Ergebnisse
+
+Dieses Kapitel erläutert das methodische Vorgehen zur Entwicklung der Drei-Artefakte-Architektur und des Master Creators. Im Zentrum steht die Frage, \textit{wie} und \textit{warum} die gewählten Methoden zur Lösung der in Kapitel~\ref{sec:IstAnalyse} identifizierten Probleme geeignet sind -- nicht die detaillierten Ergebnisse, die in späteren Kapiteln ausgeführt werden.
+
+
+\subsection{Aktionsforschung als methodischer Ansatz}
+\label{subsec:Aktionsforschung}
+
+Die vorliegende Arbeit folgt dem Paradigma der Aktionsforschung (Action Research) nach \cite{lewin:action_research1946}. Dieser Ansatz verbindet praktische Problemlösung mit wissenschaftlicher Erkenntnisgewinnung und eignet sich besonders für Kontexte, in denen der Forscher aktiv in das Untersuchungsfeld eingebettet ist \citep{reason:handbook_action_research2001}.
+
+\subsubsection{Begründung der Methodenwahl}
+\label{subsubsec:BegruendungMethode}
+
+Die Wahl von Action Research wird durch vier kontextspezifische Faktoren begründet:
+
+\begin{enumerate}
+    \item \textbf{Instabilität des Zielsystems:} GRACE befindet sich in der Pilotphase mit kontinuierlich evolvierenden Datenstrukturen und JSON-Schemata. Klassische Erhebungsmethoden würden veraltete Zustände dokumentieren, während das System parallel weiterentwickelt wird. Action Research begreift die dynamische Veränderung des Forschungsgegenstandes nicht als Hindernis, sondern als konstitutiven Bestandteil der Methode. Die Entwicklung der hier vorgestellten Artefakte erstreckte sich über einen Zeitraum von drei Monaten. Multiple Iterationen, sogenannte \textit{Action Research Cycles}, wurden durchlaufen, um sich an die dynamischen Veränderungen anzupassen, ein Phänomen, das in der Literatur als \textit{Moving Target}-Effekt bezeichnet wird.
+
+    \item \textbf{Fragmentiertes Wissen als Kernproblem:} Das Konfigurationswissen existiert verteilt über Azure DevOps Backlogs, E-Mail-Korrespondenzen, Git-Historien und informelle Teamgespräche. Es fehlt eine zentrale, strukturierte Wissensbasis. Das SECI-Modell nach \cite{nonaka:knowledge_creating_company1995} adressiert dieses Problem durch systematische Externalisierung: Die Drei-Artefakte-Architektur überführt dieses fragmentierte Wissen in explizite, maschinenlesbare Formate.
+
+    \item \textbf{Impraktikabilität formaler SME-Interviews:} Das Konfigurationsteam umfasst 5 Personen mit vollem Projektgeschäft während der Pilotphase. Mehrstündige, strukturierte Experteninterviews würden operative Kapazitäten überlasten. Regelmäßige informelle Gespräche während der täglichen Arbeit ermöglichen hingegen kontinuierliche Wissenserfassung ohne zusätzlichen Zeitaufwand. \cite{jackson:par2010} validiert diesen Ansatz: In einer vergleichbaren Studie zur Wissensexternalisierung bei Ressourcenknappheit erwies sich partizipative Aktionsforschung als praktikable Alternative zu formalen Interviewmethoden.
+
+    \item \textbf{Eingebettete Forscherrolle:} Der Autor ist selbst Teil des Konfigurationsteams und hat direkten Zugang zu Prozessen, Werkzeugen und implizitem Wissen. Diese Position ermöglicht teilnehmende Beobachtung und iterative Verfeinerung der entwickelten Artefakte. \cite{susman:action_research1983} argumentieren, dass Action Research besonders dann geeignet ist, wenn eine Distanzierung des Forschers vom Untersuchungsfeld nicht möglich oder nicht sinnvoll ist, eine Bedingung, die im vorliegenden Kontext erfüllt ist.
+
+    \item \textbf{Quantifizierbare Problemstellungen:} Die in Kapitel~\ref{sec:IstAnalyse} identifizierten Probleme manifestieren sich in messbaren Größen (Fehlerrate, Vollständigkeit, Reproduzierbarkeit, Zeit), was eine empirische Validierung der entwickelten Artefakte durch kontrolliertes Experiment ermöglicht. Action Research kombiniert praktische Problemlösung mit wissenschaftlicher Evaluation dieser Lösungen.
+\end{enumerate}
+
+
+\subsection{Forschungszyklus und Iterationen}
+\label{subsec:Forschungszyklus}
+
+Der Action-Research-Zyklus (Plan $\rightarrow$ Act $\rightarrow$ Observe $\rightarrow$ Reflect) wurde in dieser Arbeit über mehrere Iterationen operationalisiert. Die gesamte Entwicklung erstreckte sich über einen Zeitraum von drei Monaten zuzüglich zwei Wochen krankheitsbedingter Unterbrechung. Die folgende Darstellung gliedert die Entwicklung in fünf Phasen, wobei jede Phase multiple Artefakte parallel hervorbrachte.
+
+
+\subsubsection{Phase 0: Demo-Werk-Entwicklung als Erkenntnisfundament}
+\label{subsubsec:Phase0}
+
+Der Industrierahmen der Demo wurde durch das Unternehmen vorgegeben: Eine Demonstration bei der \textit{EC Conference Digitalisation} sollte die GRACE-Fähigkeiten einem Fachpublikum präsentieren.
+
+\paragraph{Domänenauswahl und Wissensquellen}
+
+Als Produktionsdomäne wurde die \textbf{Farb- und Lackproduktion} gewählt. Diese Entscheidung wurde durch vier Faktoren begründet:
+
+\begin{enumerate}
+    \item \textbf{EC Conference Zielgruppe:} Das Fachpublikum der Digitalisation-Konferenz umfasste primär Entscheider aus der Lack- und Farbenindustrie.
+    \item \textbf{Verfügbare wissenschaftliche Literatur:} Umfangreiche technische Dokumentation zu Lackherstellungsprozessen ermöglichte eine fundierte Modellierung.
+    \item \textbf{GRACE-Feature-Validierung:} Lackproduktion weist komplexe Prozessabhängigkeiten auf (Reinigungszyklen, Farbkontaminationsvermeidung), die zur Validierung von GRACE-Features (Properties, n:m-Beziehungen) geeignet sind.
+    \item \textbf{Marktpotenzial:} Hohe Anzahl potenzieller Kunden in der Lackindustrie validiert die Praxisrelevanz des Demonstrationsszenarios.
+\end{enumerate}
+
+Die Wissensgrundlage für das theoretische Produktdesign wurde systematisch aus folgenden Quellen zusammengetragen:
+
+\begin{itemize}
+    \item \textbf{Domänenexperte (Maschinenführer):} Ein ehemaliger Maschinenführer im Konfigurationsteam verfügt über langjährige Praxiserfahrung in der chemischen Industrie. Seine Fragesammlung zu typischen Produktionsprozessen basierte auf anonymisierten Kundenbeobachtungen und ermöglichte eine realistische Parametrierung der Produktionsschritte.
+
+    \item \textbf{Fachliteratur Kunststofftechnik:} \cite{schwarz:kunststoffkunde1987} lieferte technische Grundlagen zu Materialverarbeitung, Polymerchemie und industriellen Prozessketten.
+
+    \item \textbf{Branchenliteratur Lacke und Farben:} Drei Standardwerke bildeten die Wissensbasis:
+    \begin{itemize}
+        \item \cite{vci:lacke_farben2018}: Typische Produktionsprozesse, Rezepturzusammensetzungen und Maschinentypen
+        \item \cite{brock:lacktechnologie2020}: Dispergierung, Mahltechnik, Pumpen, Filtration und Reinigungsprozesse
+        \item \cite{mueller:lackformulierung2017}: Konkrete Richtrezepturen für Pigmentpasten und Lacke
+    \end{itemize}
+
+    \item \textbf{BASF Handbuch Lackiertechnik:} \cite{basf:lackiertechnik2019} lieferte technische Spezifikationen zu Materialien, Maschinen und Prozessparametern.
+\end{itemize}
+
+\paragraph{Produktentwicklung und Materialauswahl}
+
+Auf Basis dieser Wissensquellen wurde ein theoretisches Produkt entwickelt. Die Produktauswahl orientierte sich an typischen Branchenstandards und ermöglichte die Validierung von Prozesswiederverwendung bei unterschiedlichen Rezepturvarianten \citep{vci:lacke_farben2018, mueller:lackformulierung2017}.
+
+Die Konfiguration umfasste Materialien aus verschiedenen Funktionsklassen: Pigmente, Bindemittel, Lösungsmittel, Additive, Füllstoffe, Korrosionsschutz, Gleitmittel sowie Reinigungsmittel. Die Materialauswahl erfolgte nach folgender Systematik:
+
+\begin{itemize}
+    \item \textbf{Richtrezepturen aus Fachliteratur:} \cite{mueller:lackformulierung2017} lieferte Rezepturzusammensetzungen für den gewählten Industrierahmen als strukturelle Ausgangsbasis.
+    \item \textbf{Branchenstandards:} \cite{vci:lacke_farben2018} und \cite{basf:lackiertechnik2019} definierten typische Materialklassen und Mengenverhältnisse.
+    \item \textbf{Validierung durch Praxiserfahrung:} Maschinenführer-Input validierte die Plausibilität anhand anonymisierter Kundenproduktionen.
+    \item \textbf{GRACE-Validierungsanforderungen:} Bewusste Aufnahme spezifischer Materialklassen zur Validierung von GRACE-Features wie Property-basierter Materialzuordnung.
+\end{itemize}
+
+Die Batch-Größe orientierte sich an Maschinenführer-Erfahrungswerten aus realen Kundenproduktionen und repräsentiert eine typische Chargengröße im Lacksegment. Die Rezepturzusammensetzung folgt branchenüblichen Standards für lösemittelbasierte Industrielacke: Deckpigmente als Basis, Farbpigmente zur Farbgebung, Bindemittel zur Filmbildung, Lösungsmittel zur Viskositätseinstellung sowie funktionale Additive \citep{vci:lacke_farben2018, mueller:lackformulierung2017}.
+
+\paragraph{Maschinenpark und Ressourcenkonfiguration}
+
+Für das Demo-Werk wurden Maschinen konfiguriert. Die Auswahl erfolgte nach folgender Systematik:
+
+\begin{itemize}
+    \item \textbf{Branchentypische Anlagen:} \cite{vci:lacke_farben2018}, \cite{brock:lacktechnologie2020} und \cite{basf:lackiertechnik2019} definierten typische Maschinentypen für Lackproduktionsprozesse.
+    \item \textbf{Praxisvalidierung:} Maschinenführer-Input bestätigte die Relevanz anhand realer Produktionsanlagen.
+    \item \textbf{GRACE-Validierungsanforderungen:} Bewusste Auswahl zur Validierung von n:m-Beziehungen (Prozessschritte mit multiplen Maschinenressourcen).
+\end{itemize}
+
+\paragraph{Produktionsprozess und Prozessschritte}
+
+Der Produktionsprozess wurde basierend auf etablierten Prozessketten der gewählten Produktionsdomäne definiert \citep{goldschmidt:lackproduktion2019, vci:lacke_farben2018}. Die Prozessschrittdefinition erfolgte nach folgender Systematik:
+
+\begin{itemize}
+    \item \textbf{Branchenübliche Prozessketten:} Fachliteratur definierte typische Prozessabfolgen und Verarbeitungsschritte.
+    \item \textbf{Praxisvalidierung:} Maschinenführer-Input validierte die Plausibilität der Prozessreihenfolge.
+    \item \textbf{GRACE-Validierungsanforderungen:} Bewusste Konfiguration zur Validierung von Precedence-Beziehungen und Prozess-Maschine-Zuordnungen.
+\end{itemize}
+
+\paragraph{Zeitberechnung für Prozessschritte}
+
+Prozessschritte wurden mit konstanten und mengenabhängigen Zeitberechnungen konfiguriert. Die Vorgehensweise zur Formelgenerierung orientierte sich an folgenden Quellen:
+
+\begin{itemize}
+    \item \textbf{Zeitwirtschaftliche Grundlagen:} \cite{REFA2012} definiert die Zerlegung von Prozesszeiten in fixe und variable Anteile.
+    \item \textbf{Produktionslogistische Modellierung:} \cite{guenther:produktion2020} lieferte Grundlagen zur Verknüpfung von Materialmengen und Ressourcenbedarf.
+    \item \textbf{Praxisvalidierung:} Maschinenführer-Input lieferte Erfahrungswerte für Durchsatzraten und Bearbeitungszeiten.
+\end{itemize}
+
+GRACE ermöglicht verschachtelte Formelausdrücke mit Laufzeitvariablen, die zur Implementierung mengenabhängiger Zeitberechnungen genutzt wurden.
+
+\paragraph{Properties-basierte Materialzuordnung}
+
+GRACE ermöglicht die automatische Zuordnung von BOM-Materialien zu Prozessschritten über Material-Properties und \texttt{itemAssociationRules}. Für das Demo-Werk wurden Properties konfiguriert, um die Zuordnung verschiedener Materialklassen zu spezifischen Prozessschritten zu steuern. Diese Konfiguration diente der Validierung von GRACE-Features zur differenzierten Materialhandhabung innerhalb von Produktionsprozessen.
+
+\paragraph{Entity-Verknüpfung und Abhängigkeitskette}
+
+Die Konfiguration berücksichtigte die Abhängigkeiten zwischen den sechs GRACE-Entitätstypen. Entitäten höherer Aggregationsebenen verknüpfen mehrere unabhängige Basisentitäten und nutzen Versions-Attribute zur Schemakonsistenz. Diese strukturelle Komplexität wurde bewusst in das Demo-Werk integriert, um spätere Validierung von Referenzintegritäts-Anforderungen zu ermöglichen.
+
+\paragraph{Methodische Reflektion}
+
+Die Demo-Werk-Entwicklung diente als empirische Grundlage zur systematischen Erfassung der GRACE-Konfigurationsanforderungen. Die während dieser Phase identifizierten strukturellen Eigenschaften und Fehlerquellen bildeten die Basis für das Entity Mapping Workbook (Phase~1) und die 6-Punkte-Validierungscheckliste. Die konkreten Erkenntnisse werden in Kapitel~\ref{sec:Evaluation} detailliert ausgeführt.
+
+
+In \textbf{Phase~1} wurde basierend auf den Erkenntnissen der Demo-Werk-Entwicklung das \textbf{Entity Mapping Workbook} entwickelt. Dieses Dokument soll dem Problem der \textbf{Fragmentierung des Konfigurationswissens} dienen, indem es das über verschiedene Quellen verteilte implizite Wissen in eine zentrale, formale Struktur externalisiert. Gleichzeitig soll es durch Definition einheitlicher JSON-Schemata und Validierungsregeln dem Problem der \textbf{fehlenden Standardisierung} entgegenwirken. Die Entwicklung erfolgte nach der qualitativen Inhaltsanalyse \citep{mayring:qualitative2015}: Multiple Datenquellen wurden systematisch analysiert und zu allgemeinen ER-Kardinalitäten abstrahiert, um Overfitting auf einzelne Datensätze zu vermeiden. Die zentrale Herausforderung bestand darin, multi-direktionale Referenzen mit Versionierung korrekt abzubilden.
+
+Parallel wurde eine \textbf{6-Punkte-Validierungscheckliste} entwickelt, die dem Problem der \textbf{fehlenden Standardisierung} dienen soll, indem sie einheitliche Qualitätskriterien für Konfigurationen definiert. Die Checkliste systematisiert empirisch beobachtete Fehlertypen:
+
+\begin{enumerate}
+    \item \textbf{Vollständigkeit:} Alle 6 Entitätstypen vorhanden
+    \item \textbf{ID-Konsistenz:} Keine Referenzfehler (alle referenzierten IDs existieren)
+    \item \textbf{Zeiteinheiten:} Alle \texttt{processingTime.unitId} = ``s'' (Sekunden, nicht Minuten)
+    \item \textbf{BOM baseQuantity:} Summe der Items entspricht \texttt{baseQuantity}
+    \item \textbf{Product Material:} \texttt{product.material.id} referenziert Produktmaterial (nicht Zutat)
+    \item \textbf{ID-Duplikate:} Keine doppelten IDs innerhalb eines Entitätstyps
+\end{enumerate}
+
+Diese Checkliste dient als explizites Werkzeug zur Qualitätssicherung und wird in Kapitel~\ref{sec:Evaluation} zur Messung der Konfigurationsqualität verwendet.
+
+\textbf{Phase~2} umfasste das initiale Prototyping. Der verfolgte Ansatz nutzte einen umfänglichen Prompt, der alle Abhängigkeiten zwischen den Entitäten direkt abbilden sollte. Dieser Ansatz funktionierte zu diesem Zeitpunkt noch nicht. Die Reflektion ergab, dass die Komplexität der verschachtelten Abhängigkeiten nicht auf Anhieb korrekt abgebildet werden konnte.
+
+In \textbf{Phase~3} wurde das Blueprint-Prinzip entwickelt: Ein einfaches Modul für einen einzelnen Entitätstyp wurde entwickelt und validiert. Dieses Grundprinzip wurde anschließend systematisch auf alle weiteren Entitätstypen übertragen. Der modulare Ansatz ermöglichte kontrollierte Generierung mit reduzierten Fehlerquellen pro Modul.
+
+\textbf{Phase~4} adressierte die Reflektionen aus den vorherigem Limitationen durch Integration der modularen Lösungsansätze in ein einheitliches System mit Session-Management. Der Master Creator soll durch automatisierte Referenzauflösung und integrierte Validierung zur Reduktion der Fehlerrate, durch Zeitersparnis bei der Konfigurationserstellung und durch dokumentierte Chat-Konversationen zur Reproduzierbarkeit beitragen. Die iterative Verfeinerung orientierte sich methodisch an den Prinzipien des Prompt Engineering \citep{openai:codex2024}. Die technische Umsetzung wird in Kapitel~\ref{sec:Implementation} detailliert beschrieben.
+
+
+\subsubsection{Ungeplante methodische Besonderheit: Datenverlust}
+\label{subsubsec:NASCrashValidierung}
+
+Während der Bearbeitungszeit ereignete sich ein Ausfall des Network Attached Storage (NAS) im Unternehmen, der zum Verlust von Demo-Konfigurationsdaten führte. Zusätzlich verhinderten Bugs in der GRACE-Exportfunktion den vollständigen Export bestimmter Entitäten (insbesondere Properties).
+
+Dieses unerwartete Ereignis ermöglichte eine praxisnahe Validierung des Action-Research-Ansatzes. Die Rekonstruktion erfolgte iterativ unter Nutzung des Master Creators, manueller Ergänzung von UUIDs aus teilweise geretteten Originaldaten und schrittweiser Erweiterung bis zur vollständigen Rekonstruktion (\texttt{Restored\_JSONS}).
+
+Dieser Vorfall lieferte einen neuen Evaluationsansatz, der in Kapitel~\ref{sec:Evaluation} detailliert ausgeführt wird. Das Pareto-Prinzip (80/20) spielt hierbei eine zentrale Rolle.
+
+
+\subsection{Datenquellen und Erhebung}
+\label{subsec:Datenquellen}
+
+Die Wissenserhebung nutzte multiple Datenquellen, die dem ``Code as Documentation''-Charakter von GRACE entsprechen:
+
+\begin{itemize}
+    \item \textbf{Azure DevOps Wikis:} Fragmentierte Prozessdokumentation, Entitätsbeschreibungen
+    \item \textbf{Git-Historie:} Entwicklungsverläufe, Commit-Messages mit Kontextinformationen
+    \item \textbf{JSON-Konfigurationen:} Exportierte Entitäten aus Demo-Projekt, Restored\_JSONS nach NAS-Crash, generische Example-JSONs
+    \item \textbf{E-Mail-Korrespondenz:} Kundenkommunikation mit Konfigurationsdetails (anonymisiert)
+    \item \textbf{Informelle Expertengespräche:} Regelmäßiger Austausch mit Kollegen, insbesondere einem ehemaligen Maschinenführer mit Domänenwissen aus der Lacke-und-Farben-Industrie
+    \item \textbf{Eigene Praxiserfahrung:} Konfiguration von drei Kundenwerken während der Bearbeitungszeit
+\end{itemize}
+
+Die qualitative Auswertung folgt dem Kodierleitfaden-Prinzip nach \cite{mayring:qualitative2015}: Definition, Ankerbeispiel und Kodierregel für jedes Entitätsfeld. Die konkreten Datensätze mit denen die Analysen durchgeführt wurden können hier nur eingeschränkt offengelegt werden, da der Großteil der Datensätze aus Kundendaten bestehen, deren Auslagerung aus dem Firmensystem durch Geheimhaltungsvereinbarungen strikt untersagt ist.
+
+
+\subsection{Datenauswertung}
+\label{subsec:Datenauswertung}
+
+Die erhobenen Daten wurden mittels verschiedener Auswertungsmethoden analysiert und in strukturierte Artefakte überführt. Die Auswertung erfolgte iterativ und orientierte sich an etablierten Methoden der qualitativen Forschung sowie der Skalenentwicklung.
+
+\subsubsection{Qualitative Inhaltsanalyse für Entity Mapping}
+\label{subsubsec:QualitativeInhaltsanalyse}
+
+Die Entwicklung des Entity Mapping Workbooks erfolgte nach der qualitativen Inhaltsanalyse nach \cite{mayring:qualitative2015}. Die Methode umfasst drei Schritte:
+
+\begin{enumerate}
+    \item \textbf{Kodierung:} JSON-Exporte aus der Demo-Werk-Konfiguration und generische Beispiel-JSONs wurden systematisch analysiert. Für jedes Entitätsfeld wurde eine Kodierregel erstellt (Definition, Ankerbeispiel, Abgrenzung).
+
+    \item \textbf{Kategorisierung:} Wiederkehrende Muster (z.B. ID-Strukturen, Versionsattribute, Referenztypen) wurden zu allgemeinen Kategorien abstrahiert.
+
+    \item \textbf{Verallgemeinerung:} Aus den spezifischen Datensätzen wurden generalisierbare JSON-Schemata abgeleitet, um Overfitting auf einzelne Konfigurationen zu vermeiden.
+\end{enumerate}
+
+Diese systematische Abstraktion stellte sicher, dass das Entity Mapping Workbook nicht auf ein spezifisches Demo-Werk zugeschnitten ist, sondern allgemeingültige Konfigurationsmuster dokumentiert.
+
+\subsubsection{Fragebogenentwicklung nach DeVellis}
+\label{subsubsec:Fragebogenentwicklung}
+
+Der GRACE Onboarding Fragebogen wurde nach den Prinzipien der Skalenentwicklung von \cite{devellis:scale_development2017} entwickelt. Der Fragebogen soll dem Problem der \textbf{Fragmentierung} entgegenwirken, indem er fragmentiertes Kundenwissen strukturiert erfasst, und durch sein standardisiertes Format dem Problem der \textbf{fehlenden Standardisierung} bei der Wissenserhebung dienen. Das Vorgehen umfasste:
+
+\begin{enumerate}
+    \item \textbf{Item-Generierung:} Sammlung potenzieller Fragen aus allen Datenquellen (Azure DevOps, E-Mails, Expertengespräche, eigene Erfahrung).
+
+    \item \textbf{Redundanzeliminierung:} Identifikation und Zusammenführung von Fragen mit überlappenden Informationsgehalten.
+
+    \item \textbf{Essenzialitätsprüfung:} Fokussierung auf Fragen, die notwendige (nicht optionale) Informationen erheben.
+
+    \item \textbf{Praktikabilitätsanpassung:} Anpassung des Umfangs an zeitliche und ressourcenbezogene Rahmenbedingungen (Workshop-Dauer, Kundenkapazitäten).
+\end{enumerate}
+
+Die iterative Verfeinerung erfolgte durch Anwendung in realen Kundenprojekten und anschließende Anpassung basierend auf Feedback und identifizierten Informationslücken.
+
+\subsubsection{Reverse Engineering für JSON-Strukturen}
+\label{subsubsec:ReverseEngineering}
+
+Bestehende JSON-Konfigurationen wurden mittels Reverse Engineering analysiert, um implizite Strukturregeln zu identifizieren:
+
+\begin{itemize}
+    \item \textbf{Strukturanalyse:} Feldtypen, Verschachtelungstiefe, optionale vs. obligatorische Felder
+    \item \textbf{Abhängigkeitsanalyse:} Referenzbeziehungen zwischen Entitäten, Versionierungslogik
+    \item \textbf{Validierungsregeln:} Implizite Constraints (z.B. BOM baseQuantity = Summe der Items)
+\end{itemize}
+
+Diese Analyse bildete die Grundlage für die 6-Punkte-Validierungscheckliste, die empirisch beobachtete Fehlerquellen systematisiert.
+
+\subsubsection{Iterative Verfeinerung}
+\label{subsubsec:IterativeVerfeinerung}
+
+Alle entwickelten Artefakte (Fragebogen, Entity Mapping Workbook, SOPs) durchliefen multiple Iterationen. Die Verfeinerung erfolgte durch:
+
+\begin{itemize}
+    \item \textbf{Praktische Anwendung:} Einsatz in Demo-Werk-Konfiguration und Kundenprojekten
+    \item \textbf{Fehleranalyse:} Systematische Dokumentation identifizierter Probleme
+    \item \textbf{Kollegenfeedback:} Validierung durch andere Konfigurationsteam-Mitglieder
+    \item \textbf{Tool-Entwicklung als Validierung:} Technische Implementierung (Master Creator) validierte die Vollständigkeit und Konsistenz der dokumentierten Regeln
+\end{itemize}
+
+\subsubsection{Prozessmodellierung mit BPMN}
+\label{subsubsec:Prozessmodellierung}
+
+Die Konfigurationsprozesse wurden mittels Business Process Model and Notation (BPMN) dokumentiert. Die Entwicklung der Prozessmodelle erfolgte iterativ und parallel zur Artefaktentwicklung durch:
+
+\begin{itemize}
+    \item \textbf{Teilnehmende Beobachtung:} Direktes Shadowing von Konfigurationsschritten während der Demo-Werk-Entwicklung und realer Kundenprojekte
+    \item \textbf{Zeitmessungen:} Erfassung der Durchlaufzeiten für einzelne Prozessschritte unter realen Arbeitsbedingungen
+    \item \textbf{Dokumentenanalyse:} Analyse bestehender Prozessskizzen und Arbeitsanweisungen aus Azure DevOps und E-Mail-Korrespondenz
+    \item \textbf{Retrospektive Modellierung:} Nach Abschluss der Tool-Entwicklung wurden die Prozessvarianten formal modelliert
+\end{itemize}
+
+Die Modellierung folgt der BPMN 2.0-Notation und bildet verschiedene Prozessvarianten ab, um die methodische Evolution des Konfigurationsansatzes zu dokumentieren. Die konkreten Prozessmodelle und deren Auswertung werden in Kapitel~\ref{sec:Evaluation} präsentiert.
+
+
+\subsection{Drei-Artefakte-Architektur als methodisches Framework}
+\label{subsec:DreiArtefakteArchitektur}
+
+Die \textbf{Drei-Artefakte-Architektur} bildet das konzeptuelle Fundament der Externalisierung und operationalisiert das SECI-Modell nach \cite{nonaka:knowledge_creating_company1995}. Die Architektur transformiert fragmentiertes, implizites Domänenwissen in LLM-konsumierbare Strukturen und soll den in Kapitel~\ref{sec:IstAnalyse} identifizierten Problemfeldern wie folgt dienen:
+
+\begin{enumerate}
+    \item \textbf{GRACE Onboarding Fragebogen:} Systematische Wissenserhebung beim Kunden, externalisiert implizites Produktionswissen in strukturierte Antworten. Soll der Vollständigkeit dienen, indem ein standardisiertes Maß für benötigte Informationen definiert wird.
+
+    \item \textbf{Entity Mapping Workbook:} Formale JSON-Schemata mit Kardinalitäten und Validierungsregeln, externalisiert implizites Konfigurationswissen des Teams. Soll durch systematische Dokumentation der Abhängigkeiten zur Reduktion von Referenzfehlern und zur Standardisierung beitragen.
+
+    \item \textbf{Standard Operating Procedures (SOPs):} Prozessdokumentation für Workshop (SOP 01), Tool-Nutzung (SOP 02) und Import (SOP 03), externalisiert implizites Prozesswissen. Soll der Reproduzierbarkeit dienen, indem Wissensträgerabhängigkeit durch dokumentierte Prozesse reduziert wird.
+\end{enumerate}
+
+Diese drei Artefakte entwickelten sich parallel zur technischen Tool-Entwicklung in einem ko-evolutionären Prozess. Die gegenseitige Beeinflussung und iterative Verfeinerung dieser Artefakte wird in Kapitel~\ref{sec:Konzept} detailliert beschrieben.
+
+
+\subsection{Technische Infrastruktur und Datenhoheit}
+\label{subsec:TechnischeInfrastruktur}
+
+Die Wahl der technischen Infrastruktur soll dem in Kapitel~\ref{sec:IstAnalyse} identifizierten Problemfeld der Datenhoheit dienen:
+
+\begin{description}
+    \item[LLM:] qwen2.5-coder:7b, lokal via Ollama
+    \item[Hosting:] Lokale Python-HTTP-Server (Port 9000)
+    \item[Datenfluss:] Keine Übertragung an externe Cloud-Dienste
+\end{description}
+
+Diese Architektur soll DSGVO- und NDA-Anforderungen erfüllen, indem sensible Kundenproduktionsdaten das lokale Netzwerk nicht verlassen. Der Trade-off zwischen Modellgröße (7B vs. 70B+ Parameter) und Datenhoheit wurde zugunsten der Privacy-Compliance entschieden.
+
+\paragraph{Multilinguale LLM-Performance}
+
+Die Entscheidung für englische Prompts statt deutscher basiert auf empirischen Befunden zur multilingualen LLM-Performance. \cite{gupta:multilingual2025} zeigen, dass die Performance von Sprachmodellen bei nicht-englischen Sprachen signifikant abnimmt: Englisch erreicht 97,6\% Genauigkeit, während Telugu nur 86,9\% erreicht -- ein Abfall von 5-30\% je nach Aufgabentyp. Die Autoren führen dies auf die Verteilung der Trainingsdaten zurück: CommonCrawl enthält 42,8\% englische Daten, aber nur 5,5\% deutsche.
+
+Im Kontext dieser Arbeit bedeutet dies: Englische Prompts ermöglichen präzisere Entity-Type-Erkennung, akkuratere JSON-Generierung und konsistentere Validierung. Dieser Performance-Gewinn rechtfertigt die sprachliche Wahl trotz des deutschen Projektumfelds.
+
+
+\subsection{Evaluationsdesign}
+\label{subsec:Evaluationsdesign}
+
+Die Evaluation adressiert die in Kapitel~\ref{sec:IstAnalyse} identifizierten Problemfelder durch ein kontrolliertes Experiment. Die quantitativen Probleme werden wie folgt operationalisiert:
+
+\begin{itemize}
+    \item \textbf{Fragmentierung und fehlende Standardisierung:} Messung über Vollständigkeitsgrad und Fehlerrate gemäß 6-Punkte-Checkliste
+    \item \textbf{Wissensträgerabhängigkeit:} Messung über Reproduzierbarkeit durch drei unabhängige Probanden
+    \item \textbf{Zeiteffizienz:} Messung der Konfigurationsdauer als Primärmetrik
+    \item \textbf{Datenhoheit:} Adressiert durch technische Infrastruktur (lokales LLM-Deployment)
+\end{itemize}
+
+Die Evaluation kombiniert gemessene Praxisdaten mit einem kontrollierten Experiment. Die in den BPMN-Diagrammen (v1a, v1b, v2) dargestellten Durchlaufzeiten basieren auf realen Konfigurationsprojekten.
+
+\subsubsection{Kontrolliertes Validierungsexperiment}
+\label{subsubsec:Experiment}
+
+Zur Validierung der Tool-Effektivität wurde ein Within-Subjects-Experiment durchgeführt:
+
+\paragraph{Setup}
+Fiktive Produktkonfiguration mit standardisierter Komplexität: 5 Materialien, 5 Maschinen, 1 Produkt, 1 Prozess (mehrere Schritte), 1 BOM, 1 Rezept.
+
+\paragraph{Bedingungen}
+\begin{description}
+    \item[Bedingung A (Baseline):] Manuelle Eingabe in GRACE UI ohne Hilfsmittel
+    \item[Bedingung B (Intervention):] Master Creator + JSON-Import in GRACE
+\end{description}
+
+Jeder Proband absolvierte 6 Durchläufe pro Bedingung (alternierend, counterbalanced). Die Reihenfolge wurde zwischen den Probanden variiert, um Reihenfolgeeffekte zu kontrollieren.
+
+\paragraph{Probanden}
+\begin{itemize}
+    \item \textbf{Proband 1:} Konfigurationsteam-Mitglied mit GRACE-Erfahrung und Master-Creator-Erfahrung
+    \item \textbf{Proband 2:} Konfigurationsteam-Mitglied mit GRACE-Erfahrung, ohne Master-Creator-Erfahrung
+    \item \textbf{Proband 3:} Konfigurationsteam-Mitglied mit GRACE-Erfahrung, ohne Master-Creator-Erfahrung
+\end{itemize}
+
+\paragraph{Metriken}
+\begin{enumerate}
+    \item \textbf{Zeit:} Dauer bis zur vollständigen Konfiguration (MM:SS,ms)
+    \item \textbf{Fehlerrate:} Anzahl Validierungsfehler gemäß 6-Punkte-Checkliste
+\end{enumerate}
+
+Die Ergebnisse dieses Experiments werden in Kapitel~\ref{sec:Evaluation} präsentiert.
+
+\subsubsection{Statistische Auswertungsmethoden}
+\label{subsubsec:StatistischeAuswertung}
+
+Die quantitative Auswertung des kontrollierten Experiments erfolgt mittels deskriptiver Statistik. Für jede Bedingung (A: Baseline, B: Intervention) werden folgende Kennwerte berechnet:
+
+\paragraph{Zeitreduktion (Primärmetrik)}
+
+Die Konfigurationszeit $t$ wird in Sekunden erfasst. Für jede Bedingung wird der Mittelwert berechnet:
+
+\[
+\bar{t} = \frac{1}{n} \sum_{i=1}^{n} t_i
+\]
+
+Die Standardabweichung quantifiziert die Streuung der Messungen:
+
+\[
+s = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (t_i - \bar{t})^2}
+\]
+
+Die prozentuale Zeitreduktion zwischen den Bedingungen wird berechnet als:
+
+\[
+\text{Reduktion} = \frac{\bar{t}_A - \bar{t}_B}{\bar{t}_A} \times 100\%
+\]
+
+\paragraph{Vollständigkeit und Fehlerrate}
+
+Für jede Konfiguration wird die Anzahl erfüllter Validierungspunkte $v \in [0, 6]$ gemäß der 6-Punkte-Checkliste erfasst. Die durchschnittliche Vollständigkeit wird berechnet als:
+
+\[
+\bar{v} = \frac{1}{n} \sum_{i=1}^{n} v_i \quad \text{und} \quad \text{Vollständigkeit} = \frac{\bar{v}}{6} \times 100\%
+\]
+
+Fehler werden als diskrete Ereignisse gezählt. Der Mittelwert und die Standardabweichung der Fehleranzahl werden analog zur Zeitmetrik berechnet.
+
+\paragraph{Reproduzierbarkeit}
+
+Die Reproduzierbarkeit wird durch die Konsistenz der Ergebnisse über drei unabhängige Probanden gemessen. Für jede Metrik (Zeit, Vollständigkeit, Fehlerrate) wird die Inter-Proband-Variabilität über die Standardabweichung zwischen den Probanden-Mittelwerten quantifiziert.
+
+\paragraph{Darstellung der Ergebnisse}
+
+Die Ergebnisse werden in tabellarischer Form präsentiert:
+
+\begin{itemize}
+    \item \textbf{Zeit:} Mittelwert $\pm$ Standardabweichung (MM:SS $\pm$ SS)
+    \item \textbf{Vollständigkeit:} Durchschnittliche Anzahl erfüllter Punkte und Prozentangabe
+    \item \textbf{Fehlerrate:} Mittelwert $\pm$ Standardabweichung (Anzahl Fehler)
+    \item \textbf{Reproduzierbarkeit:} Variabilität zwischen Probanden
+\end{itemize}
+
+Die statistischen Berechnungen erfolgen für $n = 6$ Durchläufe pro Proband und Bedingung. Die Ergebnisse werden in Kapitel~\ref{sec:Evaluation} präsentiert.
+
+\subsubsection{Explorative Anwendung in der Praxis}
+\label{subsubsec:ExplorativeAnwendung}
+
+Parallel zum kontrollierten Experiment wurde der GRACE Onboarding Fragebogen und SOP~01 (Kundenworkshop durchführen) explorativ in zwei realen Kundenprojekten eingesetzt. Diese Anwendung erfolgte unter Produktionsbedingungen mit tatsächlichen Kundenanforderungen und diente primär der praktischen Erprobung der entwickelten Artefakte im Feldkontext.
+
+Der Fragebogen wurde als Leitfaden zur strukturierten Wissenserhebung in initialen Kundenworkshops verwendet. Die erhobenen Informationen dienten als Eingabe für die nachgelagerte Konfigurationsentwicklung mit dem Master Creator.
+
+Diese explorative Anwendung ermöglichte qualitative Beobachtungen zur Praktikabilität der Artefakte, erhob jedoch keine systematischen quantitativen Vergleichsdaten. Die Erkenntnisse fließen als ergänzende qualitative Perspektive in Kapitel~\ref{sec:Evaluation} ein.
+
+\subsubsection{Wissenschaftliche Gütekriterien des Experiments}
+\label{subsubsec:Guetekriterien}
+
+Das kontrollierte Validierungsexperiment wurde unter Berücksichtigung der wissenschaftlichen Gütekriterien Validität, Reliabilität und Objektivität konzipiert \citep{gothesis:methodikteil}.
+
+\paragraph{Validität}
+
+\begin{itemize}
+    \item \textbf{Inhaltsvalidität:} Die 6-Punkte-Checkliste basiert auf empirisch beobachteten Fehlerquellen aus der Demo-Werk-Entwicklung und deckt kritische Validierungsaspekte ab (Vollständigkeit, ID-Konsistenz, Zeiteinheiten, BOM-Berechnung, Material-Referenzen, ID-Duplikate).
+
+    \item \textbf{Konstruktvalidität:} Die gemessenen Dimensionen (Zeit, Vollständigkeit/Fehlerrate, Reproduzierbarkeit) operationalisieren das theoretische Konstrukt ``Konfigurationseffizienz'' entlang wissenschaftlich fundierter Dimensionen: Zeitwirtschaft nach REFA \citep{REFA2012}, Qualitätsmanagement (Fehlerreduktion) und Wissensmanagement (Reproduzierbarkeit durch Externalisierung).
+
+    \item \textbf{Externe Validität:} Das standardisierte Experiment-Setup ermöglicht prinzipiell die Replikation durch andere Forschende. Die Übertragbarkeit auf andere APS-Kontexte ist durch die Domänenspezifität der Artefakte eingeschränkt, die methodische Vorgehensweise (Drei-Artefakte-Architektur) jedoch generalisierbar.
+\end{itemize}
+
+\paragraph{Reliabilität}
+
+\begin{itemize}
+    \item \textbf{Test-Retest-Reliabilität:} Jeder Proband absolvierte 6 Durchläufe pro Bedingung, was die Konsistenz der Messungen über mehrere Zeitpunkte hinweg ermöglicht.
+
+    \item \textbf{Interrater-Reliabilität:} Reproduzierbarkeitstest durch drei unabhängige Probanden mit unterschiedlichen Master-Creator-Erfahrungsniveaus validiert, dass die entwickelten Artefakte (SOPs) von verschiedenen Personen konsistent angewendet werden können.
+
+    \item \textbf{Methodische Kontrolle:} Counterbalanced Design reduziert Reihenfolgeeffekte; standardisiertes Experiment-Setup (5/5/1/1/1/1) gewährleistet vergleichbare Bedingungen über alle Durchläufe hinweg.
+\end{itemize}
+
+\paragraph{Objektivität}
+
+\begin{itemize}
+    \item \textbf{Durchführungsobjektivität:} Standardisiertes Experiment-Setup mit klaren Anweisungen und identischen Aufgabenstellungen für alle Probanden minimiert Einflüsse durch unterschiedliche Versuchsbedingungen.
+
+    \item \textbf{Auswertungsobjektivität:} Objektive Metriken (Zeit in MM:SS,ms, Anzahl erfüllter Checklisten-Punkte, Anzahl Fehler) minimieren Interpretationsspielräume bei der Datenauswertung.
+
+    \item \textbf{Interpretationsobjektivität:} Die 6-Punkte-Checkliste definiert binäre Validierungskriterien (erfüllt/nicht erfüllt) ohne subjektive Bewertungsskalen. Die Einbeziehung von Probanden ohne Master-Creator-Vorerfahrung reduziert potenzielle Verzerrungen durch Entwicklernähe.
+\end{itemize}
+
+Die Kombination dieser Gütekriterien stellt sicher, dass die Evaluationsergebnisse des Experiments wissenschaftlich fundiert und nachvollziehbar sind.
+
+
+\subsection{Limitierungen der Methodik}
+\label{subsec:LimitierungenMethodik}
+
+Die gewählte Methodik unterliegt spezifischen Einschränkungen:
+
+\begin{enumerate}
+    \item \textbf{Eingebettete Forscherrolle:} Der Autor ist Teil des Konfigurationsteams, was zu Bestätigungstendenz bei der Artefakt-Entwicklung führen kann. Dies wird durch Kollegenfeedback während der Entwicklung, objektive Metriken (Zeit, Git-Commits, Checklisten-Punkte) und kontrolliertes Experiment mit standardisierten Bedingungen mitigiert.
+
+    \item \textbf{Overfitting-Prävention durch systematische Verallgemeinerung:} Das Demo-Werk wurde in Phase 0 dieser Arbeit entwickelt und bildete die empirische Grundlage für die in Phase 4 entwickelte Master-Creator-Automatisierung. Um Overfitting auf einen spezifischen Datensatz zu verhindern, erfolgte eine systematische Verallgemeinerung mehrerer Datenquellen (Restored\_JSONS, alte Demo-Werk-Fragmente, generische Example-JSONs) zu allgemeinen ER-Kardinalitäten und JSON-Schemata, die im Entity Mapping Workbook dokumentiert wurden \citep{mayring:qualitative2015}. Diese methodische Abstraktion stellt sicher, dass das Tool nicht auf die Besonderheiten eines einzelnen Projekts zugeschnitten ist, sondern generalisierbare Konfigurationsmuster verwendet.
+
+    \item \textbf{GRACE-Instabilität während Pilotphase:} Die Pilotphase war durch technische Instabilität geprägt: JSON-Import-Bugs verhinderten die Nutzung bestimmter Features (Properties, Maschinenreferenzen in Prozessen), und Systemcrashes beeinträchtigten die Entwicklungsarbeit. Der Master Creator fokussiert daher auf die Kernkonfiguration (6 Entitätstypen ohne optionale Erweiterungen), um trotz dieser Rahmenbedingungen und des zusätzlichen Zeitdrucks durch den NAS-Crash den Zeitrahmen einzuhalten. Die Bugs wurden nach Abschluss der Master-Creator-Entwicklung behoben, eine nachträgliche Erweiterung war jedoch aus Zeitgründen nicht mehr möglich.
+\end{enumerate}
+
+Trotz dieser Limitierungen bietet die Action-Research-Methodik den Vorteil, praktische Lösungen in einem realen Problemkontext zu entwickeln und simultan zu evaluieren -- ein Ansatz, der für die gegebenen Rahmenbedingungen optimal geeignet ist.

@@ -1,0 +1,40 @@
+[
+    {
+        "id": "1",
+        "name": "WP-1000 White Masterbatch",
+        "baseQuantity": 1000,
+        "unitId": "kg",
+        "items": [
+            {
+                "key": "1",
+                "material": {
+                    "version": 1,
+                    "id": "54b35968-9af3-4d5b-a335-8b26e6f8de19"
+                },
+                "quantity": 500
+            },
+            {
+                "key": "2",
+                "material": {
+                    "version": 4,
+                    "id": "3e3dfa46-3cb6-4005-a5f1-d87619ed600b"
+                },
+                "quantity": 300
+            },
+            {
+                "key": "3",
+                "material": {
+                    "version": 1,
+                    "id": "7dddeb36-c784-4960-a7f7-bb5d79cefc88"
+                },
+                "quantity": 200
+            }
+        ]
+    },
+    {
+        "id": "1234",
+        "name": "",
+        "baseQuantity": 1000,
+        "unitId": "kg"
+    }
+]

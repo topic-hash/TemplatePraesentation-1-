@@ -1,0 +1,394 @@
+\subsection{Forschungszyklus und Iterationen}
+\label{subsec:Forschungszyklus}
+
+Der Action-Research-Zyklus (Plan $\rightarrow$ Act $\rightarrow$ Observe $\rightarrow$ Reflect) wurde in dieser Arbeit über mehrere Iterationen operationalisiert. Die gesamte Entwicklung erstreckte sich über einen Zeitraum von drei Monaten zuzüglich zwei Wochen krankheitsbedingter Unterbrechung. Die folgende Darstellung gliedert die Entwicklung in fünf Phasen, wobei jede Phase multiple Artefakte parallel hervorbrachte.
+
+
+\subsubsection{Phase 0: Demo-Werk-Entwicklung als Erkenntnisfundament}
+\label{subsubsec:Phase0}
+
+Der Industrierahmen der Demo wurde durch das Unternehmen vorgegeben: Eine Demonstration bei der \textit{EC Conference Digitalisation} sollte die GRACE-Fähigkeiten einem Fachpublikum präsentieren. Die erfolgreiche Demonstration führte zur Akquise neuer Kundenkontakte, was die Praxisrelevanz des gewählten Szenarios validierte.
+
+\paragraph{Domänenauswahl und Wissensquellen}
+
+Als Produktionsdomäne wurde die \textbf{Farb- und Lackproduktion} gewählt. Die Wissensgrundlage für das theoretische Produktdesign stammte aus drei Quellen:
+
+\begin{itemize}
+    \item \textbf{Domänenexperte (Maschinenführer):} Ein ehemaliger Maschinenführer im Konfigurationsteam verfügt über langjährige Praxiserfahrung in der chemischen Industrie. Seine Fragesammlung zu typischen Produktionsprozessen und Materialkenntnis ermöglichten eine realistische Parametrierung der Produktionsschritte.
+
+    \item \textbf{Fachliteratur Kunststofftechnik:} \cite{schwarz:kunststoffkunde1987} lieferte technische Grundlagen zu Materialverarbeitung, Polymerchemie und industriellen Prozessketten.
+
+    \item \textbf{Branchenliteratur Lacke und Farben:} Das Unterrichtsmaterial ``Lacke, Farben und Druckfarben'' des Verbands der Chemischen Industrie \citep{vci:lacke_farben2018} beschreibt typische Produktionsprozesse, Rezepturzusammensetzungen und Maschinentypen der Lackindustrie.
+\end{itemize}
+
+\paragraph{Produktentwicklung: Drei Pigmentpasten-Varianten}
+
+Auf Basis dieser Wissensquellen wurde ein theoretisches Produkt entwickelt: \textbf{Pigmentpaste} in drei Farbvarianten. Die Entscheidung für drei Varianten (Weiß, Rot, Blau) ermöglichte die Validierung von Prozesswiederverwendung bei unterschiedlichen Rezepturen. Kein echtes Industrierezept wurde kopiert; stattdessen orientierte sich die Zusammensetzung an typischen Branchenstandards.
+
+\begin{table}[h]
+\centering
+\caption{Demo-Werk Produktvarianten und Rezepturzusammensetzung}
+\label{tab:DemoProdukte}
+\begin{tabular}{lrrr}
+\hline
+\textbf{Material} & \textbf{WP-1000} & \textbf{RP-1000} & \textbf{BP-1000} \\
+\hline
+Titandioxid (TiO$_2$) -- Deckpigment & 150 kg & 10 kg & 50 kg \\
+Acrylharz -- Bindemittel & 500 kg & 500 kg & 500 kg \\
+Waschbenzin -- Lösungsmittel & 250 kg & 250 kg & 250 kg \\
+Farbpigment & -- & 120 kg & 25 kg \\
+ & & (Eisenoxid Rot) & (Phthaloblau PB15:1) \\
+PEG 400 -- Weichmacher & 10 kg & 10 kg & 10 kg \\
+KENON 40 -- Dispergiermittel & 5 kg & 5 kg & 5 kg \\
+Kalziumkarbonat -- Füllstoff & 80 kg & 99,5 kg & 154,5 kg \\
+Zinkphosphat -- Korrosionsschutz & 5 kg & 5 kg & 5 kg \\
+Stearinsäure -- Gleitmittel & 0,5 kg & 0,5 kg & 0,5 kg \\
+Reinigungsflüssigkeit & 155 kg & 155 kg & 155 kg \\
+\hline
+\textbf{Batch-Größe} & 1155,5 kg & 1155 kg & 1155 kg \\
+\hline
+\end{tabular}
+\end{table}
+
+Die Batch-Größe von ca. 1155 kg entspricht einer in der Praxis häufig beobachteten Chargenproduktion im Lacksegment, wie sie sich auch bei unseren Kunden findet. Alle drei Pasten nutzen \textbf{Titandioxid als Deckpigment-Basis}; die farbigen Varianten ergänzen spezifische Farbpigmente. Das Acrylharz dient als Bindemittel, Waschbenzin als Lösungsmittel -- eine typische Kombination für lösemittelbasierte Industrielacke \citep{vci:lacke_farben2018}.
+
+
+\paragraph{Maschinenpark und Ressourcenkonfiguration}
+
+Sieben Maschinen wurden für das Demo-Werk konfiguriert. Die Auswahl orientierte sich an in der Farbenproduktion etablierten Anlagentypen \citep{vci:lacke_farben2018}:
+
+\begin{table}[h]
+\centering
+\caption{Maschinenpark Demo-Werk}
+\label{tab:Maschinen}
+\begin{tabular}{lp{8cm}}
+\hline
+\textbf{Maschine} & \textbf{Funktion} \\
+\hline
+Dissolver & Hochgeschwindigkeitsrührer für Vormischung und Homogenisierung \\
+Highspeed-Dispergierer & Feinverteilung der Pigmente im Bindemittel \\
+Perlmühle & Nassmahlwerk zur Pigment-Feinvermahlung \\
+Schraubenspindelpumpe & Förderung hochviskoser Pasten (Dosieren, Abfüllen) \\
+Wagensystem & Gravimetrische Dosierung der Rohstoffe \\
+Druckfiltersystem & Entfernung von Agglomeraten und Verunreinigungen \\
+CIP-Reinigungssystem & Cleaning-in-Place für produktberührende Anlagenteile \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\paragraph{Produktionsprozess und Prozessschritte}
+
+Der Produktionsprozess für Pigmentpaste besteht aus sieben Schritten. Die Reihenfolge orientiert sich an etablierten Prozessen der Pastenherstellung \citep{goldschmidt:lackproduktion2019}: Dosieren der Rohstoffe, Mischen zur Vordispersion, Rühren mit Perlmühle, Dispergieren zur Feinverteilung, Filtration zur Qualitätssicherung, Abfüllen in Gebinde und abschließende Reinigung.
+
+\begin{table}[h]
+\centering
+\caption{Prozessschritte mit Zeitberechnung und Maschinenzuordnung}
+\label{tab:ProzessZeitberechnung}
+\begin{tabular}{llll}
+\hline
+\textbf{Schritt} & \textbf{Zeittyp} & \textbf{Dauer/Formel} & \textbf{Maschinen} \\
+\hline
+Dosieren & Mengenabhängig & $t = \frac{m \times 1\text{s}}{1\text{kg}}$ & Pumpe, Wagensystem \\
+Mischen & Konstant & 2100s (35 min) & Dissolver \\
+Rühren & Konstant & 600s (10 min) & Perlmühle, Dissolver \\
+Dispergieren & Konstant & 1800s (30 min) & Highspeed-Dispergierer \\
+Filtration & Mengenabhängig & $t = \frac{m \times 1\text{s}}{1\text{kg}}$ & Druckfiltersystem \\
+Abfüllen & Mengenabhängig & $t = \frac{m \times 1\text{s}}{1\text{kg}}$ & Schraubenspindelpumpe \\
+Reinigen & Konstant & 600s (10 min) & Alle (6 Maschinen) \\
+\hline
+\end{tabular}
+\end{table}
+
+\paragraph{Mengenabhängige Zeitformeln}
+
+Bei vier Prozessschritten (Dosieren, Filtration, Abfüllen) wurde eine \textbf{mengenabhängige Zeitberechnung} konfiguriert. GRACE ermöglicht dies über verschachtelte Formelausdrücke mit der Laufzeitvariablen \texttt{TotalQuantityOfAssignedBomItems}:
+
+\begin{verbatim}
+"processingTime": {
+  "type": "BinaryOperation",
+  "operator": "Divide",
+  "leftOperand": {
+    "type": "BinaryOperation",
+    "operator": "Multiply",
+    "leftOperand": {
+      "type": "Variable",
+      "variable": "TotalQuantityOfAssignedBomItems"
+    },
+    "rightOperand": {"type": "Constant", "value": 1, "unitId": "s"}
+  },
+  "rightOperand": {"type": "Constant", "value": 1, "unitId": "kg"}
+}
+\end{verbatim}
+
+Die Formel berechnet: $t = \frac{m \cdot k}{1\text{kg}}$, wobei $m$ die Bestellmenge in Kilogramm ist und $k$ der Durchflusskoeffizient. Der Koeffizient $k = 1\text{s}$ repräsentiert die Zeit pro Kilogramm Material. Ein Wert nahe 1 s/kg wurde gewählt, da bei allen mengenabhängigen Schritten (Dosieren, Filtration, Abfüllen) das gleiche Produkt kontinuierlich fließt und eine konstante Förderrate angenommen werden kann. Eine Bestellung über 500 kg resultiert somit in 500 Sekunden Prozesszeit. Diese lineare Skalierung ist eine Vereinfachung; reale Anlagen zeigen oft nicht-lineare Zusammenhänge aufgrund von Viskositätsänderungen oder Anlauffasen, die durch Anpassung des Koeffizienten modelliert werden können.
+
+
+\paragraph{Properties-basierte Materialzuordnung zu Prozessschritten}
+
+Eine zentrale Konfigurationsherausforderung war die automatische Zuordnung von BOM-Materialien zu Prozessschritten. In GRACE wird dies über \texttt{itemAssociationRules} gelöst, die auf \textbf{Material-Properties} basieren.
+
+Für das Demo-Werk wurde eine Boolean-Property \texttt{IsCleaningMaterial} definiert:
+
+\begin{verbatim}
+{
+  "id": "019beae0-3100-710d-8e22-c2c2d289384d",
+  "type": "Boolean",
+  "name": "IsCleaningMaterial"
+}
+\end{verbatim}
+
+Die Zuordnungslogik:
+\begin{itemize}
+    \item \texttt{IsCleaningMaterial = false}: Material wird allen Produktionsschritten zugeordnet (Dosieren, Mischen, Rühren, Dispergieren, Filtration, Abfüllen)
+    \item \texttt{IsCleaningMaterial = true}: Material wird ausschließlich dem Schritt ``Reinigen'' zugeordnet
+\end{itemize}
+
+Im Demo-Werk trägt nur ``Reinigungsflüssigkeit'' das Attribut \texttt{IsCleaningMaterial = true}. Alle anderen 21 Materialien sind mit \texttt{false} konfiguriert. Diese Lösung ermöglicht die korrekte Mengenkalkulation: Die 155 kg Reinigungsflüssigkeit pro Batch fließen ausschließlich in den Reinigungsschritt, nicht in die produktiven Schritte.
+
+Im Reinigungsschritt werden \textbf{alle produktionsrelevanten Maschinen blockiert} (6 von 7 Ressourcen). Dies verhindert parallele Produktionsaufträge während der Reinigung -- eine typische Anforderung in der Farbenproduktion zur Vermeidung von Farbkontamination bei Chargenwechseln.
+
+
+\paragraph{Recipe-Struktur: Verknüpfung von Material, BOM und Prozess}
+
+Das Recipe bildet die höchste Aggregationsebene und verknüpft drei Entitäten:
+
+\begin{verbatim}
+{
+  "id": "03a0db7b-7554-4b1f-b3b5-3dbf3f41d98d",
+  "name": "Weiße Pigmentpaste",
+  "resultingMaterial": {"version": 3, "id": "abb1d981-..."},
+  "bom": {"version": 4, "id": "2"},
+  "productionProcess": {"version": 3, "id": "4e77aadd-..."},
+  "itemAssociationRules": [...]
+}
+\end{verbatim}
+
+Die Referenzen enthalten \texttt{version}-Attribute, die bei Schema-Änderungen inkrementiert werden. Diese Versionierung stellte während der Entwicklung eine Fehlerquelle dar: Bei manueller Konfiguration wurden häufig veraltete Versionen referenziert.
+
+
+\paragraph{Erkenntnisse aus Phase 0}
+
+Die Demo-Werk-Entwicklung offenbarte mehrere strukturelle Eigenschaften des GRACE-Konfigurationsprozesses:
+
+\begin{enumerate}
+    \item \textbf{Sechs interdependente Entitätstypen:} Materials, Machines, Products, BOMs, Processes, Recipes bilden eine Abhängigkeitskette mit komplexen Kardinalitäten.
+
+    \item \textbf{ID-Konsistenz als kritischer Erfolgsfaktor:} Referenzfehler (falsche IDs, veraltete Versionen) waren die häufigste Fehlerursache bei manueller Konfiguration.
+
+    \item \textbf{Properties als Steuerungsmechanismus:} Die \texttt{IsCleaningMaterial}-Property demonstriert, wie GRACE prozessübergreifende Logik implementiert.
+
+    \item \textbf{Formelkomplexität:} Mengenabhängige Zeitberechnungen erfordern verschachtelte JSON-Strukturen, die bei manueller Erstellung fehleranfällig sind.
+\end{enumerate}
+
+Diese Erkenntnisse bildeten die Grundlage für das Entity Mapping Workbook (Phase 1) und die 6-Punkte-Validierungscheckliste.
+
+
+\subsubsection{Phase 1: Wissensexternalisierung -- Entity Mapping Workbook}
+\label{subsubsec:Phase1}
+
+Basierend auf der Demo-Werk-Analyse wurde das \textbf{Entity Mapping Workbook} entwickelt. Dieses Dokument externalisiert das implizite Konfigurationswissen in eine formale Struktur.
+
+\paragraph{Kardinalitäten und Abhängigkeitskette}
+
+Die Abhängigkeiten zwischen den sechs Entitätstypen folgen keiner einfachen 1:n-Logik. Die Herausforderung bestand darin, \textbf{multi-direktionale Referenzen mit Versionierung} korrekt abzubilden:
+
+\begin{description}
+    \item[Material $\rightarrow$ (keine Abhängigkeiten):] Materialien sind Blattknoten der Abhängigkeitskette und können unabhängig erstellt werden.
+
+    \item[Machine $\rightarrow$ (keine Abhängigkeiten):] Maschinen-Ressourcen sind ebenfalls unabhängig.
+
+    \item[Product $\rightarrow$ Material (1:1):] Ein Product referenziert \textit{ein} Material, das das Produkt selbst repräsentiert (nicht die Zutaten). Dies war die häufigste Fehlerquelle: Konfiguration zeigte oft auf eine Zutat statt auf das Produktmaterial.
+
+    \item[BOM $\rightarrow$ Material (1:n):] Jedes BOM enthält $n$ Items, die jeweils ein Material mit \texttt{version}-Attribut referenzieren. Die Constraint \texttt{baseQuantity = $\sum$ item.quantity} muss manuell sichergestellt werden.
+
+    \item[Process $\rightarrow$ Machine (n:m):] Jeder Prozessschritt kann mehrere Maschinen als \texttt{resourceDemands} referenzieren. Im Reinigungsschritt des Demo-Werks referenziert ein einziger Schritt sechs verschiedene Maschinen.
+
+    \item[Recipe $\rightarrow$ Material + BOM + Process (1:1:1):] Ein Recipe kombiniert drei unabhängige Entitäten. Alle drei IDs müssen exakt übereinstimmen, einschließlich Versionen.
+\end{description}
+
+Das Entity Mapping Workbook dokumentiert diese Abhängigkeiten als Dependency Chain:
+
+\begin{quote}
+\small
+\texttt{Materials (0 deps) $\rightarrow$ Machines (0 deps) $\rightarrow$ Products ($\rightarrow$ Material.id) $\rightarrow$ BOMs ($\rightarrow$ Material.id[]) $\rightarrow$ Processes ($\rightarrow$ resourceId[]) $\rightarrow$ Recipes ($\rightarrow$ Material.id, bom.id, process.id)}
+\end{quote}
+
+Ohne diese explizite Dokumentation erzeugten die späteren Prototypen systematische Referenzfehler, da Entity-Typen isoliert generiert wurden.
+
+\paragraph{6-Punkte-Validierungscheckliste}
+
+Aus den identifizierten Fehlerquellen wurde eine Validierungscheckliste abgeleitet:
+
+\begin{enumerate}
+    \item \textbf{Vollständigkeit:} Alle 6 Entitätstypen vorhanden
+    \item \textbf{ID-Konsistenz:} Keine Referenzfehler (alle referenzierten IDs existieren)
+    \item \textbf{Zeiteinheiten:} Alle \texttt{processingTime.unitId} = ``s'' (Sekunden, nicht Minuten)
+    \item \textbf{BOM baseQuantity:} Summe der Items entspricht \texttt{baseQuantity}
+    \item \textbf{Product Material:} \texttt{product.material.id} referenziert Produktmaterial (nicht Zutat)
+    \item \textbf{ID-Duplikate:} Keine doppelten IDs innerhalb eines Entitätstyps
+\end{enumerate}
+
+Jeder Punkt korrespondiert mit einem empirisch beobachteten Fehlertyp aus der Demo-Werk-Entwicklung.
+
+
+\subsubsection{Phase 2: Erste Prototypen und Scheitern}
+\label{subsubsec:Phase2}
+
+Die initiale Tool-Entwicklung begann mit zwei Ansätzen, die retrospektiv als ``naive Merging-Versuche'' charakterisiert werden können:
+
+\begin{description}
+    \item[aps-configurator:] Ein phasengesteuertes Konfigurationswerkzeug mit komplexen Validierungsmustern und Multi-Entity-Unterstützung. Das System versuchte, alle sechs Entitätstypen in einer einzigen Konversation zu verwalten. Nach interner Evaluation wurde es als zu komplex eingestuft (``mixed concerns'').
+
+    \item[aps-configurator-2:] Zweiter Iterationsversuch mit ähnlicher Architektur. Scheiterte an denselben strukturellen Problemen: Kontext-Verlust bei Entity-Wechseln, Logik-Konflikte zwischen den sechs Entitätstypen und fehlerhafte ID-Referenzen.
+\end{description}
+
+\textbf{Reflektion (Reflect):} Die Analyse dieser Fehlversuche offenbarte das fundamentale Problem: Obwohl die ER-Kardinalitäten im Entity Mapping Workbook dokumentiert waren, wurden sie in den Prototypen nicht systematisch implementiert. Die Prompts behandelten jeden Entity-Typ isoliert, ohne die Abhängigkeiten zur Laufzeit zu berücksichtigen.
+
+\paragraph{Parallele Artefaktentwicklung}
+
+Während der Tool-Entwicklung entstanden parallel weitere Artefakte:
+
+\begin{itemize}
+    \item \textbf{BPMN v1a (Ist-Prozess manuell):} Dokumentation des vollständig manuellen Konfigurationsprozesses mit ca. 8 Wochen Durchlaufzeit
+    \item \textbf{Fragebogen Vollversion:} Initiale Sammlung von 96 Fragen zur Kundenerhebung, strukturiert in 8 Themenblöcke
+\end{itemize}
+
+
+\subsubsection{Phase 3: Blueprint-Entwicklung -- Sechs Einzelcreatoren}
+\label{subsubsec:Phase3}
+
+Nach der Reflektion über die gescheiterten Versuche wurde ein radikal anderer Ansatz gewählt: Statt eines monolithischen Tools sollten \textbf{sechs spezialisierte Einzelapplikationen} entwickelt werden.
+
+\paragraph{Single-Purpose-Architektur}
+
+Der Material Creator diente als Blueprint für alle nachfolgenden Entity-spezifischen Applikationen:
+
+\begin{itemize}
+    \item \textbf{Single-Purpose-Prinzip:} Eine Applikation erstellt genau einen Entity-Typ
+    \item \textbf{Isolierte Logik:} Keine Abhängigkeiten zu anderen Entity-Typen innerhalb der Applikation
+    \item \textbf{Einheitliche Struktur:} \texttt{sendToAI()} $\rightarrow$ \texttt{extractJSON()} $\rightarrow$ \texttt{validate()} $\rightarrow$ \texttt{display()}
+    \item \textbf{Visuelle Unterscheidung:} Jeder Creator erhielt einen eigenen Port (8000--8005) und eine dedizierte Farbgebung
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\caption{Sechs Einzelcreatoren mit Ports und Farbschema}
+\label{tab:Einzelcreatoren}
+\begin{tabular}{llll}
+\hline
+\textbf{Creator} & \textbf{Port} & \textbf{Farbe} & \textbf{Abhängigkeiten} \\
+\hline
+Material Creator & 8000 & Violett & Keine \\
+Machine Creator & 8001 & Pink/Rot & Keine \\
+Product Creator & 8002 & Blau & Material.id \\
+Process Creator & 8003 & Pink/Gelb & resourceId[] \\
+BOM Creator & 8004 & Türkis & Material.id[] \\
+Recipe Creator & 8005 & Pink & Material.id, bom.id, process.id \\
+\hline
+\end{tabular}
+\end{table}
+
+\textbf{Beobachtung (Observe):} Alle sechs Einzelapplikationen funktionierten isoliert korrekt. Bei der Recipe-Erstellung -- dem letzten Glied der Abhängigkeitskette -- fehlte jedoch der \textbf{Session-Kontext}: Das System konnte nicht automatisch erkennen, welche Materials, BOMs und Processes bereits in der aktuellen Sitzung erstellt wurden. Der Benutzer musste IDs manuell kopieren.
+
+\paragraph{Parallele Artefaktentwicklung Phase 3}
+
+\begin{itemize}
+    \item \textbf{BPMN v1b (Ist-Prozess mit Importer):} Dokumentation des Prozesses mit ERP-Importer, ca. 3,5 Wochen Durchlaufzeit
+    \item \textbf{SOP 01 (Kundenworkshop):} Erste Version der Workshop-Durchführungsanleitung
+\end{itemize}
+
+
+\subsubsection{Phase 4: Master Creator -- Integration mit Session-Kontext}
+\label{subsubsec:Phase4}
+
+Die Integration der sechs Einzellogiken in den Master Creator durchlief mehrere dokumentierte Iterationen. Die zentrale Innovation war die Einführung des \textbf{Session Context Summary}.
+
+\paragraph{Versionsentwicklung}
+
+\begin{table}[h]
+\centering
+\caption{Master Creator Versionsentwicklung}
+\label{tab:MasterCreatorVersions}
+\begin{tabular}{lp{10cm}}
+\hline
+\textbf{Version} & \textbf{Kritisches Problem / Lösung} \\
+\hline
+v0.1 & REJECTED -- verwendete alte aps-configurator-Konzepte \\
+v1.0 & 6 Bugs behoben: Product-Referenzen, Machine-Defaults, Time-Conversion, BOM-Berechnung, ID-Konsistenz, Download \\
+v1.1 & Keyword ``produce'' wurde als Material erkannt $\rightarrow$ Detection-Reihenfolge angepasst \\
+v1.2 & Mehrere Entities in einer Antwort erzeugten invalides JSON $\rightarrow$ separate Code-Blöcke \\
+v1.3 & ``pipe system'' nicht als Machine erkannt $\rightarrow$ erweiterte Keywords \\
+v1.4 & BOM baseQuantity falsch berechnet $\rightarrow$ JavaScript Auto-Calculation \\
+v1.5 & Recipe Process-ID mit falschem Suffix $\rightarrow$ Step-by-Step-Konvertierung \\
+v2.0 & \textbf{Session Context Summary} löst Recipe-Matching-Problem \\
+\hline
+\end{tabular}
+\end{table}
+
+\paragraph{Session Context Summary als Lösung}
+
+Version 2.0 implementierte den entscheidenden Durchbruch. Vor jeder Benutzeranfrage wird ein Kontext-Summary der existierenden Entitäten generiert und dem LLM-Prompt vorangestellt:
+
+\begin{verbatim}
+=== EXISTING ENTITIES IN THIS SESSION ===
+Materials: blue-pigment-paste, grey-pigment, titanium-dioxide
+BOMs: blue-pigment-paste-bom
+Processes: dosing-mixing-dispersion-filtration
+=========================================
+\end{verbatim}
+
+Mit diesem Kontext kann das LLM bei der Recipe-Erstellung automatisch die korrekten IDs zuordnen. Die ER-Kardinalitäten aus dem Entity Mapping Workbook sind somit \textbf{zur Laufzeit verfügbar}, nicht nur zur Dokumentationszeit.
+
+\paragraph{Parallele Artefaktentwicklung Phase 4}
+
+\begin{itemize}
+    \item \textbf{BPMN v2 (Soll-Prozess):} Dokumentation des Master-Creator-gestützten Prozesses, Ziel $<$2 Wochen
+    \item \textbf{SOP 02 (Master Creator nutzen):} 6-Schritt-Workflow mit integrierter Validierungscheckliste
+    \item \textbf{SOP 03 (GRACE Import):} Anleitung für den JSON-Import in GRACE
+    \item \textbf{Fragebogen Kompaktversion:} Reduktion von 96 auf 15 Kernfragen nach Pareto-Prinzip
+\end{itemize}
+
+
+\subsubsection{Validierung durch unerwarteten Datenverlust}
+\label{subsubsec:NASCrashValidierung}
+
+Während der Bearbeitungszeit ereignete sich ein Ausfall des Network Attached Storage (NAS) im Unternehmen, der zum Verlust von Demo-Konfigurationsdaten führte. Zusätzlich verhinderten Bugs in der GRACE-Exportfunktion den vollständigen Export bestimmter Entitäten (insbesondere Properties).
+
+Dieses unerwartete Ereignis ermöglichte eine praxisnahe Validierung des Action-Research-Ansatzes. Die Rekonstruktion erfolgte iterativ:
+
+\begin{enumerate}
+    \item Identifikation der exportierbaren Entitäten nach Bug-Behebung
+    \item Nutzung des Master Creators zur Wiederherstellung grundlegender Strukturen
+    \item Manuelle Ergänzung von UUIDs aus teilweise geretteten Originaldaten
+    \item Schrittweise Erweiterung und erneuter Export
+    \item Iteration bis zur vollständigen Rekonstruktion (\texttt{Restored\_JSONS})
+\end{enumerate}
+
+Dieser Vorfall illustriert den praktischen Wert der Wissensexternalisierung: Ohne die entwickelten Artefakte (Entity Mapping Workbook, Master Creator) wäre eine vollständige Neukonzeption erforderlich gewesen.
+
+
+\subsubsection{Übersicht: Parallele Artefaktentwicklung}
+\label{subsubsec:ParalleleArtefakte}
+
+Tabelle~\ref{tab:ParalleleArtefakte} zeigt die parallele Entstehung aller Artefakte über die fünf Phasen.
+
+\begin{table}[h]
+\centering
+\caption{Parallele Artefaktentwicklung pro Phase}
+\label{tab:ParalleleArtefakte}
+\begin{tabular}{lp{9cm}}
+\hline
+\textbf{Phase} & \textbf{Entwickelte Artefakte} \\
+\hline
+Phase 0 & Demo-Werk (Materials, Machines, Products, Processes, BOMs, Recipes), initiale JSON-Exporte \\
+Phase 1 & Entity Mapping Workbook v1, Kardinalitätsanalyse, 6-Punkte-Checkliste \\
+Phase 2 & aps-configurator (gescheitert), aps-configurator-2 (gescheitert), BPMN v1a, Fragebogen Vollversion (96 Fragen) \\
+Phase 3 & 6 Einzelcreatoren (Ports 8000--8005), BPMN v1b, SOP 01 v1 \\
+Phase 4 & Master Creator v1.0--v2.0, BPMN v2, SOP 02, SOP 03, Fragebogen Kompakt (15 Fragen) \\
+Konsolidierung & Restored\_JSONS, Entity Mapping Workbook v2, finale Validierungscheckliste \\
+\hline
+\end{tabular}
+\end{table}
+
+Die Ko-Evolution dieser Artefakte -- ihre gegenseitige Beeinflussung und iterative Verfeinerung -- wird im folgenden Abschnitt~\ref{subsec:KoEvolution} detailliert beschrieben.

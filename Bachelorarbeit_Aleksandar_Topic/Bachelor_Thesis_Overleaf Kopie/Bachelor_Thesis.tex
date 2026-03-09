@@ -1,0 +1,43 @@
+\documentclass[12pt, a4paper]{report}
+\usepackage[utf8x,utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+
+\newcommand{\Titel}{GRACE-Konfigurationsprozess: Erhebung, Dokumentation und Optimierung mittels systematischer Wissenserfassung und LLM-gestützter Automatisierung}
+\newcommand{\AutorIn}{Aleksandar Topić}
+\newcommand{\Matrikelnummer}{677502}
+\newcommand{\Studiengang}{B.Sc. in Wirtschaftsinformatik}
+\newcommand{\Anlass}{Bachelorarbeit im Unternehmen}
+\newcommand{\Firma}{seitcom GmbH}
+\newcommand{\Erstbetreuer}{Prof. Dr. Marie-Luise Sessler}
+\newcommand{\Zweitbetreuer}{Prof. Dr. Paul Langer}
+\newcommand{\Vorgesetzte}{Dipl. Inf. Daniel Schwertner}
+\newcommand{\Zeitraum}{14. Oktober 2025 - 5. Februar 2026}
+\newcommand{\Abgabedatum}{5. Februar 2026}
+\newcommand{\Sperrvermerk}{Ja} % hier Ja bzw. Nein eintragen
+
+
+\input{./@Steuerung/Settings.tex}
+
+\begin{document}
+
+\input{./00Formalitaeten.tex}
+\input{./01Abstract.tex}
+\input{./02Einleitung.tex}
+\input{./03Grundlagen.tex}
+\input{./04IstAnalyse.tex}
+\input{./05Methodik.tex}
+\input{./06Implementierung.tex}
+\input{./07Evaluation.tex}
+\input{./08Fazit.tex}
+\input{./09Ausblick.tex}
+
+\addcontentsline{toc}{section}{Literaturverzeichnis}
+
+\bibliographystyle{plainnat}
+\bibliography{@Literatur/references}
+\thispagestyle{empty}
+\mbox{}
+\input{./Anhang.tex}
+
+\end{document}

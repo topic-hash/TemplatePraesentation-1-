@@ -1,0 +1,32 @@
+[
+    {
+        "id": "094bf33d-905e-4b9e-9e89-e4a90c8e3107",
+        "name": "WP-1000",
+        "resultingMaterial": {
+            "version": 4,
+            "id": "abb1d981-b73d-4f72-95b7-615c78903da6"
+        },
+        "bom": {
+            "version": 4,
+            "id": "1"
+        },
+        "productionProcess": {
+            "version": 3,
+            "id": "5fb486b8-b394-4601-99fd-9e6f351d5ec7"
+        },
+        "itemAssociations": [
+            {
+                "bomItemKey": "2",
+                "processStepId": "7045c1d0-dd7d-460f-aa6b-f0f11b008f13"
+            },
+            {
+                "bomItemKey": "1",
+                "processStepId": "7045c1d0-dd7d-460f-aa6b-f0f11b008f13"
+            },
+            {
+                "bomItemKey": "3",
+                "processStepId": "7045c1d0-dd7d-460f-aa6b-f0f11b008f13"
+            }
+        ]
+    }
+]

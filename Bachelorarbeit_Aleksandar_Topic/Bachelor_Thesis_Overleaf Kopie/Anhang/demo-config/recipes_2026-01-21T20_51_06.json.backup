@@ -1,0 +1,50 @@
+[
+    {
+        "id": "32deeddd-d6fc-440e-a196-c9dee5674dd3",
+        "name": "Blue Pigment Paste Recipe",
+        "resultingMaterial": {
+            "version": 6,
+            "id": "3c393082-61fd-4b14-8666-03e46673229e"
+        },
+        "bom": {
+            "version": 1,
+            "id": "4"
+        },
+        "productionProcess": {
+            "version": 1,
+            "id": "4e77aadd-9e4b-4e10-ad76-9fc5a0a2fcfb"
+        }
+    },
+    {
+        "id": "bded17dc-275c-4250-b1e2-7e079b1d8c12",
+        "name": "Red Pigment Paste Recipe",
+        "resultingMaterial": {
+            "version": 4,
+            "id": "95641e5c-f5d8-4d98-9d17-4b9120851bb5"
+        },
+        "bom": {
+            "version": 1,
+            "id": "3"
+        },
+        "productionProcess": {
+            "version": 1,
+            "id": "4e77aadd-9e4b-4e10-ad76-9fc5a0a2fcfb"
+        }
+    },
+    {
+        "id": "03a0db7b-7554-4b1f-b3b5-3dbf3f41d98d",
+        "name": "White Pigment Paste Recipe",
+        "resultingMaterial": {
+            "version": 4,
+            "id": "abb1d981-b73d-4f72-95b7-615c78903da6"
+        },
+        "bom": {
+            "version": 1,
+            "id": "2"
+        },
+        "productionProcess": {
+            "version": 1,
+            "id": "4e77aadd-9e4b-4e10-ad76-9fc5a0a2fcfb"
+        }
+    }
+]

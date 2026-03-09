@@ -1,0 +1,172 @@
+\section{Grundlagen}
+\label{sec:Grundlagen}
+
+% Ziel: 8-10 Seiten
+% Detaillierungsgrad: Moderat - technisch fundiert, keine mathematischen Beweise
+
+Dieses Kapitel legt das theoretische Fundament für die nachfolgenden Analysen und Entwicklungen. Die Grundlagen sind entlang der Drei-Artefakte-Architektur strukturiert: Advanced Planning Systems und Entity-Relationship-Modellierung bilden die Basis für das Entity Mapping Workbook, Wissensmanagement-Theorien fundieren den Erhebungsfragebogen, und Large Language Models ermöglichen die Automatisierung durch den Master Creator. Die Prozessmodellierung mit BPMN stellt das methodische Werkzeug für die Ist-Analyse und den Prozessvergleich bereit.
+
+\subsection{Advanced Planning and Scheduling (APS)}
+\label{sec:APS}
+
+Advanced Planning and Scheduling (APS) Systeme erweitern klassische ERP-Funktionalitäten um fortgeschrittene Planungsalgorithmen. Während ERP-Systeme primär Materialbedarfsplanung (MRP) auf Basis von Stücklisten und Durchlaufzeiten durchführen, berücksichtigen APS-Systeme zusätzlich Kapazitätsbeschränkungen, Ressourcenverfügbarkeiten und komplexe Reihenfolgeabhängigkeiten \citep{stadtler:supply_chain_management2015}.
+
+\subsubsection{Definition und Einordnung}
+\label{subsubsec:APSDefinition}
+
+Nach \cite{stadtler:supply_chain_management2015} lassen sich APS-Systeme in die Supply Chain Planning Matrix einordnen. Die Matrix besteht aus Planungsaufgaben nach Zeithorizont und Funktionsbereich. Mit folgenden Zeithorizonten: strategisch, taktisch, operativ und Funktionsbereichen: Beschaffung, Produktion, Distribution. GRACE adressiert primär die operative Produktionsplanung mit Fokus auf Feinplanung und Ressourcenallokation. Die zentrale Herausforderung bei APS-Konfiguration liegt in der kombinatorischen Komplexität: Bereits bei moderaten Problemgrößen (20 Aufträge, 5 Maschinen) existieren faktoriell viele mögliche Zuordnungen. Optimale Lösungen ohne algorithmische Unterstützung sind praktisch unauffindbar \citep{pinedo:scheduling2016}.
+
+\subsubsection{GRACE-Entitätsmodell}
+\label{subsubsec:GRACEEntitaeten}
+
+GRACE basiert auf einem Entitätsmodell mit sechs grundlegenden Typen, die das Fundament der Konfiguration bilden:
+
+\begin{description}
+    \item[Materials] Roh-, Hilfs- und Betriebsstoffe sowie Zwischenprodukte, charakterisiert durch ID, Name und optionale Attribute wie Einheit oder Lagerort.
+    \item[Machines] Produktionsressourcen mit Kapazitäten, Verfügbarkeitszeiten und ressourcenspezifischen Eigenschaften.
+    \item[Products] Endprodukte, die auf ein Material verweisen und Produktspezifikationen definieren.
+    \item[Processes] Fertigungsabläufe bestehend aus Prozessschritten (Steps) mit Bearbeitungszeiten und Ressourcenanforderungen.
+    \item[BOMs] Bill of Materials - Stücklisten, die Eingangsmaterialien und deren Mengen für die Herstellung eines Produkts definieren.
+    \item[Recipes] Verknüpfungsentitäten, die Material, BOM und Process zu einer produktionsfähigen Einheit zusammenführen.
+\end{description}
+
+
+\noindent Die Konfiguration einer Produktion in GRACE erfordert die vollständige Definition aller sechs Entitätstypen mit ihren jeweiligen Attributen und Beziehungen. Ein Prozess, der aufgrund der Komplexität und Abhängigkeiten erheblichen Aufwand bedeutet.
+
+
+\subsection{Entity-Relationship-Modellierung}
+\label{subsec:ERM}
+
+Die Entity-Relationship-Modellierung (ERM) nach \cite{chen:erm1976} bietet ein konzeptuelles Rahmenwerk zur Darstellung von Datenstrukturen und deren Beziehungen. Für die vorliegende Arbeit ist ERM besonders relevant, da die GRACE-Entitäten komplexe Abhängigkeiten aufweisen, die bei der LLM-gestützten Generierung berücksichtigt werden müssen.
+
+\subsubsection{Grundlagen und Notation}
+\label{subsubsec:ERMGrundlagen}
+
+Ein Entity-Relationship-Modell besteht aus drei Grundelementen:
+
+\begin{itemize}
+    \item \textbf{Entitäten:} Objekte der realen Welt, die eigenständig identifizierbar sind (z.B. Material, Maschine)
+    \item \textbf{Attribute:} Eigenschaften von Entitäten (z.B. Material.name, Machine.capacity)
+    \item \textbf{Beziehungen:} Assoziationen zwischen Entitäten (z.B. \glqq Product referenziert Material\grqq{})
+\end{itemize}
+
+\noindent In dieser Arbeit wird die UML-Notationsform von ERM-Diagrammen verwendet \citep{omg:uml2017}.
+
+\subsubsection{Kardinalitäten und referenzielle Integrität}
+\label{subsubsec:ERMKardinalitaeten}
+
+Die Kardinalität gibt an, mit wie vielen Objekten einer Entität ein einzelnes Objekt (Instanz) einer anderen Entität verknüpft ist oder sein kann:
+
+\begin{itemize}
+    \item \textbf{1:1} - Eine Instanz ist genau einer anderen zugeordnet
+    \item \textbf{1:n} - Eine Instanz kann mehreren anderen zugeordnet sein
+    \item \textbf{n:m} - Mehrere Instanzen können mehreren anderen zugeordnet sein
+\end{itemize}
+
+\noindent\textbf{Referenzielle Integrität:} Dieser Grundsatz stellt sicher, dass Fremdschlüsselverweise stets auf existierende Datensätze zeigen müssen. Im spezifischen \textit{GRACE}-Kontext bedeutet dies:
+\begin{itemize}
+    \item Ein \textbf{Product} kann nur auf ein \textbf{Material} verweisen, das bereits im System vorhanden ist.
+    \item Eine \textbf{BOM} (Bill of Materials) kann ausschließlich \textbf{Materials} referenzieren, die zuvor erfolgreich angelegt wurden.
+    \item Verallgemeinert: Jede Instanz aus der Konfiguration, die auf eine andere Instanz referenziert, darf erst darauf referenzieren, wenn die Referenz existiert
+\end{itemize}
+
+
+\subsection{Prozessmodellierung mit BPMN}
+\label{subsec:BPMN}
+
+Zur Dokumentation und zum Vergleich der Konfigurationsprozessvarianten wird die Business Process Model and Notation (BPMN) nach ISO 19510 verwendet \citep{ISO19510:2013}.
+
+\subsubsection{Notation und Symbolik}
+\label{subsubsec:BPMNNotation}
+
+BPMN definiert standardisierte Symbole zur Prozessdarstellung:
+
+\begin{itemize}
+    \item \textbf{Events:} Auslöser oder Ergebnisse (Kreise) - Start, Ende, Zwischenereignisse
+    \item \textbf{Activities:} Durchzuführende Aufgaben (abgerundete Rechtecke) - Tasks, Subprozesse
+    \item \textbf{Gateways:} Verzweigungen und Zusammenführungen (Rauten) - XOR, AND, OR
+    \item \textbf{Sequence Flows:} Ablaufreihenfolge (Pfeile)
+    \item \textbf{Pools und Lanes:} Akteure und Verantwortlichkeiten
+\end{itemize}
+
+\subsubsection{Anwendung in dieser Arbeit}
+\label{subsubsec:BPMNAnwendung}
+
+BPMN wird in dieser Arbeit zur Dokumentation und zum Vergleich unterschiedlicher Konfigurationsprozesse eingesetzt. Die standardisierte Notation ermöglicht eine objektive Analyse von Geschäftsprozessen.
+
+
+\subsection{Wissensmanagement}
+\label{subsec:Wissensmanagement}
+
+% Quellen: Nonaka (SECI), Polanyi (Tacit Knowledge), Lewin (Action Research)
+
+\subsubsection{SECI-Modell nach Nonaka \& Takeuchi}
+\label{subsubsec:SECIModell}
+
+Das SECI-Modell von \cite{nonaka:knowledge_creating_company1995} beschreibt vier Modi der Wissenskonversion, die in einer Wissensspirale iterativ durchlaufen werden:
+
+\begin{description}
+    \item[Socialization] (Tacit $\rightarrow$ Tacit): Implizites Wissen wird durch gemeinsame Erfahrung übertragen - beispielsweise lernt ein neuer Consultant durch Beobachtung erfahrener Kollegen.
+    \item[Externalization] (Tacit $\rightarrow$ Explicit): Implizites Wissen wird in explizite Formen überführt. Dokumentation, Modelle, Artefakte entsprechen expliziten Formen von Wissen. Dies ist der für diese Arbeit zentrale Modus.
+    \item[Combination] (Explicit $\rightarrow$ Explicit): Explizites Wissen wird systematisiert und neu kombiniert, etwa die Integration verschiedener Dokumentationsquellen in ein einheitliches Workbook.
+    \item[Internalization] (Explicit $\rightarrow$ Tacit): Explizites Wissen wird durch Anwendung verinnerlicht $\rightarrow$ Neue Consultants lernen anhand der SOPs.
+\end{description}
+
+\noindent Die Drei-Artefakte-Architektur dieser Arbeit fokussiert sich primär auf \textit{Externalisierung}: Fragmentiertes Expertenwissen wird in strukturierte Artefakte (Fragebogen, Entity Mapping Workbook, SOPs) überführt, die anschließend als Input für LLM-gestützte Automatisierung dienen. Die Darstellungen von Kardinalitäten werden hier in vereinfachter ASCII-Form dargestellt, um die Implementierung von OCR-Funktionalitäten zu umgehen und trotzdem komplexe Informationen wie Kardinalitäten leicht lesbar für das Modell zu machen. 
+
+\subsubsection{Tacit vs. Explicit Knowledge}
+\label{subsubsec:TacitExplicit}
+
+\cite[S.~4]{polanyi:tacit_dimension1966} prägte die Unterscheidung zwischen implizitem und explizitem Wissen mit der Feststellung: \glqq We can know more than we can tell.\grqq{} Implizites Wissen ist kontextgebunden, schwer artikulierbar und oft unbewusst. Die Intuition eines erfahrenen Konfigurationsspezialisten, welche Feldwerte \glqq richtig aussehen\grqq{} wäre ein Beispiel für derartiges implizites Wissen.\\\\ Im GRACE-Kontext manifestiert sich diese Problematik deutlich: Erfahrene Teammitglieder erkennen Inkonsistenzen in Konfigurationen intuitiv. Jedoch sind die zugrunde liegenden Regeln nirgendwo explizit formuliert. Die Herausforderung besteht darin, dieses implizite Wissen systematisch zu externalisieren.
+\\\\
+Die organisatorische Relevanz dieser Problematik wird durch empirische Befunde unterstrichen: Untersuchungen zeigen, dass Organisationen bei Mitarbeiterwechseln kritisches Wissen verlieren, wenn keine systematischen Externalisierungsmechanismen existieren, nach \cite{llm:tacit_knowledge2025} betrifft dies ca 50 \% der befragten Unternehmen. Kritisches implizites Wissen geht verloren ohne Externalisierung. Im Kontext eines kleinen Konfigurationsteams von 3-4 Personen, wie es bei GRACE der Fall ist, stellt dies ein erhebliches Risiko dar.
+
+\subsubsection{Action Research nach Lewin}
+\label{subsubsec:ActionResearch}
+
+Action Research, begründet durch \cite{lewin:action_research1946}, ist ein zyklischer Forschungsansatz, der Veränderung und Erkenntnisgewinn verbindet. Der Prozess umfasst vier Phasen: \textit{Plan} (Problemanalyse und Interventionsplanung), \textit{Act} (Durchführung der Intervention), \textit{Observe} (Beobachtung der Auswirkungen) und \textit{Reflect} (Reflexion und Anpassung).\\\\
+Action Research eignet sich besonders für Kontexte, in denen der Forscher eingebettet ist und Wissen iterativ durch Beobachtung und Intervention erfasst werden kann \citep{reason:handbook_action_research2001}.
+
+
+\subsection{Large Language Models (LLMs)}
+\label{subsec:LLMs}
+
+Large Language Models (LLMs) sind neuronale Netzwerke, die auf der Transformer-Architektur basieren und durch Training auf umfangreichen Textkorpora die Fähigkeit erwerben, natürliche Sprache zu verstehen und zu generieren \citep{vaswani:attention2017}. Die Kernidee besteht im \textit{Attention}-Mechanismus, der es dem Modell ermöglicht, kontextuelle Beziehungen zwischen Wörtern unabhängig von ihrer Position im Text zu erfassen. Anders als regelbasierte Systeme lernen LLMs implizite Muster aus Trainingsdaten und können diese auf neue, ungesehene Eingaben anwenden.
+\\\\
+Für die vorliegende Arbeit ist die Fähigkeit von LLMs zur \textit{strukturierten Datengenerierung} zentral: Durch geeignete Prompt-Gestaltung können LLMs valide JSON-Strukturen erzeugen. Die zu nutzenden Schemata müssen in klarer Form in die Instruktion(Prompt) eingebaut werden. Diese Eigenschaft unterscheidet den hier verfolgten Ansatz von klassischen NLP-Anwendungen wie Textklassifikation oder Zusammenfassung.
+
+\subsubsection{LLMs im Operations Management}
+\label{subsubsec:LLMOperations}
+
+Large Language Models haben in jüngster Zeit Anwendungen im Bereich Operations Management gefunden. Forschungsarbeiten zeigen, dass LLMs zur Analyse von Produktionsplänen eingesetzt werden können \citep{smartaps2025, fan:ai_for_or2024}. Studien belegen, dass leichtgewichtige Modelle (7B Parameter) ausreichende Leistung für domänenspezifische Aufgaben erbringen können, sofern sie durch strukturierte Prompts und externe Validierung ergänzt werden.
+
+\subsubsection{Reverse Prompting}
+\label{subsubsec:RevPrompt}
+Das Prompting ist die zentrale Instruktionsform mit der man der man ein LLM zur Generierung eines spezifischen Ergebnisses anweisen kann. Das Reverse Prompting ist eine besondere Unterart des Prompten, welche die Wirkungskette logisch umkehrt. Anstatt das Modell mit Instruktionen zu füttern, wird ihm ein fertiges Ergebnis präsentiert. Dieses Ergebnis soll das LLM analysieren und daraus eine Prompt generieren, die das Ergebnis reproduziert \citep{li2025reversepromptengineering}.
+
+\subsection{Datenhoheit und Compliance}
+\label{subsec:Datenhoheit}
+
+% Quellen: Hummel (Data Sovereignty), DSGVO
+
+Datenhoheit (Data Sovereignty) bezeichnet die Kontrolle über Datenverarbeitung und -speicherung entsprechend rechtlicher und organisatorischer Anforderungen \citep{hummel:data_sovereignty2021}. Im Kontext der GRACE-Konfiguration sind mehrere Compliance-Aspekte relevant:
+
+\begin{itemize}
+    \item \textbf{DSGVO-Konformität:} Kundendaten enthalten potenziell personenbezogene Informationen (Mitarbeiternamen, Schichtpläne). Die DSGVO \citep{dsgvo2018} erfordert Kontrolle über Datenflüsse zu Drittanbietern.
+    \item \textbf{NDA-Verpflichtungen:} Produktionsdaten unterliegen Geheimhaltungsvereinbarungen. Cloud-basierte APIs würden Datentransfer an externe Anbieter bedeuten.
+    \item \textbf{Kundenvertrauen:} Fertigungsunternehmen sind sensibel bezüglich ihrer Produktionsdaten (Rezepturen, Kapazitäten, Lieferantenbeziehungen).
+\end{itemize}
+
+Die Wahl geeigneter IT-Architekturen ist entscheidend für die Gewährleistung von Datenhoheit, insbesondere wenn sensible Unternehmensdaten verarbeitet werden. \\\\Quellen die vom Partnerunternehmen als zu vertraulich klassifiziert werden, sind innerhalb dieser Arbeit als unzugänglich deklariert. 
+
+\subsection{Skalenentwicklung und qualitative Inhaltsanalyse}
+
+Um verlässliche Messinstrumente zu entwickeln, orientiert sich der Prozess an bewährten Regeln der Skalenentwicklung. Nach \cite{devellis:scale_development2017} sind dabei vor allem drei Qualitätsmerkmale entscheidend:
+
+\begin{itemize}
+    \item \textbf{Redundanzeliminierung}: Es werden keine Merkmale erhoben, die inhaltlich fast das Gleiche abfragen (Redundanz).
+    \item \textbf{Essenzialität}: Die Erhebung konzentriert sich strikt auf Informationen, die für die Beantwortung der Forschungsfrage wirklich notwendig sind.
+    \item \textbf{Praktikabilität}: Der Umfang der Datenerhebung wird so gewählt, dass er zeitlich und organisatorisch im geplanten Rahmen bleibt.
+\end{itemize}
+
+\noindent Die qualitative Inhaltsanalyse nach \cite{mayring:qualitative2015} dient dazu, große Mengen an Informationen systematisch auszuwerten und zusammenzufassen. Zentral ist hierbei ein fester Regelkatalog (der Kodierleitfaden): Jedes zu untersuchende Merkmal wird genau definiert, durch ein konkretes Beispiel (Ankerbeispiel) belegt und durch klare Regeln von anderen Kategorien abgegrenzt. Dieses Vorgehen stellt sicher, dass ungeordnete Informationen in klar definierte und auswertbare Kategorien überführt werden.

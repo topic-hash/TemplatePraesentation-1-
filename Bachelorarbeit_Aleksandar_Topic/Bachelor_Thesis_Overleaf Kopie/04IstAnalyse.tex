@@ -1,0 +1,102 @@
+\section{Ist-Analyse}
+\label{sec:IstAnalyse}
+
+% Ziel: 4-5 Seiten
+% Inhalt: Stakeholder, Konfigurationsprozesse, Pain Points, fragmentiertes Wissen
+% Quellen: Zuin (Configuration Challenges), Nonaka (SECI), Polanyi (Tacit Knowledge)
+
+Dieses Kapitel analysiert den Status quo der GRACE-Konfiguration vor Einführung der optimierten Prozesse und Werkzeuge. Die Darstellung fokussiert sich auf die organisatorischen Rahmenbedingungen, die bestehenden Konfigurationsvarianten und die identifizierten Problemfelder.
+
+\subsection{Teamstruktur}
+\label{subsec:Teamstruktur}
+
+Das GRACE-Konfigurationsteam umfasst zum Zeitpunkt der Arbeit 5 Personen mit unterschiedlichen Hintergründen: Softwareentwickler mit APS-Kenntnissen, Operations-Research-Consultants und der Autor als dualer Student. Diese kleine Teamgröße hat zwei Implikationen:
+
+\begin{itemize}
+    \item \textbf{Engpass-Risiko:} Jedes Teammitglied trägt kritisches Wissen. Ausfälle oder Fluktuation gefährden die Handlungsfähigkeit.
+    \item \textbf{Wissensfragmentierung:} Unterschiedliche Spezialisierungen führen zwar zu komplementärem Know-How, jedoch liegt das Wissen ohne eine zentrale und strukturierte Dokumentation nur fragmentiert vor. 
+\end{itemize}
+
+\noindent Zum Zeitpunkt der Arbeit befinden sich sieben Kundenwerke in der Pilotphase, was intensive Betreuung erfordert. Formale Wissensmanagement-Aktivitäten sind durch die hohe Auslastung erschwert.
+
+
+\subsection{Aktuelle Konfigurationsprozesse}
+\label{subsec:AktuelleProzesse}
+
+Eine typische GRACE-Konfiguration umfasst ca. 20-30 Materialien, 10-20 Maschinen, 3-5 Produkte mit zugehörigen Prozessen, BOMs und Rezepten.\footnote{Quantitative Metriken abgeleitet aus internen Kundenprojekt-Daten (NDA-geschützt, nicht öffentlich hinterlegbar).} Zum Zeitpunkt der Ist-Analyse existieren zwei etablierte Konfigurationsvarianten, die je nach Kundenanforderungen und verfügbarer Datenlage eingesetzt werden. Die restlichen Informationen der Prozesse wurden aus den Präsentationsmaterialien zu GRACE und den Konfigurationsarbeiten während der Thesis abgeleitet.
+
+\subsubsection{Manuelle Konfiguration über GRACE UI}
+\label{subsubsec:ManuelleKonfiguration}
+
+Die manuelle Konfiguration erfolgt vollständig über die GRACE-Benutzeroberfläche. Der Prozess umfasst:
+
+\begin{enumerate}
+    \item Kickoff-Meeting zur Anforderungsklärung
+    \item Iterative Datenerhebung (Telefonate, E-Mails, Vor-Ort-Besuche)
+    \item Manuelle Eingabe aller Entitäten in GRACE-Oberfläche
+    \item Korrekturschleifen bei Validierungsfehlern
+    \item Abnahme und Go-Live
+\end{enumerate}
+
+\noindent Die Durchlaufzeit beträgt durchschnittlich 8 Wochen (2 Monate) inklusive Kommunikationszyklen mit dem Kunden.
+
+\subsubsection{Importer-basierte Konfiguration}
+\label{subsubsec:ImporterKonfiguration}
+
+Bei Kunden mit strukturierten Vorsystemen (ERP, MES) kann ein kundenspezifischer Importer entwickelt werden, der Konfigurationsdaten direkt aus den Quellsystemen extrahiert und in GRACE-konforme JSON-Strukturen transformiert. 
+\\Dieser Ansatz reduziert die manuelle Eingabe erheblich, erfordert jedoch:
+\begin{itemize}
+    \item Initiale Entwicklung des Importers (Aufwand: 1-2 Wochen)
+    \item Zugang zu strukturierten Quelldaten (oft nicht gegeben)
+    \item Mapping-Logik zwischen Kundensystem und GRACE-Schema
+    \item Manuelle Nachbearbeitung, da Importer nicht alle Feldtypen abdecken
+\end{itemize}
+
+\noindent Die Importer-basierte Variante ist ressourcenintensiv in der Vorbereitung und wirtschaftlich erst bei vollständiger Durchsicht der Daten und Produktionsumgebungen sinnvoll. In der Praxis kommt sie bei ca. 80\% der Konfigurationsprojekte zum Einsatz, jedoch erst wenn alle Variablen der Produktion bekannt sind. Die Vollständige Durchsicht der Daten erfordert meistens einen vorgelagerten Ablauf der Manuellen Konfiguration über die GRACE UI. Die Erkenntnisse aus dem manuellen Durchlauf werden analysiert, um sie dann für den Importer zu verallgemeinern. Nach der Verallgemeinerung können alle restlichen Datenreihen die für die Initialkonfigurationen nicht genutzt worden sind automatisch importiert und hinzukommende Daten immer wieder verarbeitet werden.
+
+
+\subsection{Identifizierte Probleme}
+\label{subsec:Probleme}
+
+Die Analyse identifizierte fünf zentrale Problemfelder, die \cite{zuin:llm_tacit_knowledge2025} als typisch für Konfigurationsmanagement beschreiben.
+
+\subsubsection{Fragmentierung des Konfigurationswissens}
+\label{subsubsec:Wissensfragmentierung}
+
+Relevantes Wissen ist über mehrere Quellen verteilt: Azure DevOps Wikis, E-Mail-Korres-pondenz, Git-Historie, interne Dokumente und persönliche Erfahrung. Es existiert keine Single Source of Truth. Die Manifestation im Demo-Projekt zeigt: 48\% doppelte Materialien (13 von 27), drei simultane ID-Konventionen (numerisch, UUID, kebab-case), Version-Inkonsistenzen (v1-v6). Es ist zu bemerken, dass manchmal auch bestimmte IDs von Kunden gewünscht sind und es deshalb auch zu unterschiedlichen ID-Konventionen kommen kann. Die Fragmentierung des Wissens ist auch bei den Kunden selbst ein großes Problem.\\
+
+\noindent Diese Fragmentierung entspricht ebenso dem von \cite{nonaka:knowledge_creating_company1995} beschriebenen Problem der nicht-externalisierten Tacit Knowledge in Organisationen, welche die Grundlage zur Arbeit von \cite{zuin:llm_tacit_knowledge2025} darstellt.
+
+\subsubsection{Wissensträgerabhängigkeit}
+\label{subsubsec:Wissenstraegerabhaengigkeit}
+
+Kritisches Konfigurationswissen ist bei wenigen Experten gebunden. Der Verlust eines Teammitglieds würde erhebliche Wissenslücken verursachen - ein Risiko, das \cite{polanyi:tacit_dimension1966} mit \glqq we can know more than we can tell\grqq{} charakterisiert.
+
+\subsubsection{Fehlende Standardisierung}
+\label{subsubsec:FehlendeStandardisierung}
+
+Es existiert kein einheitliches Vorgehen bei der Konfiguration. Die Qualität variiert je nach Bearbeiter und Vorgehen. Validierungsmechanismen vor dem Import fehlen weitgehend.
+
+\subsubsection{Anforderungen an Datenhoheit}
+\label{subsubsec:Datenhoheit}
+
+Kundenkonfigurationen enthalten sensible Produktionsdaten (Rezepturen, Kapazitäten, Schichtpläne), die unter DSGVO-Anforderungen und NDA-Verpflichtungen stehen. Cloud-basierte Automatisierungsansätze würden Datentransfer an Drittanbieter bedeuten und sind aus Compliance-Gründen nicht akzeptabel. Diese Anforderung schränkt die Auswahl technischer Lösungsansätze erheblich ein.
+
+\subsubsection{Quantitative Problemmanifestationen}
+\label{subsubsec:QuantitativeProbleme}
+
+\begin{itemize}
+    \item \textbf{Hohe Fehlerrate:} 10-15 Fehler pro Konfiguration im Durchschnitt
+    \item \textbf{Geringe Vollständigkeit:} 60-70\% der Pflichtfelder korrekt ausgefüllt
+    \item \textbf{Keine Reproduzierbarkeit:} Fehlende zentrale Wissensquelle führt zu mindestens 3 Überarbeitungszyklen bis zur korrekten Konfiguration
+    \item \textbf{Lange Durchlaufzeit:} ~8 Wochen Kalenderlaufzeit für initiale Konfiguration \footnote{Quantitative Metriken abgeleitet aus internen Kundenprojekt-Daten (NDA-geschützt, nicht öffentlich hinterlegbar).}
+\end{itemize}
+
+
+\subsection{Demo-Werk als empirische Grundlage}
+\label{subsec:DemoWerk}
+Der seitcom GmbH wurde gewährt auf der EC Conference Digitalisation am 6. November 2025 ein Showcasing von GRACE durchzuführen. Aufgrund des Branchenumfelds wäre ein Demo-Werk aus der Lack- und Farbenindustrie ein ideales Showcasing-Objekt. Parallel zur Analyse der bestehenden Konfigurationsprozesse wurde ein synthetisches Demo-Werk zur Präsentation der Fähigkeiten von GRACE entwickelt und auf der EC Conference Digitalisation präsentiert. Das Werk musste eine branchengetreue Produktion abbilden. Aus diesem Grund wird es hier als Teil der Ist-Analyse aufgeführt auch wenn die Demo erst kurz nach dem Beginn der Bearbeitungszeit verfügbar war. 
+
+\noindent Die Entwicklung erfüllte eine duale Funktion: Showcasing-Tool für Kundenakquise und empirische Grundlage für die systematische Erfassung der GRACE-Konfigurationsanfor-derungen. Die Analyse dieses Projekts bildete die Basis für das Erstellen anderer Artefakte. (siehe Kapitel~\ref{sec:Methodik}).
+
+\noindent Das Demo-Werk simuliert eine Pigmentpasten-Produktion mit drei Farbvarianten (Weiß, Rot, Blau) und umfasst 22 Materialien, 7 Maschinen, 3 Produkten mit zugehörigen BOMs, Prozessen und Rezepten \citep{grace:demo_werk_restored2026}. Eine detailliertere Aufschlüsselung findet sich in späteren Kapiteln.  

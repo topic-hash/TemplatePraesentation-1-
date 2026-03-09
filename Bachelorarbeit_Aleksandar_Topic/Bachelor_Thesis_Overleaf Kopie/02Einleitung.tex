@@ -1,0 +1,66 @@
+\section{Einleitung}
+\label{sec:Einleitung}
+
+% Ziel: 3-4 Seiten (~1000 Wörter)
+% Inhalt: Problemstellung, Forschungsfrage, Zielsetzung, Aufbau der Arbeit
+% Quellen: Nonaka (SECI), Polanyi (Tacit Knowledge)
+
+GRACE (Green Renewable AI-powered
+Computing Environment) ist ein Advanced Planning and Scheduling (APS)-Softwaresystem der seitcom GmbH, das die Welt der Industrie komplett revolutionieren möchte. Das Partnerunternehmen möchte mit GRACE nicht wie typische Repräsentanten von APS-Produkten einfach nur eine Ergänzung der Planungsfunktionen von Enterprise-Resource-Planning (ERP)-Systemen darstellen, sondern die Notwendigkeit der manuellen Planung komplett ablösen. Dieses Vorhaben soll unter Berücksichtigung aller in der Produktion relevanten Constraints CO\textsubscript{2}-optimiert ablaufen. Ein hochkomplexer Prozess, der einen hohen Aufwand für den Konfigurationsprozess des Systems rechtfertigt. Deshalb besteht beim Partnerunternehmen ein starkes Bedürfnis diesen Prozess zu optimieren und zu verbessern. Jeder Prozent an Effizienz den die Konfiguration dazu gewinnt, bedeutet früheres Deployment und einen früheren Erfolg der Software. Diese Arbeit möchte einen Grundstein für die Optimierung des Konfigurationsprozesses legen. In den folgenden Abschnitten der Einleitung wird der Gegenstand dieser Arbeit noch genauer erläutert.
+\\\\
+Zum Zeitpunkt dieser Arbeit befindet sich GRACE in der Pilotphase mit sieben Kundenwerken. Dies impliziert evolvierende Datenstrukturen, fragmentierte Dokumentation und intensive Betreuung durch ein kleines Konfigurationsteam von 5 Personen. Die Pilotphase ist durch eine charakteristische Eigenschaft geprägt: Formale Dokumentation existiert kaum, stattdessen fungiert der Quellcode selbst als primäre Dokumentationsquelle (\glqq Code as Documentation\grqq{}). Diese Situation stellt besondere Anforderungen an die Wissenserfassung und -weitergabe.
+
+
+\subsection{Problemstellung}
+\label{subsec:Problemstellung}
+
+Vor dem produktiven Einsatz von GRACE muss für jeden Kunden eine initiale Konfiguration erstellt werden. Diese umfasst sechs grundlegende Entitätstypen: Materials (Roh-, Hilfs- und Betriebsstoffe), Machines (Produktionsressourcen), Products (Endprodukte), Processes (Fertigungsschritte), BOMs (Stücklistenstrukturen) und Recipes (Verknüpfungen zwischen Material, BOM und Prozess). Die sechs Entitäten stellen die Kernkonfiguration. Weitere existierende Entitätstypen werden im Rahmen dieser Arbeit nicht behandelt, um den zeitlichen Rahmen einzuhalten. Die Abhängigkeiten zwischen den Grundentitäten erfordern eine spezifische Erstellungsreihenfolge und die Einhaltung referenzieller Integrität: Ein Recipe kann beispielsweise erst erstellt werden, wenn die referenzierten Materials, BOMs und Processes bereits existieren. Im Status quo erfordert diese initiale Konfiguration bis zu acht Wochen Durchlaufzeit. Die Herausforderung ist dabei zweifacher Natur: Einerseits besteht eine beachtliche \textit{technische Komplexität} durch die JSON-Strukturen mit ihren Abhängigkeiten, Validierungsregeln und Datentypen. Andererseits liegt das fundamentale Problem in der \textit{Fragmentierung des Konfigurationswissens}. Relevante Informationen sind über Azure DevOps Wikis, E-Mail-Korrespondenzen, Git-Historien, interne Dokumente und persönliche Erfahrung verteilt. Diese Situation entspricht dem von \cite{nonaka:knowledge_creating_company1995} beschriebenen Problem der Wissensexternalisierung: Experten verfügen über implizites Wissen (\glqq tacit knowledge\grqq{}), das schwer artikulierbar und transferierbar ist.
+Dies ist nicht nur intern bei der seitcom ein Problem, sondern auch sehr häufig bei den Kunden der Fall, das Produktionswissen ist dort auch häufig fragmentiert. Das Produktionswissen ist eine Teilmenge des Konfigurationswissens und die Problematik überspannt somit sowohl interne als auch externe Systeme, beide Ebenen erfordern Defragmentierung. 
+\\\\
+\cite{polanyi:tacit_dimension1966} prägte für dieses Phänomen die Formulierung \glqq We can know more than we can tell\grqq{} - Menschen können mehr wissen, als sie explizit ausdrücken können. Im Kontext der GRACE-Konfiguration manifestiert sich dies konkret: Erfahrene Konfigurationsmitarbeiter wissen intuitiv, welche Validierungsregeln einzuhalten sind, welche Abhängigkeiten zwischen Entitäten bestehen und welche Zeiteinheiten das System erwartet. Dieses Wissen wurde jedoch nie systematisch dokumentiert, sondern existiert primär in den Köpfen weniger Personen.
+\\\\
+Die Konsequenzen dieser dualen Herausforderung zeigten sich exemplarisch bei einer Kundenkonfiguration: Das relevante Wissen war auf drei Personen verteilt und lag in keiner strukturierten Form vor. Prozessbeschreibungen waren unvollständig, sodass mehrfach verschiedene Kollegen konsultiert werden mussten. Die Datengrundlage verteilte sich auf vier separate Dokumente, von denen eines nur zufällig verfügbar war, weil ein Kollege die Notizen eines anderen gesichert hatte. Zudem waren die Kundendaten nur für einen von vier Prozessen weitgehend vollständig. Diese Fragmentierung führte zu zwei großflächigen Überarbeitungen der Konfiguration und der Korrektur von 10-15 verschiedenen Fehlern bei einem Kunden. Aktuelle Forschung zeigt, dass Organisationen bei Mitarbeiterwechseln kritisches Wissen verlieren, wenn keine systematischen Externalisierungsmechanismen existieren, ein weiteres Problem, das gelöst werden muss \citep{llm:tacit_knowledge2025}.
+
+
+\subsection{Forschungsfrage und Zielsetzung}
+\label{subsec:Forschungsfrage}
+
+Aus der beschriebenen Problemstellung leiten sich vier zentrale Forschungsfragen ab:
+
+\begin{description}
+    \item[FF1:] Wie kann fragmentiertes Konfigurationswissen systematisch externalisiert werden?
+    \item[FF2:] Welche Artefakte sind notwendig, um reproduzierbaren Wissenstransfer zu ermöglichen?
+    \item[FF3:] Inwieweit kann LLM-gestützte Automatisierung den Konfigurationsprozess optimieren?
+    \item[FF4:] Welche quantifizierbaren Verbesserungen sind hinsichtlich Zeit, Vollständigkeit und Fehlerrate erreichbar?
+\end{description}
+
+\noindent Diese Fragen adressieren die theoretische Dimension (FF1, FF2) ebenso wie die praktische Umsetzung (FF3) und die empirische Validierung (FF4). Gemeinsam bilden sie den Untersuchungsrahmen für die vorliegende Arbeit.
+\\\\
+Die Arbeit verfolgt drei komplementäre Ziele:
+\\\\
+\textbf{Primärziel:} Entwicklung einer Drei-Artefakte-Architektur zur systematischen Wissensexternalisierung. Diese besteht aus (1) einem strukturierten Erhebungsfragebogen zur Erfassung kundenspezifischer Produktionsdaten, (2) einem Entity Mapping Workbook zur formalen Definition der JSON-Schemata aller Entitätstypen und (3) Standard Operating Procedures (SOPs) zur Prozessstandardisierung. Die Standardisierung der Prozesse wurde durch BPMN-Modelle erweitert, außerdem dienen die Prozessmodelle auch als Hilfsmittel zur Analyse und Evaluation. Die Architektur folgt dem SECI-Modell nach \cite{nonaka:knowledge_creating_company1995}: Der Fragebogen externalisiert implizites Kundenwissen, das Entity Mapping Workbook kombiniert explizites Schemawissen mit den erhobenen Daten, und die SOPs ermöglichen die Internalisierung durch standardisierte Arbeitsanweisungen.
+\\\\ \textbf{Sekundärziel:} Die Entwicklung eines synthetischen Demo-Werks zur Validierung der Drei-Artefakte-Architektur unter realistischen Bedingungen. Das Demo-Werk simuliert eine Pigmentpaste-Produktion und diente zwei Zwecken: (1) Präsentation der GRACE-Fähigkeiten auf der EC Conference Digitalisation, zur Akquise neuer Kundenkontakte und (2) als empirische Grundlage für die Entwicklung des Entity Mapping Workbooks durch Reverse Engineering der JSON-Strukturen.
+\\\\
+\textbf{Tertiärziel:} LLM-gestützte Automatisierung der Entitätsgenerierung durch den \glqq Master Creator\grqq{} - ein Chat-basiertes Tool, das auf Basis strukturierter Eingaben valide GRACE-Konfigurationen erzeugt. Im Gegensatz zum fragmentierten Status quo ermöglicht der Master Creator die direkte Eingabe von Notizen und Anforderungen, woraus er Prozessskizzen, Entity-Entwürfe und Session-Zusammenfassungen generiert. Das Tool nutzt ein lokal deployetes LLM, um Datenhoheitsanforderungen (DSGVO, NDA) zu erfüllen \citep{hummel:data_sovereignty2021}.
+\\\\
+Die vorliegende Arbeit strebt eine signifikante Zeitreduktion, eine Vollständigkeit von mehr als 90\% und eine deutliche Reduktion der Fehlerrate an. Diese Ziele werden durch kontrollierte Experimente empirisch ermittelt und validiert. Sie adressieren sowohl die Effizienz (Zeitreduktion) als auch die Qualität (Vollständigkeit, Fehlerrate) des Konfigurationsprozesses.
+
+
+\subsection{Aufbau der Arbeit}
+\label{subsec:Aufbau}
+
+Die Arbeit gliedert sich in neun Kapitel, die einen durchgängigen argumentativen Bogen von der Problemidentifikation über die Lösungsentwicklung bis zur empirischen Validierung spannen:
+\\\\
+\textbf{Kapitel 3 (Grundlagen)} legt das theoretische Fundament: APS-Systeme und ihre Rollen in der Supply Chain und Optimierung von Produktionsplanung. Außerdem legt es Grundlagen für die Datenstrukturierung, Wissensmanagement nach dem SECI-Modell, BPMN-Prozessmodellierung und Large Language Models als technologische Basis der Automatisierung. Im Prinzip alle Grundlagen die man kennen sollte um diese Arbeit verstehen zu können.
+\\\\
+\textbf{Kapitel 4 (Ist-Analyse)} präsentiert die systematische Analyse des bestehenden Konfigurationsprozesses. Zwei Prozessvarianten werden identifiziert (manuelle Konfiguration über GRACE UI und Importer-basierte Konfiguration) und hinsichtlich ihrer Stärken und Schwächen evaluiert. Fünf zentrale Problemfelder werden dokumentiert. Das Demo-Werk wird als empirische Grundlage eingeführt.
+\\\\
+\textbf{Kapitel 5 (Methodik)} beschreibt die methodische Vorgehensweise nach dem Action-Research-Ansatz \citep{lewin:action_research1946}. Diese Methodik eignet sich besonders, wenn der Forscher in den Problemkontext eingebettet ist und traditionelle Experteninterviews aufgrund von Ressourcenbeschränkungen nicht praktikabel sind. Der iterative Forschungszyklus wird dokumentiert, ebenso die Ko-Evolution der entwickelten Artefakte und das Evaluationsdesign.
+\\\\
+\textbf{Kapitel 6 (Implementierung)} entwickelt die Drei-Artefakte-Architektur im Detail und dokumentiert ihre technische Umsetzung: Der Erhebungsfragebogen wird nach Prinzipien der Skalenentwicklung \citep{devellis:scale_development2017} erzeugt. Das Entity Mapping Workbook dokumentiert die JSON-Schemata aller Entitätstypen. Die SOPs standardisieren die Arbeitsabläufe. Der Master Creator wird als LLM-gestütztes Automatisierungstool entwickelt, inklusive Systemarchitektur, Ollama-Integration und Validierungsmechanismen. Der neue Konfigurationsprozess wird vorgestellt.
+\\\\
+\textbf{Kapitel 7 (Evaluation)} evaluiert die Ergebnisse problemorientiert entlang der fünf identifizierten Problemfelder. Für jedes Problemfeld werden Lösungsartefakte, Validierungsmethoden und der Grad der Problemlösung dokumentiert. Ein kontrolliertes Experiment validiert die quantitativen Verbesserungen hinsichtlich Zeitreduktion, Fehlerrate und Vollständigkeit. Die Ergebnisse werden im Kontext vergleichbarer Ansätze im Stand der Forschung eingeordnet.
+\\\\
+\textbf{Kapitel 8 (Fazit)} fasst die Erkenntnisse zusammen und beantwortet die Forschungsfragen. Die Schwierigkeiten bei der Bearbeitung werden reflektiert und die konkreten Ergebnisse sowie deren Validierung zusammengefasst.
+\\\\
+\textbf{Kapitel 9 (Ausblick)} diskutiert Weiterentwicklungspotenziale und zukünftige Forschungsrichtungen. Technische Erweiterungen und organisatorische Potenziale werden aufgezeigt. Die Transferierbarkeit auf andere Enterprise-Systeme wird erörtert. Automatisierungsvisionen werden als vielversprechende Zukunftsperspektive präsentiert.

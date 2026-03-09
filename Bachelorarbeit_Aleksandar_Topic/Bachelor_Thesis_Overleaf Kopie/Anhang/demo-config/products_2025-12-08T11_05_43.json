@@ -1,0 +1,26 @@
+[
+    {
+        "id": "f3b0ed29-8353-4a7a-ada7-a2b46fd00f05",
+        "name": "Blue Pigment Paste",
+        "material": {
+            "version": 1,
+            "id": "3c393082-61fd-4b14-8666-03e46673229e"
+        }
+    },
+    {
+        "id": "f75ad939-9236-44fa-bd9f-edd47aad4367",
+        "name": "Red Pigment Paste",
+        "material": {
+            "version": 1,
+            "id": "95641e5c-f5d8-4d98-9d17-4b9120851bb5"
+        }
+    },
+    {
+        "id": "c35381c8-4f9b-4649-9701-2e83a25e81ae",
+        "name": "White Pigment Paste",
+        "material": {
+            "version": 1,
+            "id": "abb1d981-b73d-4f72-95b7-615c78903da6"
+        }
+    }
+]

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APS Master Creator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fa-solid fa-industry"></i>
+                    <h2>APS Creator</h2>
+                </div>
+            </div>
+
+            <div class="sidebar-content">
+                <!-- Stats -->
+                <div class="stats-section">
+                    <h3>Entities</h3>
+                    <div class="stat-item" data-tab="materials">
+                        <i class="fa-solid fa-cube"></i>
+                        <span class="stat-label">Materials</span>
+                        <span class="stat-count" id="count-materials-sidebar">0</span>
+                    </div>
+                    <div class="stat-item" data-tab="machines">
+                        <i class="fa-solid fa-gears"></i>
+                        <span class="stat-label">Machines</span>
+                        <span class="stat-count" id="count-machines-sidebar">0</span>
+                    </div>
+                    <div class="stat-item" data-tab="products">
+                        <i class="fa-solid fa-box"></i>
+                        <span class="stat-label">Products</span>
+                        <span class="stat-count" id="count-products-sidebar">0</span>
+                    </div>
+                    <div class="stat-item" data-tab="processes">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                        <span class="stat-label">Processes</span>
+                        <span class="stat-count" id="count-processes-sidebar">0</span>
+                    </div>
+                    <div class="stat-item" data-tab="boms">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        <span class="stat-label">BOMs</span>
+                        <span class="stat-count" id="count-boms-sidebar">0</span>
+                    </div>
+                    <div class="stat-item" data-tab="recipes">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span class="stat-label">Recipes</span>
+                        <span class="stat-count" id="count-recipes-sidebar">0</span>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="actions-section">
+                    <button id="download-btn" class="sidebar-btn btn-download-action">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Download All</span>
+                    </button>
+                    <button id="validate-btn" class="sidebar-btn btn-validate">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Validate</span>
+                    </button>
+                    <button id="summarize-btn" class="sidebar-btn btn-summarize">
+                        <i class="fa-solid fa-file-lines"></i>
+                        <span>Chat zusammenfassen</span>
+                    </button>
+                    <button id="clear-btn" class="sidebar-btn btn-clear">
+                        <i class="fa-solid fa-trash"></i>
+                        <span>Clear All</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <button id="sidebar-toggle" class="sidebar-toggle" title="Sidebar ein-/ausblenden">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="header-content">
+                    <h1>Master Creator</h1>
+                    <p>AI-powered entity creation for APS systems</p>
+                </div>
+            </header>
+
+            <!-- Chat Section -->
+            <section class="chat-section">
+                <div id="messages" class="messages-container"></div>
+                <div class="input-area">
+                    <input type="text" id="user-input"
+                           placeholder="Describe what you want to create..."
+                           autocomplete="off">
+                    <button id="send-btn" class="send-btn">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Entity Tabs -->
+            <section class="entities-section">
+                <div class="tabs">
+                    <button class="tab active" data-tab="materials">
+                        <i class="fa-solid fa-cube"></i>
+                        <span>Materials</span>
+                        <span class="tab-count" id="count-materials">0</span>
+                    </button>
+                    <button class="tab" data-tab="machines">
+                        <i class="fa-solid fa-gears"></i>
+                        <span>Machines</span>
+                        <span class="tab-count" id="count-machines">0</span>
+                    </button>
+                    <button class="tab" data-tab="products">
+                        <i class="fa-solid fa-box"></i>
+                        <span>Products</span>
+                        <span class="tab-count" id="count-products">0</span>
+                    </button>
+                    <button class="tab" data-tab="processes">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                        <span>Processes</span>
+                        <span class="tab-count" id="count-processes">0</span>
+                    </button>
+                    <button class="tab" data-tab="boms">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        <span>BOMs</span>
+                        <span class="tab-count" id="count-boms">0</span>
+                    </button>
+                    <button class="tab" data-tab="recipes">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span>Recipes</span>
+                        <span class="tab-count" id="count-recipes">0</span>
+                    </button>
+                </div>
+
+                <div class="tab-content">
+                    <div id="materials-panel" class="entity-panel active">
+                        <div class="empty-state">
+                            <i class="fa-solid fa-cube"></i>
+                            <p>No materials yet</p>
+                            <span>Try: "I need Titanium Dioxide"</span>
+                        </div>
+                    </div>
+                    <div id="machines-panel" class="entity-panel">
+                        <div class="empty-state">
+                            <i class="fa-solid fa-gears"></i>
+                            <p>No machines yet</p>
+                            <span>Try: "We have 3 mixers"</span>
+                        </div>
+                    </div>
+                    <div id="products-panel" class="entity-panel">
+                        <div class="empty-state">
+                            <i class="fa-solid fa-box"></i>
+                            <p>No products yet</p>
+                            <span>Try: "We produce White Paste"</span>
+                        </div>
+                    </div>
+                    <div id="processes-panel" class="entity-panel">
+                        <div class="empty-state">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                            <p>No processes yet</p>
+                            <span>Try: "Dosing 5min → Mixing 15min"</span>
+                        </div>
+                    </div>
+                    <div id="boms-panel" class="entity-panel">
+                        <div class="empty-state">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                            <p>No BOMs yet</p>
+                            <span>Try: "For 1000kg: 500kg Titanium, 300kg Wax"</span>
+                        </div>
+                    </div>
+                    <div id="recipes-panel" class="entity-panel">
+                        <div class="empty-state">
+                            <i class="fa-solid fa-list-check"></i>
+                            <p>No recipes yet</p>
+                            <span>Create materials, BOMs, and processes first</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Download Section -->
+            <section class="download-section">
+                <h3>
+                    <i class="fa-solid fa-file-export"></i>
+                    Export Individual Types
+                </h3>
+                <div class="download-grid">
+                    <button onclick="downloadMaterials()" class="download-card">
+                        <i class="fa-solid fa-cube"></i>
+                        <span>Materials</span>
+                    </button>
+                    <button onclick="downloadMachines()" class="download-card">
+                        <i class="fa-solid fa-gears"></i>
+                        <span>Machines</span>
+                    </button>
+                    <button onclick="downloadProducts()" class="download-card">
+                        <i class="fa-solid fa-box"></i>
+                        <span>Products</span>
+                    </button>
+                    <button onclick="downloadProcesses()" class="download-card">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                        <span>Processes</span>
+                    </button>
+                    <button onclick="downloadBOMs()" class="download-card">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        <span>BOMs</span>
+                    </button>
+                    <button onclick="downloadRecipes()" class="download-card">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span>Recipes</span>
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+\newpage
+\addcontentsline{toc}{section}{Anhang}
+\section*{Anhang}
+
+% Anhang-Übersicht:
+% A: Fragebogen Vollversion (96 Fragen)
+% B: Fragebogen Kompakt (15 Fragen)
+% C: Mapping-Workbook (alle 6 Entity-Typen)
+% D: SOPs (alle 3 vollständig)
+% E: Master Creator System Prompt
+% E.1: Vollständiger Quellcode (optional)
+% F: Beispiel-JSONs (je 1 pro Entity-Typ)
+% G: ERM-Diagramme
+% H: BPMN-Diagramme (v1a, v1b, v2)
+
+\subsection*{Übersicht: Ordnerstruktur des digitalen Anhangs}
+
+Alle Anhangdateien befinden sich im Verzeichnis \texttt{/Anhang/} und sind wie folgt organisiert:
+
+\begin{description}
+\item[Artefakte/] Drei-Artefakte-Architektur (SOPs, Workbook, Kardinalitäten)
+\begin{itemize}
+    \item \texttt{SOP\_01\_Kundenworkshop\_durchfuehren.md}
+    \item \texttt{SOP\_02\_Master\_Creator\_nutzen.md}
+    \item \texttt{SOP\_03\_JSONs\_in\_GRACE\_importieren.md}
+    \item \texttt{GRACE\_Entity\_Mapping\_Workbook.md}
+    \item \texttt{GRACE\_ENTITY\_RELATIONSHIPS\_AND\_CARDINALITIES.md}
+    \item \texttt{CARDINALITY-RELATIONS.md}
+\end{itemize}
+
+\item[Fragebogen/] GRACE-Onboarding-Fragebogen (zwei Versionen)
+\begin{itemize}
+    \item \texttt{GRACE\_Onboarding\_Fragebogen96.pdf} (Vollversion, 96 Fragen)
+    \item \texttt{GRACE\_Onboarding\_Fragebogen15.pdf} (Kompaktversion, 15 Fragen)
+\end{itemize}
+
+\item[master-creator/] Master Creator Quellcode (LLM-gestütztes Tool)
+\begin{itemize}
+    \item \texttt{app.js} (Kernlogik: AI-Validierung, Auto-Erstellung)
+    \item \texttt{index.html} (Chat-Interface + Entity-Visualisierung)
+    \item \texttt{style.css} (UI-Styling)
+    \item \texttt{README.md} (Dokumentation)
+\end{itemize}
+
+\item[System-Prompt/] Master Creator System Prompt
+\begin{itemize}
+    \item \texttt{Master\_Creator\_System\_Prompt.md}
+\end{itemize}
+
+\item[JSONS\_example/] Beispiel-Konfigurationen (Demo-Werk, n=18 Experiment)
+\begin{itemize}
+    \item \texttt{materials\_*.json} (7 Materials)
+    \item \texttt{machine\_resources\_*.json} (3 Machines)
+    \item \texttt{products\_*.json} (3 Products)
+    \item \texttt{production\_processes\_*.json} (6 Processes)
+    \item \texttt{boms\_*.json} (3 BOMs)
+    \item \texttt{recipes\_*.json} (3 Recipes)
+    \item \texttt{processes.json} (Legacy-Format)
+\end{itemize}
+
+\item[Restored\_JSONS/] NAS-Crash-Rekonstruktion (n=1, explorativ)
+\begin{itemize}
+    \item \texttt{materials\_*.json} (27 Materials)
+    \item \texttt{machine\_resources\_*.json} (8 Machines)
+    \item \texttt{products\_*.json} (3 Products)
+    \item \texttt{production\_processes\_*.json} (6 Processes)
+    \item \texttt{boms\_*.json} (3 BOMs)
+    \item \texttt{recipes\_*.json} (3 Recipes)
+    \item \texttt{properties\_*.json} (Zusätzliche Eigenschaften)
+\end{itemize}
+
+\item[demo-config/] Demo-Werk Konfiguration (vollständig)
+\begin{itemize}
+    \item 14 JSON-Dateien (alle 6 Entity-Typen mit Backup-Versionen)
+    \item \texttt{Production\_Plan\_*.csv} (Beispiel-Produktionsplan)
+\end{itemize}
+
+\item[Prozesse/] BPMN-Diagramme (drei Prozessvarianten)
+\begin{itemize}
+    \item \texttt{bpmn-v1a.pdf} (Vollständig manuelle Konfiguration)
+    \item \texttt{bpmn-v1b.pdf} (Konfiguration mit Importer)
+    \item \texttt{bpmn-v2.pdf} (LLM-gestützte Konfiguration)
+\end{itemize}
+
+\item[ER-Diagramm/] Entity-Relationship-Diagramm
+\begin{itemize}
+    \item \texttt{ER\_UML\_Card.pdf} (6 GRACE-Entitäten mit Kardinalitäten)
+\end{itemize}
+
+\item[Architektur/] Master Creator Architektur-Diagramm
+\begin{itemize}
+    \item \texttt{Master\_Creator\_Arch.pdf}
+\end{itemize}
+
+\item[Transkript/] Gesprächstranskript Fragebogen-Validierung
+\begin{itemize}
+    \item \texttt{Gespraechstranskript\_Fragenkatalog\_2025-01-15.pdf}
+\end{itemize}
+
+\item[APS-Interviewskript/] Interviewleitfaden für APS-Konfiguration
+\begin{itemize}
+    \item \texttt{APS-Interviewskript.pdf}
+\end{itemize}
+
+\item[Fragensammlung\_Maschinenführer/] Zusätzliche Maschinenführer-Fragen
+\begin{itemize}
+    \item \texttt{Frage\_antworten.pdf}
+\end{itemize}
+
+\item[Präsentationen/] GRACE-Präsentationen und Pitch Decks
+\begin{itemize}
+    \item \texttt{GRACE Pitch Deck.pdf}
+    \item \texttt{GRACE Start Präsentation.pdf}
+    \item \texttt{Onboarding\_Grace.pdf}
+    \item 2 weitere Investor-Präsentationen
+\end{itemize}
+\end{description}

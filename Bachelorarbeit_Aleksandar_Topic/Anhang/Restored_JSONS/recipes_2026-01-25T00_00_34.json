@@ -1,0 +1,369 @@
+[
+    {
+        "id": "03a0db7b-7554-4b1f-b3b5-3dbf3f41d98d",
+        "name": "Weiße Pigmentpaste",
+        "resultingMaterial": {
+            "version": 3,
+            "id": "abb1d981-b73d-4f72-95b7-615c78903da6"
+        },
+        "bom": {
+            "version": 4,
+            "id": "2"
+        },
+        "productionProcess": {
+            "version": 3,
+            "id": "4e77aadd-9e4b-4e10-ad76-9fc5a0a2fcfb"
+        },
+        "itemAssociations": [],
+        "itemAssociationRules": [
+            {
+                "id": "019bf273-b9b3-720b-9b82-ab3739b2ddc8",
+                "name": "",
+                "processStepId": "dbefdb41-4945-42e9-bb46-6a583dff042f",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": false
+                },
+                "priority": 0
+            },
+            {
+                "id": "019bf273-b9b3-78c9-8fb9-1b9f59570925",
+                "name": "",
+                "processStepId": "ab5d89c9-a9a2-416b-835c-879a93b9eadf",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": true
+                },
+                "priority": 0
+            },
+            {
+                "id": "019bf273-b9b3-71e3-b43a-24e458a42a3d",
+                "name": "",
+                "processStepId": "019be659-bd30-7425-91a0-3410ee9c9866",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": false
+                },
+                "priority": 0
+            },
+            {
+                "id": "019bf273-b9b2-7e02-82b9-c04006040c97",
+                "name": "",
+                "processStepId": "1a25848d-1949-46b8-8585-fef125c4d75e",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": false
+                },
+                "priority": 0
+            },
+            {
+                "id": "019bf273-b9b2-7d54-b238-0865c0397f5d",
+                "name": "",
+                "processStepId": "187c4b7a-d3fc-4c7c-a195-f4b23fd8477f",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": false
+                },
+                "priority": 0
+            },
+            {
+                "id": "019bf273-b9b2-75dc-9e79-1f354ee14271",
+                "name": "",
+                "processStepId": "019be659-b1f6-75ae-93d2-b0942d141165",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": false
+                },
+                "priority": 0
+            },
+            {
+                "id": "019bf273-b9b2-74d0-90f0-2fb30a311f3f",
+                "name": "",
+                "processStepId": "187c4b7a-d3fc-4c7c-a195-f4b23fd8477f",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": false
+                },
+                "priority": 0
+            },
+            {
+                "id": "019bf273-b9b3-7642-ad2e-8dedfbe507d6",
+                "name": "",
+                "processStepId": "f96aa42d-230a-4c3f-bff3-d9d2fa3649da",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": false
+                },
+                "priority": 0
+            }
+        ],
+        "toolSelections": []
+    },
+    {
+        "id": "2",
+        "name": "Weiße Pigmentpaste (WP-1000)",
+        "itemAssociations": [],
+        "itemAssociationRules": [],
+        "toolSelections": []
+    },
+    {
+        "id": "3",
+        "name": "Rote Pigmentpaste (RP-1000)",
+        "itemAssociations": [],
+        "itemAssociationRules": [],
+        "toolSelections": []
+    },
+    {
+        "id": "32deeddd-d6fc-440e-a196-c9dee5674dd3",
+        "name": "Blaue Pigmentpaste",
+        "resultingMaterial": {
+            "version": 3,
+            "id": "3c393082-61fd-4b14-8666-03e46673229e"
+        },
+        "bom": {
+            "version": 4,
+            "id": "4"
+        },
+        "productionProcess": {
+            "version": 3,
+            "id": "4e77aadd-9e4b-4e10-ad76-9fc5a0a2fcfb"
+        },
+        "itemAssociations": [],
+        "itemAssociationRules": [
+            {
+                "id": "019bf273-6b59-7050-9189-25cebd0794c2",
+                "name": "",
+                "processStepId": "f96aa42d-230a-4c3f-bff3-d9d2fa3649da",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": false
+                },
+                "priority": 0
+            },
+            {
+                "id": "019bf273-6b59-7128-bb6e-10b77729c1a0",
+                "name": "",
+                "processStepId": "019be659-bd30-7425-91a0-3410ee9c9866",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": false
+                },
+                "priority": 0
+            },
+            {
+                "id": "019bf273-6b59-71db-84a1-de1ff85c9a60",
+                "name": "",
+                "processStepId": "187c4b7a-d3fc-4c7c-a195-f4b23fd8477f",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": false
+                },
+                "priority": 0
+            },
+            {
+                "id": "019bf273-6b59-7337-a907-7d4b3bde9a14",
+                "name": "",
+                "processStepId": "019be659-b1f6-75ae-93d2-b0942d141165",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": false
+                },
+                "priority": 0
+            },
+            {
+                "id": "019bf273-6b59-7c3d-a496-528b66ba8e72",
+                "name": "",
+                "processStepId": "1a25848d-1949-46b8-8585-fef125c4d75e",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": false
+                },
+                "priority": 0
+            },
+            {
+                "id": "019bf273-6b59-7d62-b424-ff9bb1b228d1",
+                "name": "",
+                "processStepId": "ab5d89c9-a9a2-416b-835c-879a93b9eadf",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": true
+                },
+                "priority": 0
+            },
+            {
+                "id": "019bf273-6b59-7eff-9490-2d878709a53a",
+                "name": "",
+                "processStepId": "dbefdb41-4945-42e9-bb46-6a583dff042f",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": false
+                },
+                "priority": 0
+            }
+        ],
+        "toolSelections": []
+    },
+    {
+        "id": "4",
+        "name": "Blaue Pigmentpaste (BP-1000)",
+        "itemAssociations": [],
+        "itemAssociationRules": [],
+        "toolSelections": []
+    },
+    {
+        "id": "bded17dc-275c-4250-b1e2-7e079b1d8c12",
+        "name": "Rote Pigmentpaste",
+        "resultingMaterial": {
+            "version": 3,
+            "id": "95641e5c-f5d8-4d98-9d17-4b9120851bb5"
+        },
+        "bom": {
+            "version": 4,
+            "id": "3"
+        },
+        "productionProcess": {
+            "version": 3,
+            "id": "4e77aadd-9e4b-4e10-ad76-9fc5a0a2fcfb"
+        },
+        "itemAssociations": [],
+        "itemAssociationRules": [
+            {
+                "id": "019bf273-a270-7b18-9e42-280e1f29a771",
+                "name": "",
+                "processStepId": "019be659-bd30-7425-91a0-3410ee9c9866",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": false
+                },
+                "priority": 0
+            },
+            {
+                "id": "019bf273-a270-7aae-a0f4-f31f0a2b5ce4",
+                "name": "",
+                "processStepId": "019be659-b1f6-75ae-93d2-b0942d141165",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": false
+                },
+                "priority": 0
+            },
+            {
+                "id": "019bf273-a270-7a05-a785-6d1209cda2b6",
+                "name": "",
+                "processStepId": "187c4b7a-d3fc-4c7c-a195-f4b23fd8477f",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": false
+                },
+                "priority": 0
+            },
+            {
+                "id": "019bf273-a270-77eb-a176-bc2a11b35b32",
+                "name": "",
+                "processStepId": "1a25848d-1949-46b8-8585-fef125c4d75e",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": false
+                },
+                "priority": 0
+            },
+            {
+                "id": "019bf273-a270-776a-b69a-284d37a1399b",
+                "name": "",
+                "processStepId": "f96aa42d-230a-4c3f-bff3-d9d2fa3649da",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": false
+                },
+                "priority": 0
+            },
+            {
+                "id": "019bf273-a270-747c-b942-96336810b828",
+                "name": "",
+                "processStepId": "ab5d89c9-a9a2-416b-835c-879a93b9eadf",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": true
+                },
+                "priority": 0
+            },
+            {
+                "id": "019bf273-a270-745e-b615-b96396ae9857",
+                "name": "",
+                "processStepId": "dbefdb41-4945-42e9-bb46-6a583dff042f",
+                "rule": {
+                    "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                    "type": "Predicate",
+                    "variable": "BomItemMaterialProperty",
+                    "operator": "Equal",
+                    "comparisonValue": false
+                },
+                "priority": 0
+            }
+        ],
+        "toolSelections": []
+    }
+]

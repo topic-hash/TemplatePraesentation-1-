@@ -1,0 +1,86 @@
+[
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "13",
+        "name": "Druckfiltersystem",
+        "initialUnits": 1,
+        "unitsAutoGrow": false,
+        "properties": []
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "4f1b6be0-3eff-420b-b82f-afca2eb441f4",
+        "name": "CIP-Reinigungssystem",
+        "initialUnits": 1,
+        "unitsAutoGrow": false,
+        "properties": []
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "5",
+        "name": "Wagensystem",
+        "initialUnits": 1,
+        "unitsAutoGrow": false,
+        "properties": []
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "5dae3918-02ed-4a7b-b989-2a853502bcb3",
+        "name": "Perlmühle",
+        "initialUnits": 1,
+        "unitsAutoGrow": false,
+        "properties": []
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "68987259-e3e6-422b-b08f-e0f330fc3671",
+        "name": "Dissolver",
+        "initialUnits": 1,
+        "unitsAutoGrow": false,
+        "properties": []
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "8c79c6d2-c088-4c60-8a92-cfc51ec7fff0",
+        "name": "Schraubenspindelpumpe",
+        "initialUnits": 1,
+        "unitsAutoGrow": false,
+        "properties": []
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "ea07c36a-c7a9-4a71-8f71-bc13614c3698",
+        "name": "Highspeed-Dispergierer",
+        "initialUnits": 1,
+        "unitsAutoGrow": false,
+        "properties": []
+    }
+]

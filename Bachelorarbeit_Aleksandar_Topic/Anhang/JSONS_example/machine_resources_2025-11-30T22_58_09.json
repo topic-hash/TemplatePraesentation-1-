@@ -1,0 +1,349 @@
+[
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "1",
+        "name": "Mixer",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "10",
+        "name": "Silo",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "11",
+        "name": "PVC-Pipe",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "12",
+        "name": "Softener-Pipe",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "13",
+        "name": "Pressure Filter System",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "14",
+        "name": "Barrel",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "15",
+        "name": "Scanner",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "16",
+        "name": "Vacuum Pump",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "17",
+        "name": "Pneumatic Hose",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "18",
+        "name": "Piping System",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "1854229d-da8d-4c67-ac7b-e9ce31173df9",
+        "name": "Gravity Feed",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "19",
+        "name": "Spektrophotometer",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "2",
+        "name": "Extruder",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "20",
+        "name": "Vibration Plate",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "21",
+        "name": "Conveyor Belt",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "22",
+        "name": "Water Pump",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "23",
+        "name": "Rotary Sieve",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "24",
+        "name": "Guillotine Cutter",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "materialHandling": {
+            "isEnabled": false
+        },
+        "isSpatial": false,
+        "id": "25",
+        "name": "Cooling Box",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "26",
+        "name": "Dryer",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "27",
+        "name": "Forklift",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "3",
+        "name": "Bucket",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "4",
+        "name": "Funnel",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "materialHandling": {
+            "isEnabled": false
+        },
+        "isSpatial": false,
+        "id": "4f1b6be0-3eff-420b-b82f-afca2eb441f4",
+        "name": "CIP-System",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "5",
+        "name": "Scale System",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "6",
+        "name": "Mixing Bowl",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "68987259-e3e6-422b-b08f-e0f330fc3671",
+        "name": "Dissolver",
+        "initialUnits": 3,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "7",
+        "name": "Precision Scale",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "8",
+        "name": "Shovel",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "8c79c6d2-c088-4c60-8a92-cfc51ec7fff0",
+        "name": "Screw Plunger Pump",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    },
+    {
+        "operatingCosts": {
+            "type": "Constant",
+            "value": 0
+        },
+        "isSpatial": false,
+        "id": "9",
+        "name": "Tank",
+        "initialUnits": 1,
+        "unitsAutoGrow": false
+    }
+]

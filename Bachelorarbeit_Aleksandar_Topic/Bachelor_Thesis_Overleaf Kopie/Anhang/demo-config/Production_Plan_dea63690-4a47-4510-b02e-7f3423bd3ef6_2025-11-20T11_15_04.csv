@@ -1,0 +1,13 @@
+ActivityName;ResourceId;ResourceName
+Dosieren;5;Wagensystem
+Dosieren;8c79c6d2-c088-4c60-8a92-cfc51ec7fff0;Schraubenspindelpumpe
+Mischen;68987259-e3e6-422b-b08f-e0f330fc3671;Dissolver
+Rühren;5dae3918-02ed-4a7b-b989-2a853502bcb3;Perlmühle
+Dispergieren;ea07c36a-c7a9-4a71-8f71-bc13614c3698;Highspeed-Dispergierer
+Filtration;13;Druckfiltersystem
+Abfüllen;8c79c6d2-c088-4c60-8a92-cfc51ec7fff0;Schraubenspindelpumpe
+Reinigen;5dae3918-02ed-4a7b-b989-2a853502bcb3;Perlmühle
+Reinigen;13;Druckfiltersystem
+Reinigen;4f1b6be0-3eff-420b-b82f-afca2eb441f4;CIP-Reinigungssystem
+Reinigen;8c79c6d2-c088-4c60-8a92-cfc51ec7fff0;Schraubenspindelpumpe
+Reinigen;ea07c36a-c7a9-4a71-8f71-bc13614c3698;Highspeed-Dispergierer

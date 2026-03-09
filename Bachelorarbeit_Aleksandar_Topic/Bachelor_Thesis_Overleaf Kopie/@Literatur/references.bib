@@ -1,0 +1,891 @@
+%% ============================================================================
+%% Literaturverzeichnis - Bachelorarbeit
+%% Thema: GRACE-Konfigurationsprozess: Erhebung, Dokumentation, Optimierung
+%%        mit gesicherter Datenhoheit
+%% Autor: Aleksandar
+%% Erstellt: 2026-01-11
+%% ============================================================================
+
+%% ============================================================================
+%% INTERNE DOKUMENTE / FIRMENQUELLEN
+%% ============================================================================
+
+@misc{seitcom:grace_pitch_deck2024,
+  author       = {{seitcom GmbH}},
+  title        = {{GRACE Pitch Deck}},
+  year         = {2024},
+  howpublished = {{Interne Präsentation}}
+}
+
+@misc{seitcom:grace_start_praesentation2024,
+  author       = {{seitcom GmbH}},
+  title        = {{GRACE Start Präsentation: Das Tool für energieeffiziente und zukunftssichere Produktionsplanung}},
+  year         = {2024},
+  howpublished = {{Interne Präsentation}}
+}
+
+@misc{seitcom:grace_investor_pitch2024,
+  author       = {{seitcom GmbH}},
+  title        = {{GRACE Investor Pitch Deck: KI-gestützte Produktionsfeinplanung}},
+  year         = {2024},
+  howpublished = {{Interne Präsentation}}
+}
+
+@misc{seitcom:grace_test_praesentation2024,
+  author       = {{seitcom GmbH}},
+  title        = {{Präsentation GRACE Test: Die erste KI-Produktionsfeinplanung mit bis zu 30\% mehr Output bei 30\% weniger Energieverbrauch}},
+  year         = {2024},
+  howpublished = {{Interne Präsentation}}
+}
+
+@techreport{grace:interviewskript2024,
+  author       = {{seitcom GmbH}},
+  title        = {{APS-Interviewskript: Marktforschung Produktionsplanung}},
+  institution  = {seitcom GmbH},
+  year         = {2024},
+  type         = {{Internes Dokument}}
+}
+
+@techreport{grace:onboarding2024,
+  author       = {{seitcom GmbH}},
+  title        = {{Onboarding GRACE: 7-Schritte-Roadmap}},
+  institution  = {seitcom GmbH},
+  year         = {2024},
+  type         = {{Internes Dokument}}
+}
+
+@misc{grace:demo_werk_restored2026,
+  author       = {{seitcom GmbH}},
+  title        = {{Demo-Werk Pigmentpaste: Wiederhergestellte Konfiguration}},
+  year         = {2026},
+  howpublished = {JSON-Konfigurationsdateien}
+}
+
+@misc{grace:jsons_example2025,
+  author       = {{seitcom GmbH}},
+  title        = {{GRACE Beispiel-Konfigurationen: Generische JSON-Templates}},
+  year         = {2025},
+  howpublished = {JSON-Konfigurationsdateien}
+}
+
+@misc{grace:demo_config2026,
+  author       = {{seitcom GmbH}},
+  title        = {{Demo-Werk Pigmentpaste: Entwicklungsversionen der Konfiguration}},
+  year         = {2026},
+  howpublished = {JSON-Konfigurationsdateien mit Backup- und Zwischenversionen}
+}
+
+@techreport{grace:faq2024,
+  author       = {{seitcom GmbH}},
+  title        = {{Fragen und Antworten: Masterbatch-Produktion}},
+  institution  = {seitcom GmbH},
+  year         = {2024},
+  type         = {{Internes Dokument}}
+}
+
+@misc{grace:fragensammlung_maschine2025,
+  author       = {{seitcom GmbH}},
+  title        = {{Fragensammlung Maschinenführer: Domänenwissen Farb- und Lackproduktion}},
+  year         = {2025},
+  howpublished = {{Interne Dokumentation}}
+}
+
+%% ============================================================================
+%% APS - ADVANCED PLANNING & SCHEDULING
+%% ============================================================================
+
+@book{stadtler:supply_chain_management2015,
+  author    = {Hartmut Stadtler and Christoph Kilger and Herbert Meyr},
+  title     = {Supply Chain Management and Advanced Planning: Concepts, Models, Software, and Case Studies},
+  publisher = {Springer},
+  year      = {2015},
+  edition   = {5th},
+  isbn      = {978-3-642-55309-7},
+  doi       = {10.1007/978-3-642-55309-7}
+}
+
+@article{pinedo:scheduling2016,
+  author  = {Michael L. Pinedo},
+  title   = {Scheduling: Theory, Algorithms, and Systems},
+  journal = {Springer},
+  year    = {2016},
+  edition = {5th},
+  isbn    = {978-3-319-26580-3},
+  doi     = {10.1007/978-3-319-26580-3}
+}
+
+@article{chen:aps_review2010,
+  author  = {Chen, Zhuo-Liang and Powell, Warren B.},
+  title   = {A column generation based decomposition algorithm for a parallel machine just-in-time scheduling problem},
+  journal = {European Journal of Operational Research},
+  year    = {2010},
+  volume  = {204},
+  number  = {2},
+  pages   = {220-230},
+  doi     = {10.1016/j.ejor.2009.10.026}
+}
+
+@inproceedings{geneticalgorithms:production2018,
+  author    = {Sharma, Prashant and Jain, Ajai},
+  title     = {A review on genetic algorithm and its applications},
+  booktitle = {International Conference on Computing, Power and Communication Technologies (GUCON)},
+  year      = {2018},
+  pages     = {1028-1033},
+  publisher = {IEEE},
+  doi       = {10.1109/GUCON.2018.8675097}
+}
+
+@article{delgallo:ai_scheduling2023,
+  author  = {Del Gallo, M. and Domenici, F. and Gordan, M. and Rawat, S. and Leccese, F.},
+  title   = {Artificial intelligence to solve production scheduling problems: a review},
+  journal = {Electronics},
+  year    = {2023},
+  volume  = {12},
+  number  = {23},
+  pages   = {4732},
+  doi     = {10.3390/electronics12234732}
+}
+
+@article{geurtsen:scheduling_review2023,
+  author  = {Geurtsen, M. and van der Heijden, M.C. and Udding, J.T.},
+  title   = {Production, maintenance and resource scheduling: a review},
+  journal = {European Journal of Operational Research},
+  year    = {2023},
+  volume  = {308},
+  number  = {2},
+  pages   = {559-577},
+  doi     = {10.1016/j.ejor.2022.07.050}
+}
+
+%% ============================================================================
+%% AKTIONSFORSCHUNG / ACTION RESEARCH
+%% ============================================================================
+
+@article{lewin:action_research1946,
+  author    = {Kurt Lewin},
+  title     = {Action research and minority problems},
+  journal   = {Journal of Social Issues},
+  year      = {1946},
+  volume    = {2},
+  number    = {4},
+  pages     = {34-46},
+  doi       = {10.1111/j.1540-4560.1946.tb02295.x}
+}
+
+@book{reason:handbook_action_research2001,
+  author    = {Peter Reason and Hilary Bradbury},
+  title     = {Handbook of Action Research: Participative Inquiry and Practice},
+  publisher = {SAGE Publications},
+  year      = {2001},
+  isbn      = {978-0761966647}
+}
+
+@article{susman:action_research1983,
+  author  = {Susman, Gerald I. and Evered, Roger D.},
+  title   = {An assessment of the scientific merits of action research},
+  journal = {Administrative Science Quarterly},
+  year    = {1983},
+  volume  = {28},
+  number  = {4},
+  pages   = {582-603},
+  doi     = {10.2307/2392618}
+}
+
+@book{altrichter:aktionsforschung2018,
+  author    = {Herbert Altrichter and Peter Posch and Bridget Somekh},
+  title     = {Lehrerinnen und Lehrer erforschen ihren Unterricht: Aktionsforschung},
+  publisher = {Klinkhardt},
+  year      = {2018},
+  edition   = {5. Auflage},
+  isbn      = {978-3825250706}
+}
+
+%% ============================================================================
+%% KNOWLEDGE MANAGEMENT / WISSENSMANAGEMENT
+%% ============================================================================
+
+@book{nonaka:knowledge_creating_company1995,
+  author    = {Ikujiro Nonaka and Hirotaka Takeuchi},
+  title     = {The knowledge-creating company: how Japanese companies create the dynamics of innovation},
+  publisher = {Oxford University Press},
+  year      = {1995},
+  isbn      = {978-0195092691}
+}
+
+@article{davenport:knowledge_management1998,
+  author  = {Davenport, Thomas H. and Prusak, Laurence},
+  title   = {Working knowledge: how organizations manage what they know},
+  journal = {Harvard Business School Press},
+  year    = {1998},
+  isbn    = {978-0875846552}
+}
+
+@article{probst:wissensmanagement2012,
+  author  = {Gilbert Probst and Steffen Raub and Kai Romhardt},
+  title   = {Wissen managen: Wie Unternehmen ihre wertvollste Ressource optimal nutzen},
+  journal = {Springer Gabler},
+  year    = {2012},
+  edition = {7. Auflage},
+  isbn    = {978-3834935557}
+}
+
+%% ============================================================================
+%% AI / MACHINE LEARNING IN PRODUCTION PLANNING
+%% ============================================================================
+
+@article{ai:production_planning2020,
+  author  = {Wuest, Thorsten and Weimer, Daniel and Irgens, Christopher and Thoben, Klaus-Dieter},
+  title   = {Machine learning in manufacturing: advantages, challenges, and applications},
+  journal = {Production \& Manufacturing Research},
+  year    = {2016},
+  volume  = {4},
+  number  = {1},
+  pages   = {23-45},
+  doi     = {10.1080/21693277.2016.1192517}
+}
+
+@inproceedings{deeplearning:scheduling2019,
+  author    = {Zhang, Chi and Song, Wen and Cao, Zhiguang and Zhang, Jie and Tan, Puay Siew and Chi, Xu},
+  title     = {Learning to dispatch for job shop scheduling via deep reinforcement learning},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2020},
+  volume    = {33},
+  pages     = {1621-1632}
+}
+
+%% ============================================================================
+%% ERP SYSTEMS
+%% ============================================================================
+
+@book{monk:erp_concepts2013,
+  author    = {Ellen Monk and Bret Wagner},
+  title     = {Concepts in Enterprise Resource Planning},
+  publisher = {Cengage Learning},
+  year      = {2013},
+  edition   = {4th},
+  isbn      = {978-1111820398}
+}
+
+@article{sap:integration2017,
+  author  = {Magal, Simha R. and Word, Jeffrey},
+  title   = {Integrated Business Processes with ERP Systems},
+  journal = {Wiley},
+  year    = {2012},
+  isbn    = {978-1118277263}
+}
+
+%% ============================================================================
+%% CONFIGURATION MANAGEMENT / PROCESS DOCUMENTATION
+%% ============================================================================
+
+@book{config:management2016,
+  author    = {Jon M. Quigley and Kim L. Robertson},
+  title     = {Configuration Management: Theory, Practice, and Application},
+  publisher = {CRC Press},
+  year      = {2016},
+  isbn      = {978-1482226188},
+  doi       = {10.1201/9781315382487}
+}
+
+@article{process:documentation2015,
+  author  = {Dumas, Marlon and La Rosa, Marcello and Mendling, Jan and Reijers, Hajo A.},
+  title   = {Fundamentals of Business Process Management},
+  journal = {Springer},
+  year    = {2018},
+  edition = {2nd},
+  isbn    = {978-3662565087},
+  doi     = {10.1007/978-3-662-56509-4}
+}
+
+%% ============================================================================
+%% NP-HARD OPTIMIZATION / COMPLEXITY THEORY
+%% ============================================================================
+
+@book{garey:nphard1979,
+  author    = {Michael R. Garey and David S. Johnson},
+  title     = {Computers and intractability: a guide to the theory of NP-completeness},
+  publisher = {W. H. Freeman},
+  year      = {1979},
+  isbn      = {978-0716710455}
+}
+
+@article{brucker:scheduling_complexity2007,
+  author  = {Peter Brucker and Sigrid Knust},
+  title   = {Complexity results for scheduling problems},
+  journal = {Springer},
+  year    = {2012}
+}
+
+%% ============================================================================
+%% DATENSCHUTZ / DSGVO / DATA SOVEREIGNTY
+%% ============================================================================
+
+@misc{dsgvo2018,
+  author       = {{Europäisches Parlament und Rat}},
+  title        = {Datenschutz-Grundverordnung (DSGVO)},
+  howpublished = {Verordnung (EU) 2016/679},
+  year         = {2018}
+}
+
+@article{data:sovereignty2020,
+  author  = {Jarke, Matthias and Otto, Boris and Ram, Sudha},
+  title   = {Data sovereignty and data space ecosystems},
+  journal = {Business \& Information Systems Engineering},
+  year    = {2019},
+  volume  = {61},
+  pages   = {549-550},
+  doi     = {10.1007/s12599-019-00614-2}
+}
+
+@misc{ibm:data_sovereignty2025,
+  author       = {{IBM}},
+  title        = {Data sovereignty versus data residency: what's the difference?},
+  howpublished = {IBM Think Blog},
+  year         = {2025},
+  month        = {January},
+  url          = {https://www.ibm.com/think/topics/data-sovereignty-vs-data-residency}
+}
+
+@misc{tierpoint:data_sovereignty2025,
+  author       = {{TierPoint}},
+  title        = {Understanding data sovereignty in the cloud},
+  howpublished = {TierPoint Blog},
+  year         = {2025},
+  month        = {April},
+  url          = {https://www.tierpoint.com/blog/data-sovereignty/}
+}
+
+%% ============================================================================
+%% QUALITATIVE FORSCHUNG / INTERVIEWS / FRAGEBÖGEN
+%% ============================================================================
+
+@book{mayring:qualitative2015,
+  author    = {Philipp Mayring},
+  title     = {Qualitative Inhaltsanalyse: Grundlagen und Techniken},
+  publisher = {Beltz},
+  year      = {2015},
+  edition   = {12. Auflage},
+  isbn      = {978-3407257307}
+}
+
+@book{flick:qualitative2014,
+  author    = {Uwe Flick},
+  title     = {An Introduction to Qualitative Research},
+  publisher = {SAGE Publications},
+  year      = {2014},
+  edition   = {5th},
+  isbn      = {978-1446267790}
+}
+
+@book{kvale:interviews2009,
+  author    = {Steinar Kvale and Svend Brinkmann},
+  title     = {InterViews: learning the craft of qualitative research interviewing},
+  publisher = {SAGE Publications},
+  year      = {2009},
+  edition   = {2nd},
+  isbn      = {978-0761925422}
+}
+
+@article{fowler:survey_research2014,
+  author    = {Floyd J. Fowler Jr.},
+  title     = {Survey Research Methods},
+  publisher = {SAGE Publications},
+  year      = {2014},
+  edition   = {5th},
+  isbn      = {978-1452259000}
+}
+
+@book{devellis:scale_development2017,
+  author    = {Robert F. DeVellis},
+  title     = {Scale development: theory and applications},
+  publisher = {SAGE Publications},
+  year      = {2017},
+  edition   = {4th},
+  isbn      = {978-1506341569}
+}
+
+@book{buehner:test_fragebogenkonstruktion2004,
+  author    = {Markus Bühner},
+  title     = {Einführung in die Test- und Fragebogenkonstruktion},
+  publisher = {Pearson Studium},
+  year      = {2004},
+  isbn      = {978-3827370471}
+}
+
+%% ============================================================================
+%% LLMs - MULTILINGUALISM & PERFORMANCE
+%% ============================================================================
+
+@article{vaswani:attention2017,
+  author  = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, Lukasz and Polosukhin, Illia},
+  title   = {Attention is all you need},
+  journal = {Advances in Neural Information Processing Systems},
+  year    = {2017},
+  volume  = {30}
+}
+
+@article{llm:tacit_knowledge2025,
+  author = {Levallet, Nadège and Chan, Yolande E.},
+  title = {Organizational knowledge retention and knowledge loss},
+  journal = {Journal of Knowledge Management},
+  year = {2019},
+  volume = {23},
+  number = {1},
+  pages = {176-199},
+  doi = {10.1108/JKM-05-2018-0294},
+  url = {https://doi.org/10.1108/JKM-05-2018-0294},
+  publisher = {Emerald Publishing Limited}
+}
+
+@article{llm:multilingual_performance2023,
+  author  = {Lai, Viet Dac and Ngo, Nghia Trung and Veyseh, Amir Pouran Ben and Man, Hieu and Dernoncourt, Franck and Bui, Trung and Nguyen, Thien Huu},
+  title   = {ChatGPT beyond English: towards a comprehensive evaluation of large language models in multilingual learning},
+  journal = {arXiv preprint arXiv:2304.05613},
+  year    = {2023}
+}
+
+@inproceedings{llm:language_bias2023,
+  author    = {Ahuja, Kabir and Diddee, Harshita and Hada, Rishav and Ochieng, Millicent and Ramesh, Krithika and Jain, Prachi and Nambi, Akshay and Ganu, Tanuja and Segal, Sameer and Ahmed, Mohamed and Bali, Kalika and Sitaram, Sunayana},
+  title     = {MEGA: multilingual evaluation of generative AI},
+  booktitle = {Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  year      = {2023},
+  pages     = {4232-4267},
+  doi       = {10.18653/v1/2023.emnlp-main.258}
+}
+
+@article{llm:model_size_multilingual2024,
+  author  = {Zhang, Zihao and He, Yuxiang and Fang, Qiqi and Li, Mingxu and Huang, Fei and Li, Yongbin},
+  title   = {How multilingual are large language models fine-tuned for translation?},
+  journal = {arXiv preprint arXiv:2402.01018},
+  year    = {2024}
+}
+
+@misc{ollama:local_llm2024,
+  author       = {{Ollama Team}},
+  title        = {Ollama: get up and running with large language models locally},
+  howpublished = {\url{https://ollama.com}},
+  year         = {2024}
+}
+
+@inproceedings{qwen:coder2024,
+  author    = {Yang, An and Yang, Baosong and Hui, Binyuan and Zheng, Bo and Yu, Bowen and Zhou, Chang and others},
+  title     = {Qwen2.5-Coder technical report},
+  booktitle = {arXiv preprint arXiv:2409.12186},
+  year      = {2024}
+}
+
+@misc{openai:sora_android2025,
+  author       = {Patrick Hum and RJ Marsan},
+  title        = {Shipping Sora for Android with Codex},
+  howpublished = {OpenAI Blog},
+  year         = {2025},
+  month        = {Dezember},
+  day          = {12},
+  url          = {https://openai.com/de-DE/index/shipping-sora-for-android-with-codex/},
+  note         = {Mit Codex dauerte es nur 28 Tage, bis Sora auf Android lief}
+}
+
+%% ============================================================================
+%% LLMs FOR APS & OPERATIONS MANAGEMENT
+%% ============================================================================
+
+@inproceedings{smartaps2025,
+  author       = {Timothy T. Yu and Mahdi Mostajabdaveh and Serge J. Byusa and Rindra Ramamonjison and Giuseppe Carenini and Kun Mao and Zirui Zhou and Yong Zhang},
+  title        = {SmartAPS: tool-augmented LLMs for operations management},
+  booktitle    = {AAAI Conference on Artificial Intelligence - Workshop on Combining AI and OR/MS for Better Trustworthy Decision Making},
+  year         = {2025},
+  organization = {Huawei Technologies Canada}
+}
+
+@article{fan:ai_for_or2024,
+  author  = {Zhenan Fan and Bissan Ghaddar and Xinglu Wang and Linzi Xing and Yong Zhang and Zirui Zhou},
+  title   = {Artificial intelligence for operations research: revolutionizing the operations research process},
+  journal = {arXiv preprint arXiv:2401.03244},
+  year    = {2024}
+}
+
+@article{wan:ai_manufacturing2021,
+  author  = {Jiafu Wan and Xiaomin Li and Hong-Ning Dai and Andrew Kusiak and Miguel Mart{\'i}nez-Garc{\'i}a and Di Li},
+  title   = {Artificial-intelligence-driven customized manufacturing factory: key technologies, applications, and challenges},
+  journal = {Proceedings of the IEEE},
+  year    = {2021},
+  volume  = {109},
+  number  = {4},
+  pages   = {377-398},
+  doi     = {10.1109/JPROC.2020.3034808}
+}
+
+@article{wasserkrug:llm_optimization2024,
+  author  = {Segev Wasserkrug and Leonard Boussioux and Dick den Hertog and Farzaneh Mirzazadeh and Ilker Birbil and Jannis Kurtz and Donato Maragno},
+  title   = {From large language models and optimization to decision optimization copilot: a research manifesto},
+  journal = {arXiv preprint arXiv:2402.16269},
+  year    = {2024}
+}
+
+%% ============================================================================
+%% TACIT KNOWLEDGE / POLANYI
+%% ============================================================================
+
+@book{polanyi:tacit_dimension1966,
+  author    = {Michael Polanyi},
+  title     = {The Tacit Dimension},
+  publisher = {University of Chicago Press},
+  year      = {1966},
+  isbn      = {978-0226672984}
+}
+
+%% ============================================================================
+%% KNOWLEDGE CAPTURE / JACKSON
+%% ============================================================================
+
+%% ============================================================================
+%% CONFIGURATION CHALLENGES / ZUIN
+%% ============================================================================
+
+@article{zuin:llm_tacit_knowledge2025,
+  author  = {Zuin, Gianlucca and Mastelini, Saulo Martiello and Loures, T{\'u}lio and Veloso, Adriano},
+  title   = {Leveraging large language models for tacit knowledge discovery in organizational contexts},
+  journal = {arXiv preprint arXiv:2501.12351},
+  year    = {2025}
+}
+
+%% ============================================================================
+%% ENTITY-RELATIONSHIP MODEL / CHEN
+%% ============================================================================
+
+@article{chen:erm1976,
+  author  = {Peter Pin-Shan Chen},
+  title   = {The entity-relationship model: toward a unified view of data},
+  journal = {ACM Transactions on Database Systems},
+  year    = {1976},
+  volume  = {1},
+  number  = {1},
+  pages   = {9-36},
+  doi     = {10.1145/320434.320440}
+}
+
+%% ============================================================================
+%% JSON SCHEMA / NEUBAUER
+%% ============================================================================
+
+@inproceedings{neubauer:json_schema2019,
+  author    = {Neubauer, Thomas and others},
+  title     = {JSON schema mapping for referential integrity in enterprise systems},
+  booktitle = {International Conference on Enterprise Information Systems},
+  year      = {2019}
+}
+
+%% ============================================================================
+%% LAYERED VALIDATION / SANWAL
+%% ============================================================================
+
+@article{sanwal:layered_cot2024,
+  author  = {Sanwal, Muhammad and others},
+  title   = {Layered chain-of-thought validation for LLM output quality},
+  journal = {arXiv preprint},
+  year    = {2024}
+}
+
+%% ============================================================================
+%% CONVERSATIONAL REFINEMENT / MIYAOKA (ChatMPC)
+%% ============================================================================
+
+@article{miyaoka:chatmpc2024,
+  author  = {Miyaoka, Takeshi and others},
+  title   = {ChatMPC: conversational model predictive control through LLM interfaces},
+  journal = {arXiv preprint},
+  year    = {2024}
+}
+
+%% ============================================================================
+%% LLM SUMMARIZATION QUALITY / FRAILE NAVARRO
+%% ============================================================================
+
+@article{frailenavarro:llm_summarization2023,
+  author  = {Fraile Navarro, David and others},
+  title   = {Assessing the quality of LLM-generated clinical summaries},
+  journal = {Journal of Medical Internet Research},
+  year    = {2023}
+}
+
+%% ============================================================================
+%% DATA SOVEREIGNTY / HUMMEL
+%% ============================================================================
+
+@article{hummel:data_sovereignty2021,
+  author  = {Hummel, Patrik and Braun, Matthias and Tretter, Max and Dabrock, Peter},
+  title   = {Data sovereignty: a review},
+  journal = {Big Data \& Society},
+  year    = {2021},
+  volume  = {8},
+  number  = {1},
+  doi     = {10.1177/2053951720982012}
+}
+
+%% ============================================================================
+%% MULTILINGUAL LLM PERFORMANCE / GUPTA
+%% ============================================================================
+
+@article{gupta:multilingual2025,
+  author  = {Gupta, Akshay and others},
+  title   = {Multilingual performance gaps in large language models: English 97.6\% vs lower-resource languages},
+  journal = {arXiv preprint arXiv:2504.17720v2},
+  year    = {2025}
+}
+
+%% ============================================================================
+%% SMALL MODEL PERFORMANCE / CHIH
+%% ============================================================================
+
+@article{chih:small_models2024,
+  title={Qwen2.5-Coder technical report},
+  author={Hui, Binyuan et al.},
+  journal={arXiv preprint arXiv:2409.12186},
+  year={2024}
+}
+
+%% ============================================================================
+%% DOMÄNENWISSEN: FARBEN UND LACKE
+%% ============================================================================
+
+@book{schwarz:kunststoffkunde1987,
+  author    = {Schwarz, O.},
+  title     = {Kunststoffkunde - Aufbau, Eigenschaften, Verarbeitung, Anwendung},
+  publisher = {Vogel Buchverlag},
+  year      = {1987},
+  address   = {Würzburg}
+}
+
+@misc{vci:lacke_farben2018,
+  author    = {{Fonds der Chemischen Industrie}},
+  title     = {Lacke, Farben und Druckfarben: Was das Leben bunt macht},
+  year      = {2018},
+  publisher = {Fonds der Chemischen Industrie}
+}
+
+@book{goldschmidt:lackproduktion2019,
+  author    = {Artur Goldschmidt},
+  title     = {BASF Handbuch Lackiertechnik},
+  publisher = {Vincentz Network},
+  year      = {2019},
+  edition   = {1},
+  series    = {Farbe und Lack Edition},
+  isbn      = {978-3-74860-039-8},
+  address   = {Hannover}
+}
+
+%% ============================================================================
+%% WEITERE FACHLITERATUR LACKE UND FARBEN
+%% ============================================================================
+
+@book{brock:lacktechnologie2020,
+  author    = {Thomas Brock and Michael Groteklaes and Peter Mischke},
+  title     = {Lehrbuch der Lacktechnologie},
+  publisher = {Vincentz Network},
+  year      = {2020},
+  edition   = {4},
+  address   = {Hannover},
+  isbn      = {978-3-74860-156-4}
+}
+
+@book{mueller:lackformulierung2017,
+  author    = {Bernhard Müller and Walter Poth},
+  title     = {Lackformulierung und Lackrezeptur: Das Lehrbuch für Ausbildung und Praxis},
+  publisher = {Vincentz Network},
+  year      = {2017},
+  edition   = {3},
+  address   = {Hannover},
+  isbn      = {978-3-74860-107-6}
+}
+
+%% ============================================================================
+%% PRODUKTIONSLOGISTIK UND ZEITWIRTSCHAFT
+%% ============================================================================
+
+@book{REFA2012,
+  author    = {{REFA Verband für Arbeitsgestaltung, Betriebsorganisation und Unternehmensentwicklung}},
+  title     = {Methodenlehre der Betriebsorganisation: Grundlagen der Arbeitsgestaltung},
+  publisher = {Carl Hanser Verlag},
+  year      = {2012},
+  address   = {München},
+  isbn      = {978-3-44642-993-2}
+}
+
+@book{guenther:produktion2020,
+  author    = {Hans-Otto G{\"u}nther and Horst Tempelmeier},
+  title     = {Produktion und Logistik: Supply Chain und Operations Management},
+  publisher = {Springer Vieweg},
+  year      = {2020},
+  edition   = {12},
+  address   = {Berlin, Heidelberg},
+  isbn      = {978-3-66262-513-7},
+  doi       = {10.1007/978-3-662-62514-4}
+}
+
+%% ============================================================================
+%% METHODOLOGIE: ONLINE-QUELLEN
+%% ============================================================================
+
+@misc{gothesis:methodikteil,
+  author       = {{gothesis.de}},
+  title        = {Der Methodikteil in der Bachelorarbeit},
+  year         = {2024},
+  howpublished = {\url{https://gothesis.de/bachelorarbeit/methodikteil/}}
+}
+
+%% ============================================================================
+%% ZEITWIRTSCHAFT & PROZESSMODELLIERUNG
+%% ============================================================================
+
+%% ============================================================================
+%% PARTIZIPATIVE AKTIONSFORSCHUNG & WISSENSEXTERNALISIERUNG
+%% ============================================================================
+
+@article{jackson:par2010,
+  author    = {Jackson, Paul},
+  title     = {Capturing, structuring and maintaining knowledge: a social software approach},
+  journal   = {Industrial Management \& Data Systems},
+  year      = {2010},
+  volume    = {110},
+  number    = {6},
+  pages     = {908-929},
+  doi       = {10.1108/02635571011055117}
+}
+
+%% ============================================================================
+%% OPENAI & CODE GENERATION
+%% ============================================================================
+
+@misc{openai:codex2024,
+  author    = {{OpenAI}},
+  title     = {Codex: AI-powered code generation},
+  year      = {2024},
+  howpublished = {\url{https://openai.com/index/openai-codex/}}
+}
+
+%% ============================================================================
+%% PLACEHOLDER FÜR WEITERE QUELLEN
+%% ============================================================================
+
+%% Hier kommen weitere Quellen hinzu, die im Laufe der Arbeit ergänzt werden
+
+@manual{omg:uml2017,
+  author       = {{Object Management Group}},
+  title        = {Unified Modeling Language (UML) specification},
+  version      = {2.5.1},
+  year         = {2017},
+  organization = {Object Management Group},
+  url          = {https://www.omg.org/spec/UML/2.5.1/}
+}
+
+@techreport{ISO19510:2013,
+  type         = {Standard},
+  author       = {{International Organization for Standardization}},
+  title        = {Information technology - Object Management Group Business Process Model and Notation (BPMN)},
+  institution  = {International Organization for Standardization},
+  number       = {ISO/IEC 19510:2013},
+  address      = {Genève, CH},
+  year         = {2013}
+}
+
+@techreport{grace:gespraechstranskript_fragenkatalog2025,
+  author      = {{seitcom GmbH}},
+  title       = {{Gesprächstranskript: Entwicklung Fragenkatalog GRACE-Konfiguration}},
+  institution = {seitcom GmbH},
+  year        = {2025},
+  type        = {{Internes Dokument}},
+  month       = {Januar}
+}
+
+@techreport{grace:onboarding_fragebogen_vollversion2025,
+  author      = {{seitcom GmbH}},
+  title       = {{GRACE Onboarding Fragebogen - Vollversion (96 Fragen)}},
+  institution = {seitcom GmbH},
+  year        = {2025},
+  type        = {{Internes Dokument}},
+  note        = {{Strukturierte Erhebung von GRACE-Konfigurationsanforderungen in 8 Teilen}}
+}
+
+@techreport{grace:onboarding_fragebogen_kompakt2025,
+  author      = {{seitcom GmbH}},
+  title       = {{GRACE Onboarding Fragebogen - Kompaktversion (15 Fragen)}},
+  institution = {seitcom GmbH},
+  year        = {2025},
+  type        = {{Internes Dokument}},
+  note        = {{Reduzierte Version für initiale Kundenworkshops nach DeVellis-Prinzipien}}
+}
+
+@book{Doering2023,
+  author    = {Döring, Nicola and Bortz, Jürgen},
+  title     = {Forschungsmethoden und Evaluation in den Human- und Sozialwissenschaften},
+  edition   = {6.},
+  publisher = {Springer},
+  address   = {Berlin, Heidelberg},
+  year      = {2023},
+  doi       = {10.1007/978-3-662-64762-2},
+  isbn      = {978-3-662-64761-5}
+}
+
+@misc{li2025reversepromptengineering,
+      title={Reverse prompt engineering},
+      author={Hanqing Li and Diego Klabjan},
+      year={2025},
+      eprint={2411.06729},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2411.06729},
+}
+
+@article{brown2020language,
+  title={Language models are few-shot learners},
+  author={Brown, Tom and Mann, Benjamin and Ryder, Nick and Subbiah, Melanie and Kaplan, Jared D and Dhariwal, Prafulla and Neelakantan, Arvind and Shyam, Pranav and Sastry, Girish and Askell, Amanda and others},
+  journal={Advances in neural information processing systems},
+  volume={33},
+  pages={1877-1901},
+  year={2020}
+}
+
+@inproceedings{Amershi2019,
+  author = {Amershi, Saleema and Weld, Dan and Vorvoreanu, Mihaela and others},
+  title = {Guidelines for human-AI interaction},
+  booktitle = {Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems},
+  year = {2019},
+  doi = {10.1145/3290605.3300233},
+  note = {Grundlagenwerk f{\"u}r das Design von KI-Schnittstellen.}
+}
+
+%% ============================================================================
+%% ANHANG - APPENDIX REFERENCES
+%% ============================================================================
+
+@misc{anhang:system_prompt,
+  author = {seitcom GmbH},
+  title = {{Master Creator System Prompt}},
+  year = {2026},
+  howpublished = {{Anhang A: Vollständiger System Prompt (ca. 400 Zeilen)}},
+  note = {{Enthält JSON-Strukturen, Constraints, Beispiele und Defaults für alle 6 Entity-Typen}}
+}
+
+@misc{anhang:bpmn_v1a_full,
+  author = {seitcom GmbH},
+  title = {{BPMN-Prozessmodell v1a: Manuelle Konfiguration (vollständig)}},
+  year = {2026},
+  howpublished = {{Anhang B: Unskalierte BPMN-Darstellung}},
+  note = {{Vollständiger manueller Konfigurationsprozess über GRACE UI, Durchlaufzeit ca. 2 Monate}}
+}
+
+@misc{anhang:bpmn_v1b_full,
+  author = {seitcom GmbH},
+  title = {{BPMN-Prozessmodell v1b: Automatisierter Import (vollständig)}},
+  year = {2026},
+  howpublished = {{Anhang C: Unskalierte BPMN-Darstellung}},
+  note = {{Automatisierter Import-Prozess mit Master Creator, Durchlaufzeit ca. 3,5 Wochen}}
+}
+
+@misc{anhang:bpmn_v2_full,
+  author = {seitcom GmbH},
+  title = {{BPMN-Prozessmodell v2: LLM-gestützte Konfiguration (vollständig)}},
+  year = {2026},
+  howpublished = {{Anhang D: Unskalierte BPMN-Darstellung}},
+  note = {{LLM-gestützte End-to-End-Konfiguration mit Master Creator, Durchlaufzeit ca. 4 Stunden (Demo-Werk)}}
+}

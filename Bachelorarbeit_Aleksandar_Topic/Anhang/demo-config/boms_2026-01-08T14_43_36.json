@@ -1,0 +1,258 @@
+[
+    {
+        "id": "2",
+        "name": "White Pigment Paste (WP-1000)",
+        "baseQuantity": 1155.5,
+        "unitId": "kg",
+        "items": [
+            {
+                "key": "1",
+                "material": {
+                    "version": 1,
+                    "id": "1"
+                },
+                "quantity": 150
+            },
+            {
+                "key": "2",
+                "material": {
+                    "version": 1,
+                    "id": "00414186-9f44-4ab5-b109-105747727153"
+                },
+                "quantity": 500
+            },
+            {
+                "key": "3",
+                "material": {
+                    "version": 1,
+                    "id": "e200939d-ae72-471d-aa49-971bd1a1a09f"
+                },
+                "quantity": 250
+            },
+            {
+                "key": "4",
+                "material": {
+                    "version": 1,
+                    "id": "3fc65fab-c139-4978-b136-1c72508df4a5"
+                },
+                "quantity": 10
+            },
+            {
+                "key": "5",
+                "material": {
+                    "version": 1,
+                    "id": "b23dcc2c-0022-4e20-9b13-550d2244e70b"
+                },
+                "quantity": 5
+            },
+            {
+                "key": "6",
+                "material": {
+                    "version": 1,
+                    "id": "e3d851cd-9675-42b7-b958-ad344d887ed7"
+                },
+                "quantity": 80
+            },
+            {
+                "key": "7",
+                "material": {
+                    "version": 1,
+                    "id": "3ef48444-d1e2-4927-8f6b-94d7d34bf640"
+                },
+                "quantity": 5
+            },
+            {
+                "key": "8",
+                "material": {
+                    "version": 1,
+                    "id": "3e3dfa46-3cb6-4005-a5f1-d87619ed600b"
+                },
+                "quantity": 0.5
+            },
+            {
+                "key": "9",
+                "material": {
+                    "version": 1,
+                    "id": "9f122846-5be2-487c-b4aa-f04bd61d1a51"
+                },
+                "quantity": 155
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "name": "Red Pigment Paste (RP-1000)",
+        "baseQuantity": 1155,
+        "unitId": "kg",
+        "items": [
+            {
+                "key": "1",
+                "material": {
+                    "version": 1,
+                    "id": "6"
+                },
+                "quantity": 120
+            },
+            {
+                "key": "10",
+                "material": {
+                    "version": 1,
+                    "id": "9f122846-5be2-487c-b4aa-f04bd61d1a51"
+                },
+                "quantity": 155
+            },
+            {
+                "key": "2",
+                "material": {
+                    "version": 1,
+                    "id": "1"
+                },
+                "quantity": 10
+            },
+            {
+                "key": "3",
+                "material": {
+                    "version": 1,
+                    "id": "00414186-9f44-4ab5-b109-105747727153"
+                },
+                "quantity": 500
+            },
+            {
+                "key": "4",
+                "material": {
+                    "version": 1,
+                    "id": "e200939d-ae72-471d-aa49-971bd1a1a09f"
+                },
+                "quantity": 250
+            },
+            {
+                "key": "5",
+                "material": {
+                    "version": 1,
+                    "id": "3fc65fab-c139-4978-b136-1c72508df4a5"
+                },
+                "quantity": 10
+            },
+            {
+                "key": "6",
+                "material": {
+                    "version": 1,
+                    "id": "b23dcc2c-0022-4e20-9b13-550d2244e70b"
+                },
+                "quantity": 5
+            },
+            {
+                "key": "7",
+                "material": {
+                    "version": 1,
+                    "id": "e3d851cd-9675-42b7-b958-ad344d887ed7"
+                },
+                "quantity": 99.5
+            },
+            {
+                "key": "8",
+                "material": {
+                    "version": 1,
+                    "id": "3ef48444-d1e2-4927-8f6b-94d7d34bf640"
+                },
+                "quantity": 5
+            },
+            {
+                "key": "9",
+                "material": {
+                    "version": 1,
+                    "id": "3e3dfa46-3cb6-4005-a5f1-d87619ed600b"
+                },
+                "quantity": 0.5
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "name": "Blue Pigment Paste (BP-1000)",
+        "baseQuantity": 1155,
+        "unitId": "kg",
+        "items": [
+            {
+                "key": "1",
+                "material": {
+                    "version": 1,
+                    "id": "ea7520da-b39e-44e3-8f4d-82d2aa4636de"
+                },
+                "quantity": 25
+            },
+            {
+                "key": "10",
+                "material": {
+                    "version": 1,
+                    "id": "9f122846-5be2-487c-b4aa-f04bd61d1a51"
+                },
+                "quantity": 155
+            },
+            {
+                "key": "2",
+                "material": {
+                    "version": 1,
+                    "id": "1"
+                },
+                "quantity": 50
+            },
+            {
+                "key": "3",
+                "material": {
+                    "version": 1,
+                    "id": "00414186-9f44-4ab5-b109-105747727153"
+                },
+                "quantity": 500
+            },
+            {
+                "key": "4",
+                "material": {
+                    "version": 1,
+                    "id": "e200939d-ae72-471d-aa49-971bd1a1a09f"
+                },
+                "quantity": 250
+            },
+            {
+                "key": "5",
+                "material": {
+                    "version": 1,
+                    "id": "3fc65fab-c139-4978-b136-1c72508df4a5"
+                },
+                "quantity": 10
+            },
+            {
+                "key": "6",
+                "material": {
+                    "version": 1,
+                    "id": "b23dcc2c-0022-4e20-9b13-550d2244e70b"
+                },
+                "quantity": 5
+            },
+            {
+                "key": "7",
+                "material": {
+                    "version": 1,
+                    "id": "e3d851cd-9675-42b7-b958-ad344d887ed7"
+                },
+                "quantity": 154.5
+            },
+            {
+                "key": "8",
+                "material": {
+                    "version": 1,
+                    "id": "3ef48444-d1e2-4927-8f6b-94d7d34bf640"
+                },
+                "quantity": 5
+            },
+            {
+                "key": "9",
+                "material": {
+                    "version": 1,
+                    "id": "3e3dfa46-3cb6-4005-a5f1-d87619ed600b"
+                },
+                "quantity": 0.5
+            }
+        ]
+    }
+]

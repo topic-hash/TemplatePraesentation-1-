@@ -1,0 +1,101 @@
+[
+  {
+    "id": "green-pigment-paste-new-process",
+    "name": "Green Pigment Paste New Process",
+    "steps": [
+      {
+        "id": "step-1",
+        "name": "Dosing",
+        "processingTime": {
+          "type": "Constant",
+          "value": 300,
+          "unitId": "s"
+        },
+        "resourceDemands": [],
+        "isParallelizable": false
+      },
+      {
+        "id": "step-2",
+        "name": "Mixing",
+        "processingTime": {
+          "type": "Constant",
+          "value": 600,
+          "unitId": "s"
+        },
+        "resourceDemands": [],
+        "isParallelizable": false
+      },
+      {
+        "id": "step-3",
+        "name": "Dissolving",
+        "processingTime": {
+          "type": "Constant",
+          "value": 1200,
+          "unitId": "s"
+        },
+        "resourceDemands": [],
+        "isParallelizable": false
+      },
+      {
+        "id": "step-4",
+        "name": "Filtering",
+        "processingTime": {
+          "type": "Constant",
+          "value": 600,
+          "unitId": "s"
+        },
+        "resourceDemands": [],
+        "isParallelizable": false
+      },
+      {
+        "id": "step-5",
+        "name": "Packout",
+        "processingTime": {
+          "type": "Constant",
+          "value": 600,
+          "unitId": "s"
+        },
+        "resourceDemands": [],
+        "isParallelizable": false
+      }
+    ],
+    "links": [
+      {
+        "sourceId": "step-1",
+        "targetId": "step-2",
+        "constraints": [
+          {
+            "type": "Precedence"
+          }
+        ]
+      },
+      {
+        "sourceId": "step-2",
+        "targetId": "step-3",
+        "constraints": [
+          {
+            "type": "Precedence"
+          }
+        ]
+      },
+      {
+        "sourceId": "step-3",
+        "targetId": "step-4",
+        "constraints": [
+          {
+            "type": "Precedence"
+          }
+        ]
+      },
+      {
+        "sourceId": "step-4",
+        "targetId": "step-5",
+        "constraints": [
+          {
+            "type": "Precedence"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,172 @@
+\documentclass[11pt, aspectratio=169]{beamer}
+\usepackage[utf8x,utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+\newcommand{\Title}{Zusammenfassung: \\ Harmonizing Company Wide Information Objects \\ }
+\newcommand{\Subtitle}{Alexander Schmidt, Dr. Boris Otto}
+\newcommand{\TitleFooter}{Zusammenfassung: Harmonizing Company Wide Information Objects}
+\newcommand{\ReferentIn}{Aleksandar Topic}
+\newcommand{\Matrikelnummer}{(677502)}
+\newcommand{\Picture}{\includegraphics[width=2cm]{./@Bilder/at.jpeg}}
+\date{08.01.2024}
+
+\input{./@Steuerung/Settings.tex}
+
+
+
+\begin{document}
+\begin{frame}
+  \begin{tikzpicture}[remember picture, overlay]
+    \node at ([xshift=140mm,yshift=33mm]current page.south west) {\Picture};
+  \end{tikzpicture}  
+  \titlepage
+\end{frame}
+
+
+\begin{frame}[t, fragile]\frametitleNew{\faTasks}{Inhaltsverzeichnis}
+  \tableofcontents
+\end{frame}
+
+
+
+\section{Gegenstand des Papers}
+
+\begin{frame}[t, fragile]
+\frametitleNew{\faList}{Gegenstand des Papers}
+\only<1>{
+  \begin{itemize}
+  \item	Entwicklung der METIO-Methode (Method for Establishing Transparency on Information Objects)
+  \item Fallstudien
+    \begin{itemize}
+        \item Multinationaler Automobilhersteller
+        \item Nationales europäisches Eisenbahnunternehmen
+    \end{itemize}
+  \end{itemize}
+}
+
+\only<2>{
+  \begin{itemize}
+  \item Kein Standard zur Harmonisierung, deshalb METIO
+  \item Unternehmen vernachlässigen Management ihrer Informationsobjekte komplett
+  \end{itemize}
+}
+\end{frame}
+
+\section{Probleme bei fehlender Harmonisierung}
+\begin{frame}[t, fragile]
+\frametitleNew{\faList}{Probleme bei fehlender Harmonisierung}
+\only<1>{
+  \begin{itemize}
+  \item Intransparenz der IO (Informationsobjekte)
+  \item Unvollständigkeit der IO
+  \item Inkorrekte und veraltete Definitionen zu den IO
+  \end{itemize}
+}
+\end{frame}
+
+\section{Folgen dieser Probleme}
+\begin{frame}[t, fragile]
+\frametitleNew{\faList}{Folgen dieser Probleme}
+\only<1>{
+  \begin{itemize}
+  \item Milde Katastrophen
+      \begin{itemize}
+      \item Mehrkosten
+      \end{itemize}
+  \item Schwere Katastrophen
+      \begin{itemize}
+      \item Homizide
+      \end{itemize}
+  \end{itemize}
+}
+\end{frame}
+
+\section{Umriss}
+\begin{frame}[t, fragile]
+\frametitleNew{\faList}{Umriss}
+  \begin{itemize}
+  \item METIO wird entwickelt    
+  
+  \item Fokus: Stammdaten
+      \begin{itemize}
+      \item Wurzel aller IOs
+      \end{itemize}
+      
+  \item Werkzeug zur Harmonisierung: Metadaten
+      \begin{itemize}
+      \item Schablone der Stammdaten
+      \item BDD (Business Data Dictionary)
+      \end{itemize}
+
+  \item Action Research Methode
+  \end{itemize}
+\end{frame}
+
+\section{Differenzierung BO IO DO}
+
+\begin{frame}[t, fragile]
+\frametitleNew{\faImage[regular]}{Differenzierung BO IO DO}
+
+\begin{center}
+\includegraphics[scale=0.55]{./@Bilder/IOBODO.pdf}
+
+Stammdaten ziehen sich genau durch die drei Ebenen.
+\end{center}
+\tocite{{\cite{schmidt2008harmonizing}}}
+\end{frame}
+
+\section{Ergebnisse}
+\begin{frame}[t, fragile]
+\frametitleNew{\faPoll}{Ergebnisse}
+\only<1>{
+  \begin{itemize}
+  \item Prozessmodelle
+  \item Aktivitätendiagramme
+  \item BDD
+  \end{itemize}
+}
+\only<2>{
+  \begin{center}
+  \includegraphics[scale=0.6]{./@Bilder/Prozedur.pdf}
+  \end{center}
+	
+  \tocite{{\cite{schmidt2008harmonizing}}}
+}
+  \only<3>{
+  \begin{center}
+  \includegraphics[scale=0.4]{./@Bilder/Akti}
+  \end{center}
+
+
+	
+  \tocite{{\cite{schmidt2008harmonizing}}}
+}
+\only<4>{
+  \begin{center}
+  \includegraphics[scale=0.8]{./@Bilder/finalbdd.pdf}
+  \end{center}
+	
+  \tocite{{\cite{schmidt2008harmonizing}}}
+}
+\end{frame}
+
+\begin{frame}[t, fragile]
+\frametitleNew{\faCheck}{}
+\begin{center}
+Evaluation...
+\end{center}
+\end{frame}
+
+\begin{frame}[t, fragile]
+\frametitleNew{\faSmile}{}
+\begin{center}
+Danke für die Aufmerksamkeit...
+\end{center}
+\end{frame}
+
+% Zum Abschluss die bibliographischen Angaben
+\frame{\tiny
+  \bibliographystyle{hc-de} 
+  \bibliography{./@Literatur/literatur}
+}
+\end{document}

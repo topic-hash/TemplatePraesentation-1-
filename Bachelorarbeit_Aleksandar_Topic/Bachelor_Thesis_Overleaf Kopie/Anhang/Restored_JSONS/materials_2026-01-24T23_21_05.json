@@ -1,0 +1,244 @@
+[
+    {
+        "id": "00414186-9f44-4ab5-b109-105747727153",
+        "name": "Acrylharz",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    },
+    {
+        "id": "1",
+        "name": "Titanium Dioxid",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "name": "Polypropylen",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "name": "Tinuvin 328",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    },
+    {
+        "id": "3c393082-61fd-4b14-8666-03e46673229e",
+        "name": "Blaue Pigmentpaste (BP-1000)",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    },
+    {
+        "id": "3e3dfa46-3cb6-4005-a5f1-d87619ed600b",
+        "name": "Stearinsäure",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    },
+    {
+        "id": "3ef48444-d1e2-4927-8f6b-94d7d34bf640",
+        "name": "Zinkphosphat",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    },
+    {
+        "id": "3fc65fab-c139-4978-b136-1c72508df4a5",
+        "name": "PEG 400",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "name": "Irganox",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    },
+    {
+        "id": "40c27f95-eb75-4739-8313-9abf73dba6f0",
+        "name": "White Masterbatch",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    },
+    {
+        "id": "5",
+        "name": "Polyethylenwachs",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    },
+    {
+        "id": "54b35968-9af3-4d5b-a335-8b26e6f8de19",
+        "name": "Titaniumdioxid",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    },
+    {
+        "id": "6",
+        "name": "Eisenoxid Rot",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    },
+    {
+        "id": "7",
+        "name": "Eisenoxid Gelb",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    },
+    {
+        "id": "7dddeb36-c784-4960-a7f7-bb5d79cefc88",
+        "name": "Poly-E Wax",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    },
+    {
+        "id": "95641e5c-f5d8-4d98-9d17-4b9120851bb5",
+        "name": "Rote Pigmentpaste (RP-1000)",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    },
+    {
+        "id": "9f122846-5be2-487c-b4aa-f04bd61d1a51",
+        "name": "Reinigungsflüssigkeit",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": true
+            }
+        ]
+    },
+    {
+        "id": "abb1d981-b73d-4f72-95b7-615c78903da6",
+        "name": "Weiße Pigmentpaste (WP-1000)",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    },
+    {
+        "id": "b23dcc2c-0022-4e20-9b13-550d2244e70b",
+        "name": "KENON 40",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    },
+    {
+        "id": "e200939d-ae72-471d-aa49-971bd1a1a09f",
+        "name": "Waschbenzin",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    },
+    {
+        "id": "e3d851cd-9675-42b7-b958-ad344d887ed7",
+        "name": "Kalziumkarbonat",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    },
+    {
+        "id": "ea7520da-b39e-44e3-8f4d-82d2aa4636de",
+        "name": "Phthaloblau (PB15:1)",
+        "comment": "",
+        "properties": [
+            {
+                "propertyId": "019beae0-3100-710d-8e22-c2c2d289384d",
+                "value": false
+            }
+        ]
+    }
+]

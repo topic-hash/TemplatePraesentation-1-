@@ -1,0 +1,226 @@
+[
+    {
+        "steps": [
+            {
+                "processingTime": {
+                    "type": "Constant",
+                    "value": 2100,
+                    "unitId": "s"
+                },
+                "resourceDemands": [
+                    {
+                        "resourceId": "68987259-e3e6-422b-b08f-e0f330fc3671",
+                        "units": 1
+                    }
+                ],
+                "resourceRequirements": [
+                    {
+                        "id": "9290be21-487f-4134-bdb2-2437aa008bb3",
+                        "name": "Dissolver",
+                        "units": 1,
+                        "conditionals": [
+                            {
+                                "propertyId": "6dcdaad9-cd4b-42ca-8b16-7d038b22a9a6",
+                                "operator": "Equal",
+                                "comparisonValue": true
+                            }
+                        ]
+                    }
+                ],
+                "isParallelizable": true,
+                "expectedBomItemUnitId": "kg",
+                "id": "187c4b7a-d3fc-4c7c-a195-f4b23fd8477f",
+                "name": "Mixing"
+            },
+            {
+                "processingTime": {
+                    "type": "BinaryOperation",
+                    "operator": "Divide",
+                    "leftOperand": {
+                        "type": "BinaryOperation",
+                        "operator": "Multiply",
+                        "leftOperand": {
+                            "type": "Variable",
+                            "variable": "TotalQuantityOfAssignedBomItems"
+                        },
+                        "rightOperand": {
+                            "type": "Constant",
+                            "value": 1,
+                            "unitId": "s"
+                        }
+                    },
+                    "rightOperand": {
+                        "type": "Constant",
+                        "value": 1,
+                        "unitId": "kg"
+                    }
+                },
+                "resourceDemands": [
+                    {
+                        "resourceId": "5",
+                        "units": 1
+                    },
+                    {
+                        "resourceId": "8c79c6d2-c088-4c60-8a92-cfc51ec7fff0",
+                        "units": 1
+                    }
+                ],
+                "resourceRequirements": [
+                    {
+                        "id": "c9b84852-a423-4763-93b9-484dba9d2258",
+                        "name": "Dissolver",
+                        "units": 1,
+                        "conditionals": [
+                            {
+                                "propertyId": "6dcdaad9-cd4b-42ca-8b16-7d038b22a9a6",
+                                "operator": "Equal",
+                                "comparisonValue": true
+                            }
+                        ]
+                    }
+                ],
+                "isParallelizable": true,
+                "expectedBomItemUnitId": "kg",
+                "id": "1a25848d-1949-46b8-8585-fef125c4d75e",
+                "name": "Dosing"
+            },
+            {
+                "processingTime": {
+                    "type": "Constant",
+                    "value": 600,
+                    "unitId": "s"
+                },
+                "resourceDemands": [
+                    {
+                        "resourceId": "8c79c6d2-c088-4c60-8a92-cfc51ec7fff0",
+                        "units": 1
+                    },
+                    {
+                        "resourceId": "68987259-e3e6-422b-b08f-e0f330fc3671",
+                        "units": 1
+                    },
+                    {
+                        "resourceId": "4f1b6be0-3eff-420b-b82f-afca2eb441f4",
+                        "units": 1
+                    },
+                    {
+                        "resourceId": "13",
+                        "units": 1
+                    }
+                ],
+                "isParallelizable": false,
+                "expectedBomItemUnitId": "kg",
+                "id": "ab5d89c9-a9a2-416b-835c-879a93b9eadf",
+                "name": "Cleaning"
+            },
+            {
+                "processingTime": {
+                    "type": "BinaryOperation",
+                    "operator": "Divide",
+                    "leftOperand": {
+                        "type": "BinaryOperation",
+                        "operator": "Multiply",
+                        "leftOperand": {
+                            "type": "Constant",
+                            "value": 1,
+                            "unitId": "s"
+                        },
+                        "rightOperand": {
+                            "type": "Variable",
+                            "variable": "TotalQuantityOfAssignedBomItems"
+                        }
+                    },
+                    "rightOperand": {
+                        "type": "Constant",
+                        "value": 1,
+                        "unitId": "kg"
+                    }
+                },
+                "resourceDemands": [
+                    {
+                        "resourceId": "13",
+                        "units": 1
+                    }
+                ],
+                "isParallelizable": false,
+                "expectedBomItemUnitId": "kg",
+                "id": "dbefdb41-4945-42e9-bb46-6a583dff042f",
+                "name": "Filtration"
+            },
+            {
+                "processingTime": {
+                    "type": "BinaryOperation",
+                    "operator": "Divide",
+                    "leftOperand": {
+                        "type": "BinaryOperation",
+                        "operator": "Multiply",
+                        "leftOperand": {
+                            "type": "Variable",
+                            "variable": "TotalQuantityOfAssignedBomItems"
+                        },
+                        "rightOperand": {
+                            "type": "Constant",
+                            "value": 1,
+                            "unitId": "s"
+                        }
+                    },
+                    "rightOperand": {
+                        "type": "Constant",
+                        "value": 1,
+                        "unitId": "kg"
+                    }
+                },
+                "resourceDemands": [
+                    {
+                        "resourceId": "8c79c6d2-c088-4c60-8a92-cfc51ec7fff0",
+                        "units": 1
+                    }
+                ],
+                "isParallelizable": false,
+                "expectedBomItemUnitId": "kg",
+                "id": "f96aa42d-230a-4c3f-bff3-d9d2fa3649da",
+                "name": "Packout"
+            }
+        ],
+        "id": "4e77aadd-9e4b-4e10-ad76-9fc5a0a2fcfb",
+        "name": "Pigment Paste WP",
+        "links": [
+            {
+                "sourceId": "187c4b7a-d3fc-4c7c-a195-f4b23fd8477f",
+                "targetId": "dbefdb41-4945-42e9-bb46-6a583dff042f",
+                "constraints": [
+                    {
+                        "type": "Precedence"
+                    }
+                ]
+            },
+            {
+                "sourceId": "1a25848d-1949-46b8-8585-fef125c4d75e",
+                "targetId": "dbefdb41-4945-42e9-bb46-6a583dff042f",
+                "constraints": [
+                    {
+                        "type": "Precedence"
+                    }
+                ]
+            },
+            {
+                "sourceId": "dbefdb41-4945-42e9-bb46-6a583dff042f",
+                "targetId": "f96aa42d-230a-4c3f-bff3-d9d2fa3649da",
+                "constraints": [
+                    {
+                        "type": "Precedence"
+                    }
+                ]
+            },
+            {
+                "sourceId": "f96aa42d-230a-4c3f-bff3-d9d2fa3649da",
+                "targetId": "ab5d89c9-a9a2-416b-835c-879a93b9eadf",
+                "constraints": [
+                    {
+                        "type": "Precedence"
+                    }
+                ]
+            }
+        ]
+    }
+]

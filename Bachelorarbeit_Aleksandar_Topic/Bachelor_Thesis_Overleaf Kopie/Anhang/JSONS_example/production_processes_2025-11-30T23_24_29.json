@@ -1,0 +1,117 @@
+[
+    {
+        "id": "5fb486b8-b394-4601-99fd-9e6f351d5ec7",
+        "name": "WP-Pigment Paste"
+    },
+    {
+        "steps": [
+            {
+                "processingTime": {
+                    "type": "Constant",
+                    "value": 300,
+                    "unitId": "s"
+                },
+                "resourceDemands": [
+                    {
+                        "resourceId": "18",
+                        "units": 1
+                    },
+                    {
+                        "resourceId": "5",
+                        "units": 1
+                    },
+                    {
+                        "resourceId": "1",
+                        "units": 1
+                    }
+                ],
+                "isParallelizable": false,
+                "expectedBomItemUnitId": "kg",
+                "id": "22763ef4-cec0-4fe2-95fc-2d9640e8b18e",
+                "name": "Dosing"
+            },
+            {
+                "processingTime": {
+                    "type": "Constant",
+                    "value": 900,
+                    "unitId": "s"
+                },
+                "resourceDemands": [
+                    {
+                        "resourceId": "1",
+                        "units": 1
+                    }
+                ],
+                "isParallelizable": false,
+                "expectedBomItemUnitId": "kg",
+                "id": "373e7473-dcf7-443f-b221-c50821358f44",
+                "name": "Mixing"
+            },
+            {
+                "processingTime": {
+                    "type": "Constant",
+                    "value": 600,
+                    "unitId": "s"
+                },
+                "resourceDemands": [
+                    {
+                        "resourceId": "13",
+                        "units": 1
+                    }
+                ],
+                "isParallelizable": false,
+                "expectedBomItemUnitId": "kg",
+                "id": "82cc80a2-87c0-4a4a-8283-49aec531440f",
+                "name": "Filtration"
+            },
+            {
+                "processingTime": {
+                    "type": "Constant",
+                    "value": 300,
+                    "unitId": "s"
+                },
+                "resourceDemands": [
+                    {
+                        "resourceId": "9",
+                        "units": 1
+                    }
+                ],
+                "isParallelizable": false,
+                "expectedBomItemUnitId": "kg",
+                "id": "db7c35a1-5fba-4702-985d-acf57129cfd8",
+                "name": "Packout"
+            }
+        ],
+        "id": "c720fec5-c287-4ca4-a9a0-d3b76ff0b85f",
+        "name": "Pigment Paste",
+        "links": [
+            {
+                "sourceId": "22763ef4-cec0-4fe2-95fc-2d9640e8b18e",
+                "targetId": "373e7473-dcf7-443f-b221-c50821358f44",
+                "constraints": [
+                    {
+                        "type": "Precedence"
+                    }
+                ]
+            },
+            {
+                "sourceId": "373e7473-dcf7-443f-b221-c50821358f44",
+                "targetId": "82cc80a2-87c0-4a4a-8283-49aec531440f",
+                "constraints": [
+                    {
+                        "type": "Precedence"
+                    }
+                ]
+            },
+            {
+                "sourceId": "82cc80a2-87c0-4a4a-8283-49aec531440f",
+                "targetId": "db7c35a1-5fba-4702-985d-acf57129cfd8",
+                "constraints": [
+                    {
+                        "type": "Precedence"
+                    }
+                ]
+            }
+        ]
+    }
+]
